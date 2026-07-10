@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tharpe IT Services</title>
+
+<title>Tharpe IT Services | Biddeford, Maine</title>
 
 <style>
+
 *{
 margin:0;
 padding:0;
@@ -13,193 +15,527 @@ box-sizing:border-box;
 font-family:Arial,Helvetica,sans-serif;
 }
 
-body{
-background:#0b0b0f;
-color:white;
+html{
+scroll-behavior:smooth;
 }
 
-header{
-background:#12121b;
-padding:20px;
+body{
+background:#05010c;
+color:white;
+overflow-x:hidden;
+}
+
+body::before{
+content:"";
+position:fixed;
+width:300%;
+height:300%;
+left:-100%;
+top:-100%;
+background:
+radial-gradient(circle,#7c3aed22 0%,transparent 60%),
+radial-gradient(circle,#4c1d9544 0%,transparent 55%);
+animation:movebg 25s linear infinite;
+z-index:-3;
+}
+
+@keyframes movebg{
+
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
+
+}
+
+nav{
+
+position:fixed;
+width:100%;
+padding:20px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
+
+background:rgba(0,0,0,.45);
+backdrop-filter:blur(18px);
+
+z-index:999;
+
 }
 
-header img{
-height:70px;
+nav img{
+
+height:55px;
+
+}
+
+nav ul{
+
+display:flex;
+list-style:none;
+gap:35px;
+
 }
 
 nav a{
+
 color:white;
 text-decoration:none;
-margin-left:20px;
 font-weight:bold;
+transition:.3s;
+
+}
+
+nav a:hover{
+
+color:#b56cff;
+
 }
 
 .hero{
+
+height:100vh;
+
+background:
+linear-gradient(rgba(0,0,0,.60),rgba(0,0,0,.85)),
+url("hero.jpg");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+align-items:center;
+justify-content:center;
 text-align:center;
-padding:80px 20px;
-background:linear-gradient(135deg,#1b0b2d,#000);
+
+}
+
+.hero-content{
+
+max-width:900px;
+
+padding:40px;
+
+background:rgba(255,255,255,.06);
+
+border-radius:25px;
+
+backdrop-filter:blur(10px);
+
+animation:fadeUp 1.5s;
+
+}
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(60px);
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+.hero img{
+
+width:170px;
+margin-bottom:25px;
+
 }
 
 .hero h1{
-font-size:48px;
-margin-bottom:20px;
-color:#bb66ff;
+
+font-size:60px;
+
+}
+
+.hero span{
+
+color:#b56cff;
+
 }
 
 .hero p{
+
+margin-top:25px;
 font-size:22px;
-margin-bottom:30px;
+line-height:1.6;
+
 }
 
 .button{
+
 display:inline-block;
-padding:15px 30px;
-background:#8a2be2;
+
+margin-top:35px;
+
+padding:18px 45px;
+
+background:#8b5cf6;
+
 color:white;
+
+border-radius:40px;
+
 text-decoration:none;
-border-radius:8px;
+
 font-weight:bold;
+
+transition:.3s;
+
 }
 
-.services{
-padding:60px 20px;
-max-width:1000px;
-margin:auto;
+.button:hover{
+
+background:#a855f7;
+
+transform:scale(1.08);
+
 }
 
-.services h2{
+section{
+
+padding:90px 8%;
+
+}
+
+.section-title{
+
+font-size:42px;
+
 text-align:center;
-margin-bottom:40px;
-color:#bb66ff;
+
+margin-bottom:60px;
+
 }
 
-.grid{
+.cards{
+
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:35px;
+
 }
 
 .card{
-background:#181824;
-padding:25px;
-border-radius:12px;
+
+background:rgba(255,255,255,.05);
+
+padding:40px;
+
+border-radius:25px;
+
+backdrop-filter:blur(12px);
+
+transition:.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+background:#6d28d933;
+
 }
 
 .card h3{
-margin-bottom:10px;
-color:#c78cff;
+
+margin-bottom:15px;
+
+color:#c084fc;
+
+}
+
+.about{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:50px;
+
+align-items:center;
+
+}
+
+.about img{
+
+width:100%;
+
+border-radius:20px;
+
 }
 
 .contact{
-background:#111;
-padding:60px 20px;
+
 text-align:center;
+
+}
+
+.contact a{
+
+color:#d8b4fe;
+
+text-decoration:none;
+
+font-size:22px;
+
+display:block;
+
+margin:15px;
+
 }
 
 footer{
-padding:25px;
+
+padding:35px;
+
 text-align:center;
-background:#000;
+
+background:#09030f;
+
 color:#888;
+
 }
+
+@media(max-width:900px){
+
+.about{
+
+grid-template-columns:1fr;
+
+}
+
+.hero h1{
+
+font-size:42px;
+
+}
+
+.hero p{
+
+font-size:18px;
+
+}
+
+}
+
 </style>
 
 </head>
 
 <body>
 
-<header>
-
-<img src="logo.png" alt="Tharpe IT Services">
-
 <nav>
-<a href="#services">Services</a>
-<a href="#contact">Contact</a>
-</nav>
 
-</header>
+<img src="logo.png">
+
+<ul>
+
+<li><a href="#services">Services</a></li>
+
+<li><a href="#about">About</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</nav>
 
 <section class="hero">
 
-<h1>Tharpe IT Services</h1>
+<div class="hero-content">
 
-<p>Solve. Support. Simplify.</p>
+<img src="logo.png">
 
-<p>Professional Computer Repair & Remote IT Support in York County, Maine</p>
+<h1>Tharpe <span>IT Services</span></h1>
 
-<a class="button" href="tel:+12078493939">
+<p>
+
+Professional IT Support & Services<br>
+
+Serving Biddeford, Maine and Surrounding Areas
+
+</p>
+
+<a href="tel:2078493939" class="button">
+
 Call (207) 849-3939
+
 </a>
+
+</div>
 
 </section>
 
-<section id="services" class="services">
+<section id="services">
 
-<h2>Our Services</h2>
+<h2 class="section-title">
 
-<div class="grid">
+Our Services
+
+</h2>
+
+<div class="cards">
 
 <div class="card">
-<h3>Computer Repair</h3>
-<p>Fast diagnostics and repairs for desktops and laptops.</p>
+
+<h3>Remote IT Support</h3>
+
+<p>
+
+Fast remote troubleshooting and technical support.
+
+</p>
+
 </div>
 
 <div class="card">
-<h3>Virus Removal</h3>
-<p>Remove malware and secure your computer.</p>
+
+<h3>Computer Setup</h3>
+
+<p>
+
+New computer installation and optimization.
+
+</p>
+
 </div>
 
 <div class="card">
+
 <h3>Wi-Fi & Networking</h3>
-<p>Home and small business network setup and troubleshooting.</p>
+
+<p>
+
+Reliable wireless networking and internet solutions.
+
+</p>
+
 </div>
 
 <div class="card">
-<h3>Remote Support</h3>
-<p>Get help without leaving your home.</p>
-</div>
 
-<div class="card">
 <h3>Mobile Device Setup</h3>
-<p>New phones, tablets, email, backups and transfers.</p>
+
+<p>
+
+Phone, tablet, and smart device configuration.
+
+</p>
+
 </div>
 
 <div class="card">
-<h3>Data Recovery</h3>
-<p>Recover important files and protect your data.</p>
+
+<h3>Data Backup</h3>
+
+<p>
+
+Protect important files with secure backup solutions.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Small Business IT</h3>
+
+<p>
+
+Professional IT services for local businesses.
+
+</p>
+
 </div>
 
 </div>
 
 </section>
 
-<section id="contact" class="contact">
+<section id="about">
 
-<h2>Contact Tharpe IT Services</h2>
+<div class="about">
 
-<p><strong>Phone:</strong> (207) 849-3939</p>
+<div>
 
-<p><strong>Email:</strong> TharpeITServices@gmail.com</p>
+<img src="hero.jpg">
 
-<p><strong>Location:</strong> York County, Maine</p>
+</div>
 
-<br>
+<div>
 
-<a class="button" href="mailto:TharpeITServices@gmail.com">
-Request Service
+<h2 class="section-title">
+
+Why Choose Tharpe IT?
+
+</h2>
+
+<p style="font-size:20px;line-height:1.9;">
+
+At Tharpe IT Services, we provide dependable, professional technology support for homes and small businesses throughout Biddeford and the surrounding communities.
+
+Whether you need remote assistance, new device setup, Wi-Fi optimization, or ongoing IT support, we're committed to delivering fast, friendly service you can trust.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2 class="section-title">
+
+Contact
+
+</h2>
+
+<div class="contact">
+
+<a href="tel:2078493939">
+
+📞 (207) 849-3939
+
 </a>
+
+<a href="mailto:TharpeITServices@gmail.com">
+
+📧 TharpeITServices@gmail.com
+
+</a>
+
+<p style="margin-top:20px;font-size:22px;">
+
+📍 Biddeford, Maine
+
+Serving Surrounding Areas
+
+</p>
+
+</div>
 
 </section>
 
 <footer>
 
-© 2026 Tharpe IT Services • All Rights Reserved
+© 2026 Tharpe IT Services • Solve. Support. Simplify.
 
 </footer>
 
 </body>
+
 </html>
+
 
