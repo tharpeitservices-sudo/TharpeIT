@@ -1964,5 +1964,27 @@ to{
 background-position:60px 60px;
 }
 }
+* Let the tech background show through the main sections */
+
+.services-section,
+.why-us-section,
+.about-section,
+.reviews-section,
+.contact-section {
+background: rgba(6, 7, 16, 0.78);
+backdrop-filter: blur(3px);
+-webkit-backdrop-filter: blur(3px);
+}
+
+.services-section,
+.about-section,
+.contact-section {
+background:
+linear-gradient(
+rgba(6, 7, 16, 0.82),
+rgba(10, 7, 20, 0.82)
+);
+}
+
 }
 
