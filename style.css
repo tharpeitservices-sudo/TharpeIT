@@ -424,7 +424,10 @@ position: absolute;
 inset: 0;
 z-index: -4;
 
-background-image: url("./hero.png?v=2");
+background:
+radial-gradient(circle at 70% 40%, rgba(123, 44, 191, 0.35), transparent 45%),
+linear-gradient(135deg, #05030a, #140522);
+  
 background-size: cover;
 background-position: center;
 
