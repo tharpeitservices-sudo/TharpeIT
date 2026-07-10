@@ -1,344 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Tharpe IT Services | Biddeford, Maine</title>
+<title>Tharpe IT Services | Professional IT Support & Services</title>
 
-<style>
+<meta name="description"
+content="Professional IT Support & Services in Biddeford, Maine and surrounding areas. Remote support, device setup, Wi-Fi, networking, and technology solutions.">
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,Helvetica,sans-serif;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-background:#05010c;
-color:white;
-overflow-x:hidden;
-}
-
-body::before{
-content:"";
-position:fixed;
-width:300%;
-height:300%;
-left:-100%;
-top:-100%;
-background:
-radial-gradient(circle,#7c3aed22 0%,transparent 60%),
-radial-gradient(circle,#4c1d9544 0%,transparent 55%);
-animation:movebg 25s linear infinite;
-z-index:-3;
-}
-
-@keyframes movebg{
-
-0%{transform:rotate(0deg);}
-100%{transform:rotate(360deg);}
-
-}
-
-nav{
-
-position:fixed;
-width:100%;
-padding:20px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-background:rgba(0,0,0,.45);
-backdrop-filter:blur(18px);
-
-z-index:999;
-
-}
-
-nav img{
-
-height:55px;
-
-}
-
-nav ul{
-
-display:flex;
-list-style:none;
-gap:35px;
-
-}
-
-nav a{
-
-color:white;
-text-decoration:none;
-font-weight:bold;
-transition:.3s;
-
-}
-
-nav a:hover{
-
-color:#b56cff;
-
-}
-
-.hero{
-
-height:100vh;
-
-background:
-linear-gradient(rgba(0,0,0,.60),rgba(0,0,0,.85)),
-url("hero.jpg");
-
-background-size:cover;
-background-position:center;
-
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-
-}
-
-.hero-content{
-
-max-width:900px;
-
-padding:40px;
-
-background:rgba(255,255,255,.06);
-
-border-radius:25px;
-
-backdrop-filter:blur(10px);
-
-animation:fadeUp 1.5s;
-
-}
-
-@keyframes fadeUp{
-
-from{
-opacity:0;
-transform:translateY(60px);
-}
-
-to{
-
-opacity:1;
-transform:translateY(0);
-
-}
-
-}
-
-.hero img{
-
-width:170px;
-margin-bottom:25px;
-
-}
-
-.hero h1{
-
-font-size:60px;
-
-}
-
-.hero span{
-
-color:#b56cff;
-
-}
-
-.hero p{
-
-margin-top:25px;
-font-size:22px;
-line-height:1.6;
-
-}
-
-.button{
-
-display:inline-block;
-
-margin-top:35px;
-
-padding:18px 45px;
-
-background:#8b5cf6;
-
-color:white;
-
-border-radius:40px;
-
-text-decoration:none;
-
-font-weight:bold;
-
-transition:.3s;
-
-}
-
-.button:hover{
-
-background:#a855f7;
-
-transform:scale(1.08);
-
-}
-
-section{
-
-padding:90px 8%;
-
-}
-
-.section-title{
-
-font-size:42px;
-
-text-align:center;
-
-margin-bottom:60px;
-
-}
-
-.cards{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-
-gap:35px;
-
-}
-
-.card{
-
-background:rgba(255,255,255,.05);
-
-padding:40px;
-
-border-radius:25px;
-
-backdrop-filter:blur(12px);
-
-transition:.3s;
-
-}
-
-.card:hover{
-
-transform:translateY(-10px);
-
-background:#6d28d933;
-
-}
-
-.card h3{
-
-margin-bottom:15px;
-
-color:#c084fc;
-
-}
-
-.about{
-
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-gap:50px;
-
-align-items:center;
-
-}
-
-.about img{
-
-width:100%;
-
-border-radius:20px;
-
-}
-
-.contact{
-
-text-align:center;
-
-}
-
-.contact a{
-
-color:#d8b4fe;
-
-text-decoration:none;
-
-font-size:22px;
-
-display:block;
-
-margin:15px;
-
-}
-
-footer{
-
-padding:35px;
-
-text-align:center;
-
-background:#09030f;
-
-color:#888;
-
-}
-
-@media(max-width:900px){
-
-.about{
-
-grid-template-columns:1fr;
-
-}
-
-.hero h1{
-
-font-size:42px;
-
-}
-
-.hero p{
-
-font-size:18px;
-
-}
-
-}
-
-</style>
-
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<header>
+
+<div class="logo">
+
+<img src="logo.png" alt="Tharpe IT Services Logo">
+
+<h2>Tharpe IT Services</h2>
+
+</div>
+
 <nav>
 
-<img src="logo.png">
-
 <ul>
+
+<li><a href="#home">Home</a></li>
 
 <li><a href="#services">Services</a></li>
 
@@ -350,23 +41,31 @@ font-size:18px;
 
 </nav>
 
-<section class="hero">
+</header>
+
+<!-- HERO -->
+
+<section id="home" class="hero">
 
 <div class="hero-content">
 
-<img src="logo.png">
+<img src="logo.png" class="hero-logo" alt="Tharpe IT Services">
 
-<h1>Tharpe <span>IT Services</span></h1>
+<h1>Professional IT Support & Services</h1>
+
+<h2>Serving Biddeford, Maine & Surrounding Areas</h2>
 
 <p>
 
-Professional IT Support & Services<br>
+Reliable on-site and remote IT support for homes and small businesses.
 
-Serving Biddeford, Maine and Surrounding Areas
+From device setup and Wi-Fi troubleshooting to network solutions and ongoing technical support,
+
+Tharpe IT Services keeps your technology running smoothly.
 
 </p>
 
-<a href="tel:2078493939" class="button">
+<a href="tel:2078493939" class="btn">
 
 Call (207) 849-3939
 
@@ -375,167 +74,313 @@ Call (207) 849-3939
 </div>
 
 </section>
+<!-- ==========================
+SERVICES
+=========================== -->
 
-<section id="services">
+<section id="services" class="services">
 
-<h2 class="section-title">
+<h2 class="section-title">Our IT Support & Services</h2>
 
-Our Services
+<div class="service-grid">
 
-</h2>
-
-<div class="cards">
-
-<div class="card">
-
-<h3>Remote IT Support</h3>
-
+<div class="service">
+<h3>🖥️ Remote IT Support</h3>
 <p>
-
-Fast remote troubleshooting and technical support.
-
+Fast, secure remote assistance to diagnose and resolve
+technical issues without waiting for an on-site visit.
 </p>
-
 </div>
 
-<div class="card">
-
-<h3>Computer Setup</h3>
-
+<div class="service">
+<h3>📶 Wi-Fi & Network Setup</h3>
 <p>
-
-New computer installation and optimization.
-
+Improve your home or business network with reliable
+Wi-Fi setup, troubleshooting, and optimization.
 </p>
-
 </div>
 
-<div class="card">
-
-<h3>Wi-Fi & Networking</h3>
-
+<div class="service">
+<h3>📱 Mobile Device Setup</h3>
 <p>
-
-Reliable wireless networking and internet solutions.
-
+Phone, tablet, and smart device setup, email
+configuration, backups, and data transfers.
 </p>
-
 </div>
 
-<div class="card">
-
-<h3>Mobile Device Setup</h3>
-
+<div class="service">
+<h3>☁️ Cloud & Backup Solutions</h3>
 <p>
-
-Phone, tablet, and smart device configuration.
-
+Protect your important files with secure cloud backups
+and recovery planning.
 </p>
-
 </div>
 
-<div class="card">
-
-<h3>Data Backup</h3>
-
+<div class="service">
+<h3>🏢 Small Business IT</h3>
 <p>
-
-Protect important files with secure backup solutions.
-
+Professional technology support for local businesses,
+including workstation setup and ongoing IT assistance.
 </p>
-
 </div>
 
-<div class="card">
-
-<h3>Small Business IT</h3>
-
+<div class="service">
+<h3>🔒 Security & Protection</h3>
 <p>
-
-Professional IT services for local businesses.
-
+Help secure your devices, accounts, and network using
+security best practices and protective solutions.
 </p>
-
 </div>
 
 </div>
 
 </section>
 
-<section id="about">
+<!-- ==========================
+WHY CHOOSE US
+=========================== -->
 
-<div class="about">
+<section class="services">
 
-<div>
+<h2 class="section-title">Why Choose Tharpe IT Services?</h2>
 
-<img src="hero.jpg">
+<div class="service-grid">
 
+<div class="service">
+<h3>⚡ Fast Response</h3>
+<p>
+Quick, dependable support to minimize downtime and get
+your technology working again.
+</p>
 </div>
 
-<div>
-
-<h2 class="section-title">
-
-Why Choose Tharpe IT?
-
-</h2>
-
-<p style="font-size:20px;line-height:1.9;">
-
-At Tharpe IT Services, we provide dependable, professional technology support for homes and small businesses throughout Biddeford and the surrounding communities.
-
-Whether you need remote assistance, new device setup, Wi-Fi optimization, or ongoing IT support, we're committed to delivering fast, friendly service you can trust.
-
+<div class="service">
+<h3>🤝 Honest Service</h3>
+<p>
+Straightforward advice, transparent pricing, and
+solutions tailored to your needs.
 </p>
+</div>
 
+<div class="service">
+<h3>📍 Local & Remote Support</h3>
+<p>
+Serving Biddeford, Maine and surrounding areas with both
+on-site visits and remote support options.
+</p>
 </div>
 
 </div>
 
 </section>
+<!-- ==========================
+ABOUT
+=========================== -->
 
-<section id="contact">
+<section id="about" class="about">
 
-<h2 class="section-title">
+<div class="about-image">
 
-Contact
+<img src="hero.jpg" alt="Tim Tharpe - Tharpe IT Services">
 
-</h2>
+</div>
 
-<div class="contact">
+<div class="about-text">
 
-<a href="tel:2078493939">
+<h2>About Tharpe IT Services</h2>
 
-📞 (207) 849-3939
+<p>
+
+At <strong>Tharpe IT Services</strong>, our goal is to make
+technology simple, secure, and dependable.
+
+We provide professional IT support for homeowners, remote
+workers, and small businesses throughout Biddeford, Maine
+and surrounding communities.
+
+</p>
+
+<br>
+
+<p>
+
+Whether you need help setting up a new computer,
+configuring Wi-Fi, troubleshooting technology issues,
+or managing multiple devices, you can count on prompt,
+friendly, and reliable service.
+
+</p>
+
+<br>
+
+<p>
+
+We believe in honest recommendations, responsive support,
+and helping customers get the most from their technology.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ==========================
+CONTACT
+=========================== -->
+
+<section id="contact" class="contact">
+
+<h2>Get IT Support Today</h2>
+
+<p>
+
+Need help with your computer, network, Wi-Fi,
+mobile devices, or technology?
+
+</p>
+
+<br>
+
+<a href="tel:2078493939" class="btn">
+
+📞 Call (207) 849-3939
 
 </a>
 
-<a href="mailto:TharpeITServices@gmail.com">
+<br><br>
 
-📧 TharpeITServices@gmail.com
+<a href="mailto:TharpeITServices@gmail.com" class="btn">
+
+📧 Email Us
 
 </a>
 
-<p style="margin-top:20px;font-size:22px;">
+<br><br>
 
-📍 Biddeford, Maine
+<p>
 
-Serving Surrounding Areas
+<strong>Email</strong><br>
+
+TharpeITServices@gmail.com
 
 </p>
+
+<br>
+
+<p>
+
+<strong>Business Hours</strong><br>
+
+Available by Appointment<br>
+
+On-Site & Remote Support
+
+</p>
+
+<br>
+
+<p>
+
+<strong>Service Area</strong><br>
+
+Biddeford, Maine & Surrounding Areas
+
+</p>
+
+</section>
+
+<!-- ==========================
+CALL TO ACTION
+=========================== -->
+
+<section class="services">
+
+<h2 class="section-title">
+
+Ready for Professional IT Support?
+
+</h2>
+
+<div style="text-align:center;">
+
+<p style="font-size:22px; max-width:800px; margin:auto; line-height:1.8;">
+
+Whether you're a homeowner needing technology help or
+a small business looking for dependable IT support,
+Tharpe IT Services is ready to help.
+
+</p>
+
+<br><br>
+
+<a href="tel:2078493939" class="btn">
+
+Call Now
+
+</a>
 
 </div>
 
 </section>
+<!-- ==========================
+FOOTER
+=========================== -->
 
 <footer>
 
-© 2026 Tharpe IT Services • Solve. Support. Simplify.
+<div class="footer-content">
+
+<img src="logo.png" alt="Tharpe IT Services Logo" class="footer-logo">
+
+<h3>Tharpe IT Services</h3>
+
+<p>
+Professional IT Support & Services for homes and businesses in
+Biddeford, Maine and surrounding areas.
+</p>
+
+<div class="footer-contact">
+
+<p>📞 <a href="tel:2078493939">(207) 849-3939</a></p>
+
+<p>📧 <a href="mailto:TharpeITServices@gmail.com">TharpeITServices@gmail.com</a></p>
+
+<p>📍 Biddeford, Maine</p>
+
+</div>
+
+<div class="footer-links">
+
+<a href="#home">Home</a>
+
+<a href="#services">Services</a>
+
+<a href="#about">About</a>
+
+<a href="#contact">Contact</a>
+
+</div>
+
+<hr style="margin:30px auto;max-width:800px;border:1px solid rgba(255,255,255,.1);">
+
+<p>
+
+© 2026 Tharpe IT Services. All Rights Reserved.
+
+</p>
+
+<p style="margin-top:10px;color:#b56dff;">
+
+Solve • Support • Simplify
+
+</p>
+
+</div>
 
 </footer>
 
+<script src="script.js"></script>
+
 </body>
-
 </html>
-
 
