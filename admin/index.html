@@ -14,56 +14,61 @@
   <script src="https://unpkg.com@^3.0.0/dist/decap-cms.js"></script>
 
   <script>
-    // Manual initialization interceptor prevents infinite blank page loops
+    // Flag tells the system we will initialize manually
     window.CMS_MANUAL_INIT = true;
 
-    CMS.init({
-      config: {
-        backend: {
-          name: 'github',
-          repo: 'tharpeitservices-sudo/TharpeIT',
-          branch: 'main'
-        },
-        media_folder: 'images',
-        public_folder: '/images',
-        collections: [
-          {
-            name: 'homepage',
-            label: 'Website Content Manager',
-            files: [
+    // Safety function: Waits until the script engine is fully initialized on the page
+    window.addEventListener('DOMContentLoaded', () => {
+      if (typeof CMS !== 'undefined') {
+        CMS.init({
+          config: {
+            backend: {
+              name: 'github',
+              repo: 'tharpeitservices-sudo/TharpeIT',
+              branch: 'main'
+            },
+            media_folder: 'images',
+            public_folder: '/images',
+            collections: [
               {
-                file: 'index.html',
-                label: 'Home Page Copy',
-                name: 'index',
-                fields: [
-                  { label: 'Main Title Headline', name: 'title', widget: 'string' },
-                  { label: 'Business Tagline', name: 'tagline', widget: 'string' },
-                  { label: '15 Years Experience Text Block', name: 'experience_text', widget: 'text' },
-                  { label: 'Support Email Address', name: 'contact_email', widget: 'string' },
-                  { label: 'Support Phone or Text Line', name: 'contact_phone', widget: 'string' }
-                ]
-              },
-              {
-                file: 'reviews.json',
-                label: 'Approved Customer Testimonials',
-                name: 'testimonials',
-                fields: [
+                name: 'homepage',
+                label: 'Website Content Manager',
+                files: [
                   {
-                    label: 'Approved Reviews List',
-                    name: 'customer_reviews',
-                    widget: 'list',
+                    file: 'index.html',
+                    label: 'Home Page Copy',
+                    name: 'index',
                     fields: [
-                      { label: 'Customer Initials Avatar', name: 'avatar', widget: 'string' },
-                      { label: 'Customer Name Display', name: 'name', widget: 'string' },
-                      { label: 'Star Count Rating Score', name: 'stars', widget: 'select', options: ['★★★★★', '★★★★', '★★★', '★★', '★'] },
-                      { label: 'Review Narrative Description Text', name: 'text', widget: 'text' }
+                      { label: 'Main Title Headline', name: 'title', widget: 'string' },
+                      { label: 'Business Tagline', name: 'tagline', widget: 'string' },
+                      { label: '15 Years Experience Text Block', name: 'experience_text', widget: 'text' },
+                      { label: 'Support Email Address', name: 'contact_email', widget: 'string' },
+                      { label: 'Support Phone or Text Line', name: 'contact_phone', widget: 'string' }
+                    ]
+                  },
+                  {
+                    file: 'reviews.json',
+                    label: 'Approved Customer Testimonials',
+                    name: 'testimonials',
+                    fields: [
+                      {
+                        label: 'Approved Reviews List',
+                        name: 'customer_reviews',
+                        widget: 'list',
+                        fields: [
+                          { label: 'Customer Initials Avatar', name: 'avatar', widget: 'string' },
+                          { label: 'Customer Name Display', name: 'name', widget: 'string' },
+                          { label: 'Star Count Rating Score', name: 'stars', widget: 'select', options: ['★★★★★', '★★★★', '★★★', '★★', '★'] },
+                          { label: 'Review Narrative Description Text', name: 'text', widget: 'text' }
+                        ]
+                      }
                     ]
                   }
                 ]
               }
             ]
           }
-        ]
+        ]);
       }
     });
   </script>
