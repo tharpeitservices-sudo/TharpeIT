@@ -14,7 +14,9 @@
   <script src="https://unpkg.com@^3.0.0/dist/decap-cms.js"></script>
 
   <script>
-    // Inline configurations guarantee the CMS initializes even if separate yml files get blocked by server rules
+    // Manual initialization interceptor prevents infinite blank page loops
+    window.CMS_MANUAL_INIT = true;
+
     CMS.init({
       config: {
         backend: {
@@ -67,4 +69,3 @@
   </script>
 </body>
 </html>
-
