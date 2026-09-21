@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Tharpe IT Services - Customized Deep Purple Tech Layout
+   Tharpe IT Services - Customized Deep Purple Tech Layout (V2 Fix)
    ========================================================================== */
 
 * {
@@ -10,17 +10,17 @@
 
 body {
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background-color: #0f0c1b; /* Deep Tech Dark Purple Baseline */
+    background-color: #0f0c1b; 
     background-image: radial-gradient(circle at top right, #2d124d 0%, #0f0c1b 70%);
     color: #f3f4f6;
     line-height: 1.6;
     padding-bottom: 5rem;
 }
 
-/* Brand Nav Header */
+/* Nav Header Setup */
 header {
-    background-color: rgba(26, 17, 48, 0.85);
-    border-bottom: 2px solid #5b21b6; /* Vivid Cyber Purple Border Line */
+    background-color: rgba(26, 17, 48, 0.9);
+    border-bottom: 2px solid #5b21b6; 
     padding: 1.25rem 2rem;
     backdrop-filter: blur(10px);
 }
@@ -44,178 +44,147 @@ h1 {
     font-size: 1.85rem;
     font-weight: 800;
     color: #ffffff;
-    text-shadow: 0 2px 10px rgba(139, 92, 246, 0.3);
 }
 
-/* Fluid Responsive Container Framework */
-main {
+/* 🖼️ FIX: Adaptive Banner Layout Module (No Cropping) */
+.banner-wrapper {
     max-width: 1100px;
-    margin: 2.5rem auto;
+    margin: 2rem auto 0 auto;
     padding: 0 1.5rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
 }
 
-/* Hero Section */
-.hero-section {
-    grid-column: 1 / -1;
-    position: relative;
+.full-responsive-banner {
+    width: 100%;
+    height: auto; /* Dynamically calculates proportional scaling constraints */
+    display: block;
     border-radius: 16px;
-    overflow: hidden;
-    height: 280px;
     border: 1px solid #4c1d95;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-.hero-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.6) contrast(1.1);
+/* Responsive Grid Setup */
+main {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
 }
 
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(15, 12, 27, 0.2) 0%, rgba(15, 12, 27, 0.9) 100%);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 2.5rem;
-}
-
-.hero-overlay h2 {
-    font-size: 2.5rem;
-    color: #ffffff;
-    margin-bottom: 0.5rem;
-    font-weight: 800;
-}
-
-.hero-overlay p {
-    font-size: 1.2rem;
-    color: #c084fc; /* High Tech Neon Lavendar info text */
-}
-
-/* Cyber Glass Card Blocks */
+/* Unified Layout Enclosures */
 .card-container {
     background: rgba(30, 27, 51, 0.65);
     border-radius: 14px;
-    padding: 2.25rem;
+    padding: 2rem;
     border: 1px solid rgba(139, 92, 246, 0.2);
     backdrop-filter: blur(12px);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
-.card-container h2 {
-    font-size: 1.4rem;
-    margin-bottom: 1.75rem;
-    color: #a78bfa;
-    border-bottom: 1px solid rgba(139, 92, 246, 0.2);
-    padding-bottom: 0.75rem;
-    font-weight: 700;
+.full-width-card {
+    grid-column: 1 / -1; /* Forces profiles panels to occupy full container width */
 }
 
-/* Form Styling */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+.card-container h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    color: #a78bfa;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+    padding-bottom: 0.5rem;
 }
+
+/* Core Information Display Grids */
+.profile-content-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .profile-content-grid { grid-template-columns: 1fr; }
+    main { grid-template-columns: 1fr; }
+}
+
+.service-highlight-text {
+    font-size: 1.1rem;
+    color: #ddd6fe;
+    margin-bottom: 1rem;
+}
+
+.contact-details-badge {
+    background: rgba(22, 17, 41, 0.8);
+    border: 1px dashed #6d28d9;
+    padding: 1.5rem;
+    border-radius: 10px;
+}
+
+.contact-details-badge h3 {
+    font-size: 1.1rem;
+    color: #c084fc;
+    margin-bottom: 1rem;
+}
+
+.contact-details-badge p {
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+}
+
+.neon-link {
+    color: #a78bfa;
+    text-decoration: none;
+}
+
+.neon-link:hover {
+    text-decoration: underline;
+    color: #c084fc;
+}
+
+.accent-glow {
+    color: #f59e0b;
+    font-weight: bold;
+}
+
+/* Form Settings */
+form { display: flex; flex-direction: column; gap: 1.25rem; }
 
 select, textarea {
     width: 100%;
-    padding: 0.85rem 1.1rem;
+    padding: 0.8rem 1rem;
     border: 1px solid #4c1d95;
-    border-radius: 10px;
-    font-size: 0.95rem;
+    border-radius: 8px;
     background-color: #161129;
     color: #f3f4f6;
-    transition: all 0.25s ease;
+    font-size: 0.95rem;
 }
 
 select:focus, textarea:focus {
     outline: none;
     border-color: #a78bfa;
-    box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.25);
-    background-color: #1c1535;
 }
 
-textarea {
-    height: 130px;
-}
+textarea { height: 120px; }
 
-/* Vibrant Action Buttons */
 .btn-primary {
     background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
-    color: #ffffff;
-    padding: 0.85rem 1.75rem;
+    color: white;
+    padding: 0.8rem;
     font-size: 1rem;
     font-weight: 700;
     border: none;
-    border-radius: 10px;
+    border-radius: 8px;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
-    transition: all 0.2s ease;
 }
 
-.btn-primary:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.55);
-    background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
-}
-
-/* Cascading Stars Visual Component */
-.rating-stars {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-    gap: 0.4rem;
-}
-
-.rating-stars input {
-    display: none;
-}
-
-.rating-stars label {
-    font-size: 2.5rem;
-    color: #3b2e5c;
-    cursor: pointer;
-    transition: color 0.15s ease, text-shadow 0.15s ease;
-}
-
+/* Rating Interaction States */
+.rating-stars { display: flex; flex-direction: row-reverse; justify-content: flex-end; gap: 0.4rem; }
+.rating-stars input { display: none; }
+.rating-stars label { font-size: 2.5rem; color: #3b2e5c; cursor: pointer; }
 .rating-stars label:hover,
 .rating-stars label:hover ~ label,
-.rating-stars input:checked ~ label {
-    color: #ddd6fe;
-    text-shadow: 0 0 12px #8b5cf6, 0 0 20px #7c3aed;
-}
+.rating-stars input:checked ~ label { color: #f59e0b; }
 
-/* Support Dashboard Panel */
-#ticketDashboard {
-    margin-top: 2rem;
-    border-top: 1px solid rgba(139, 92, 246, 0.2);
-    padding-top: 1.5rem;
-}
-
-#ticketDashboard h3 {
-    font-size: 1.15rem;
-    color: #c084fc;
-    margin-bottom: 1.25rem;
-}
-
-.no-tickets {
-    list-style: none;
-    text-align: center;
-    color: #6b21a8;
-    padding: 2rem;
-    background: rgba(22, 17, 41, 0.5);
-    border: 1px dashed rgba(139, 92, 246, 0.3);
-    border-radius: 10px;
-}
-
-@media (max-width: 800px) {
-    main { grid-template-columns: 1fr; }
-    .hero-section { height: auto; }
-    .hero-overlay { position: relative; padding: 2rem 1.5rem; background: #0f0c1b; }
-}
+/* Status Queue Styles */
+#ticketDashboard { margin-top: 1.5rem; border-top: 1px solid rgba(139, 92, 246, 0.2); padding-top: 1rem; }
+#ticketDashboard h3 { font-size: 1.1rem; color: #c084fc; margin-bottom: 1rem; }
+.no-tickets { list-style: none; text-align: center; color: #6b21a8; padding: 1.5rem; background: rgba(22, 17, 41, 0.5); border-radius: 8px; }
