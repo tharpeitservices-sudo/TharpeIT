@@ -5,10 +5,66 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tharpe IT - Content Manager Portal</title>
   
+  
   </script>
 </head>
 <body>
+  
   <!-- Decap CMS Visual Dashboard Engine -->
   <script src="https://unpkg.com@^3.0.0/dist/decap-cms.js"></script>
+
+  <script>
+    // Inline configurations guarantee the CMS initializes even if separate yml files get blocked by server rules
+    CMS.init({
+      config: {
+        backend: {
+          name: 'github',
+          repo: 'tharpeitservices-sudo/TharpeIT',
+          branch: 'main'
+        },
+        media_folder: 'images',
+        public_folder: '/images',
+        collections: [
+          {
+            name: 'homepage',
+            label: 'Website Content Manager',
+            files: [
+              {
+                file: 'index.html',
+                label: 'Home Page Copy',
+                name: 'index',
+                fields: [
+                  { label: 'Main Title Headline', name: 'title', widget: 'string' },
+                  { label: 'Business Tagline', name: 'tagline', widget: 'string' },
+                  { label: '15 Years Experience Text Block', name: 'experience_text', widget: 'text' },
+                  { label: 'Support Email Address', name: 'contact_email', widget: 'string' },
+                  { label: 'Support Phone or Text Line', name: 'contact_phone', widget: 'string' }
+                ]
+              },
+              {
+                file: 'reviews.json',
+                label: 'Approved Customer Testimonials',
+                name: 'testimonials',
+                fields: [
+                  {
+                    label: 'Approved Reviews List',
+                    name: 'customer_reviews',
+                    widget: 'list',
+                    fields: [
+                      { label: 'Customer Initials Avatar', name: 'avatar', widget: 'string' },
+                      { label: 'Customer Name Display', name: 'name', widget: 'string' },
+                      { label: 'Star Count Rating Score', name: 'stars', widget: 'select', options: ['★★★★★', '★★★★', '★★★', '★★', '★'] },
+                      { label: 'Review Narrative Description Text', name: 'text', widget: 'text' }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    });
+  </script>
 </body>
 </html>
+
