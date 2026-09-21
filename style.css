@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Tharpe IT Services - Responsive Deep Purple Tech Theme
+   Tharpe IT Services - Animated Cyber Theme Layout
    ========================================================================== */
 
 * {
@@ -9,20 +9,22 @@
 }
 
 body {
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background-color: #0f0c1b; 
-    background-image: radial-gradient(circle at top right, #2d124d 0%, #0f0c1b 70%);
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: #0b0813; 
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(91, 33, 182, 0.25) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(124, 58, 237, 0.2) 0%, transparent 50%);
     color: #f3f4f6;
     line-height: 1.6;
     padding-bottom: 5rem;
 }
 
-/* Nav Header Setup */
-header {
-    background-color: rgba(26, 17, 48, 0.9);
-    border-bottom: 2px solid #5b21b6; 
+/* Cyber Header Matrix */
+.cyber-header {
+    background: linear-gradient(90deg, #130f26 0%, #1a1235 100%);
+    border-bottom: 2px solid #6d28d9; 
     padding: 1.25rem 2rem;
-    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
 }
 
 .nav-container {
@@ -37,19 +39,22 @@ header {
     height: 55px;
     width: auto;
     border-radius: 8px;
-    box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
 }
 
 h1 {
     font-size: 1.85rem;
     font-weight: 800;
-    color: #ffffff;
+    letter-spacing: 0.5px;
+    background: linear-gradient(45deg, #ffffff, #c084fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-/* 🖼️ FIXED BANNER MODULE: Scales image proportionally across devices without cropping */
+/* Banner Layout Configuration */
 .banner-wrapper {
     max-width: 1100px;
-    margin: 2rem auto 0 auto;
+    margin: 2.5rem auto 0 auto;
     padding: 0 1.5rem;
 }
 
@@ -58,136 +63,170 @@ h1 {
     height: auto;
     display: block;
     border-radius: 16px;
-    border: 1px solid #4c1d95;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid #5b21b6;
+    box-shadow: 0 0 30px rgba(109, 40, 217, 0.25);
 }
 
-/* Responsive Grid Layout */
-main {
+/* Grid Alignment Framework */
+main.cyber-grid {
     max-width: 1100px;
-    margin: 2rem auto;
+    margin: 2.5rem auto;
     padding: 0 1.5rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
-/* Unified Layout Enclosures */
-.card-container {
-    background: rgba(30, 27, 51, 0.65);
-    border-radius: 14px;
-    padding: 2rem;
-    border: 1px solid rgba(139, 92, 246, 0.2);
-    backdrop-filter: blur(12px);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+/* Neon Dynamic Glowing Cards */
+.glow-card {
+    position: relative;
+    background: #120e24;
+    border-radius: 16px;
+    padding: 2.25rem;
+    border: 1px solid rgba(139, 92, 246, 0.25);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    overflow: hidden;
 }
 
 .full-width-card {
     grid-column: 1 / -1; 
 }
 
-.card-container h2 {
-    font-size: 1.4rem;
-    margin-bottom: 1.5rem;
-    color: #a78bfa;
-    border-bottom: 1px solid rgba(139, 92, 246, 0.2);
-    padding-bottom: 0.5rem;
+/* Bright Purple/Neon Pink Accent bar */
+.glow-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #7c3aed, #ec4899);
 }
 
-/* Profile Text Alignment */
+.glow-card h2 {
+    font-size: 1.45rem;
+    margin-bottom: 1.75rem;
+    color: #c084fc;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Profile Text Panels */
 .profile-content-grid {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-columns: 1.3fr 0.7fr;
     gap: 2rem;
 }
 
 @media (max-width: 768px) {
-    .profile-content-grid { grid-template-columns: 1fr; }
-    main { grid-template-columns: 1fr; }
+    main.cyber-grid, .profile-content-grid { grid-template-columns: 1fr; }
 }
 
 .service-highlight-text {
-    font-size: 1.2rem;
-    color: #c084fc;
+    font-size: 1.4rem;
+    color: #ffffff;
     margin-bottom: 1rem;
-    font-weight: 600;
+    font-weight: 700;
+    line-height: 1.4;
 }
 
+.body-narrative {
+    color: #9ca3af;
+    font-size: 1.05rem;
+}
+
+/* Infobox Badging */
 .contact-details-badge {
-    background: rgba(22, 17, 41, 0.8);
-    border: 1px dashed #6d28d9;
+    background: #191333;
+    border: 1px solid rgba(139, 92, 246, 0.4);
     padding: 1.5rem;
-    border-radius: 10px;
+    border-radius: 12px;
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.4);
 }
 
 .contact-details-badge h3 {
     font-size: 1.1rem;
-    color: #c084fc;
-    margin-bottom: 1rem;
+    color: #f472b6;
+    margin-bottom: 1.25rem;
 }
 
 .contact-details-badge p {
-    margin-bottom: 0.75rem;
-    font-size: 0.95rem;
+    margin-bottom: 0.85rem;
+    font-size: 1rem;
+    color: #e5e7eb;
 }
 
 .neon-link {
     color: #a78bfa;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
 }
 
-.neon-link:hover {
-    text-decoration: underline;
-    color: #c084fc;
+.neon-link:hover { color: #c084fc; text-shadow: 0 0 8px rgba(167,139,250,0.6); }
+.accent-glow { color: #fbbf24; font-weight: 700; text-decoration: none; }
+
+/* Interactive Cyber Inputs */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
 }
 
-.accent-glow {
-    color: #f59e0b;
-    font-weight: bold;
-    text-decoration: none;
+.input-group label {
+    font-size: 0.85rem;
+    color: #a78bfa;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
 }
-
-/* Inputs */
-form { display: flex; flex-direction: column; gap: 1.25rem; }
 
 select, textarea {
     width: 100%;
-    padding: 0.8rem 1rem;
+    padding: 0.9rem 1.1rem;
     border: 1px solid #4c1d95;
-    border-radius: 8px;
-    background-color: #161129;
-    color: #f3f4f6;
-    font-size: 0.95rem;
+    border-radius: 10px;
+    background-color: #090615;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: all 0.2s ease;
 }
 
 select:focus, textarea:focus {
     outline: none;
-    border-color: #a78bfa;
+    border-color: #c084fc;
+    box-shadow: 0 0 12px rgba(192, 132, 252, 0.3);
 }
 
-textarea { height: 120px; }
+textarea { height: 120px; resize: none; }
 
-.btn-primary {
-    background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+/* Neon Pulse Buttons */
+.btn-cyber {
+    background: linear-gradient(135deg, #7c3aed 0%, #db2777 100%);
     color: white;
-    padding: 0.8rem;
-    font-size: 1rem;
+    padding: 1rem;
+    font-size: 1.05rem;
     font-weight: 700;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
+    transition: all 0.25s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-/* Star Handling */
-.rating-stars { display: flex; flex-direction: row-reverse; justify-content: flex-end; gap: 0.4rem; }
+.btn-cyber:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(219, 39, 119, 0.6);
+    filter: brightness(1.1);
+}
+
+/* Fluid Interactivity Stars Layout */
+.rating-stars { display: flex; flex-direction: row-reverse; justify-content: flex-end; gap: 0.5rem; }
 .rating-stars input { display: none; }
-.rating-stars label { font-size: 2.5rem; color: #3b2e5c; cursor: pointer; }
+.rating-stars label { font-size: 2.75rem; color: #251b47; cursor: pointer; transition: all 0.15s ease; }
 .rating-stars label:hover,
 .rating-stars label:hover ~ label,
-.rating-stars input:checked ~ label { color: #f59e0b; }
-
-/* Status Modules */
-#ticketDashboard { margin-top: 1.5rem; border-top: 1px solid rgba(139, 92, 246, 0.2); padding-top: 1rem; }
-#ticketDashboard h3 { font-size: 1.1rem; color: #c084fc; margin-bottom: 1rem; }
-.no-tickets { list-style: none; text-align: center; color: #6b21a8; padding: 1.5rem; background: rgba(22, 17, 41, 0.5); border-radius: 8px; }
+.rating-stars input:checked ~ label { 
+    color: #fbbf24; 
+    text-shadow: 0 0 10px #f59e0b, 0 0 20px #d97706;
+}
