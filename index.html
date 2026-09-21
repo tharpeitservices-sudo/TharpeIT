@@ -1,36 +1,79 @@
-<!-- Site Review Section -->
-<section id="review-system" class="card-container">
-  <h2>Customer Experience Reviews</h2>
-  <form id="reviewForm">
-    <div class="rating-stars">
-      <input type="radio" id="star5" name="rating" value="5"><label for="star5" title="5 stars">★</label>
-      <input type="radio" id="star4" name="rating" value="4"><label for="star4" title="4 stars">★</label>
-      <input type="radio" id="star3" name="rating" value="3"><label for="star3" title="3 stars">★</label>
-      <input type="radio" id="star2" name="rating" value="2"><label for="star2" title="2 stars">★</label>
-      <input type="radio" id="star1" name="rating" value="1"><label for="star1" title="1 stars">★</label>
-    </div>
-    <textarea id="reviewText" placeholder="Tell us how our IT support team did..." required></textarea>
-    <button type="submit" class="btn-primary">Submit Review</button>
-  </form>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tharpe IT Services</title>
+    <!-- Reconnecting your original stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<!-- Modernized Ticketing Section -->
-<section id="ticketing-system" class="card-container">
-  <h2>Submit a Support Ticket</h2>
-  <form id="ticketForm">
-    <select id="ticketCategory" required>
-      <option value="" disabled selected>Select Issue Category</option>
-      <option value="Network">Network & Basic Connectivity</option>
-      <option value="Hardware">Hardware (Desktop/Laptop/Printer)</option>
-      <option value="Software">Software & Cloud Applications</option>
-      <option value="Security">Security Policy / MFA Access</option>
-    </select>
-    <select id="ticketUrgency" required>
-      <option value="Low">Low Priority</option>
-      <option value="Medium" selected>Medium Priority</option>
-      <option value="High">High Priority (SLA Warning)</option>
-    </select>
-    <textarea id="ticketDesc" placeholder="Describe the IT issue you are experiencing..." required></textarea>
-    <button type="submit" class="btn-primary">Generate Ticket</button>
-  </form>
-</section>
+    <header>
+        <div class="nav-container">
+            <!-- Reconnecting your original logo picture -->
+            <img src="logo.png" alt="Tharpe IT Services Logo" class="site-logo">
+            <h1>Tharpe IT Services</h1>
+        </div>
+    </header>
+
+    <main>
+        <!-- Reconnecting your original hero picture banner -->
+        <section class="hero-section">
+            <img src="hero.png" alt="IT Services Banner" class="hero-image">
+            <div class="hero-overlay">
+                <h2>Modern IT Solutions & Support</h2>
+                <p>Fast, reliable technical support at your fingertips.</p>
+            </div>
+        </section>
+
+        <!-- New User-Friendly Review System -->
+        <section id="review-system" class="card-container">
+            <h2>Customer Experience Reviews</h2>
+            <form id="reviewForm">
+                <div class="rating-stars">
+                    <input type="radio" id="star5" name="rating" value="5"><label for="star5" title="5 stars">★</label>
+                    <input type="radio" id="star4" name="rating" value="4"><label for="star4" title="4 stars">★</label>
+                    <input type="radio" id="star3" name="rating" value="3"><label for="star3" title="3 stars">★</label>
+                    <input type="radio" id="star2" name="rating" value="2"><label for="star2" title="2 stars">★</label>
+                    <input type="radio" id="star1" name="rating" value="1"><label for="star1" title="1 stars">★</label>
+                </div>
+                <textarea id="reviewText" placeholder="Tell us how our IT support team did..." required></textarea>
+                <button type="submit" class="btn-primary">Submit Review</button>
+            </form>
+            <div id="reviewFeedback" class="hidden"></div>
+        </section>
+
+        <!-- New Updated Ticketing System -->
+        <section id="ticketing-system" class="card-container">
+            <h2>Submit a Support Ticket</h2>
+            <form id="ticketForm">
+                <select id="ticketCategory" required>
+                    <option value="" disabled selected>Select Issue Category</option>
+                    <option value="Network">Network & Basic Connectivity</option>
+                    <option value="Hardware">Hardware (Desktop/Laptop/Printer)</option>
+                    <option value="Software">Software & Cloud Applications</option>
+                    <option value="Security">Security Policy / MFA Access</option>
+                </select>
+                <select id="ticketUrgency" required>
+                    <option value="Low">Low Priority</option>
+                    <option value="Medium" selected>Medium Priority</option>
+                    <option value="High">High Priority (SLA Warning)</option>
+                </select>
+                <textarea id="ticketDesc" placeholder="Describe the IT issue you are experiencing..." required></textarea>
+                <button type="submit" class="btn-primary">Generate Ticket</button>
+            </form>
+
+            <!-- Real-time dashboard view -->
+            <div id="ticketDashboard">
+                <h3>Active Support Status</h3>
+                <ul id="ticketList"></ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- Reconnecting your updated javascript actions -->
+    <script src="script.js"></script>
+</body>
+</html>
+
