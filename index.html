@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <header>
+    <header class="cyber-header">
         <div class="nav-container">
             <img src="logo.png" alt="Tharpe IT Services Logo" class="site-logo">
             <h1>Tharpe IT Services</h1>
@@ -20,75 +20,89 @@
         <img src="hero.png" alt="Tharpe IT Services Network Background Banner" class="full-responsive-banner">
     </section>
 
-    <main>
-        <!-- 🏢 RESTORED CORE BUSINESS PROFILE PANEL -->
-        <section id="business-profile-info" class="card-container full-width-card">
+    <main class="cyber-grid">
+        <!-- 🏢 CORE BUSINESS PROFILE PANEL -->
+        <section id="business-profile-info" class="glow-card full-width-card">
+            <div class="card-glow-layer"></div>
             <h2>Our Technical IT Solutions & Services</h2>
             <div class="profile-content-grid">
                 <div class="profile-text-block">
                     <p class="service-highlight-text">
-                        Welcome to Tharpe IT Services. We focus on **providing local and simple IT services to the community**. 
+                        Providing local and simple IT services to the community.
                     </p>
-                    <p>
-                        Backed by over **15 years of professional IT experience**, we provide reliable technical troubleshooting, network optimization, device diagnostics, and secure helpdesk support built around your home or small business systems. 
+                    <p class="body-narrative">
+                        Backed by over <strong>15 years of professional IT experience</strong>, we deliver robust tech troubleshooting, networking optimization, and clear device solutions built directly around your small business or home infrastructure.
                     </p>
                 </div>
                 
                 <div class="contact-details-badge">
-                    <h3>📬 Contact Technical Support Desk</h3>
+                    <h3>📬 Contact Technical Support</h3>
                     <p><strong>Email Us:</strong> <a href="mailto:Tharpeitservices@gmail.com" class="neon-link">Tharpeitservices@gmail.com</a></p>
                     <p><strong>Call or Text:</strong> <a href="tel:2078493939" class="accent-glow">207-849-3939</a></p>
-                    <p><strong>Operational Hours:</strong> Local Response & Ongoing Monitoring</p>
                 </div>
             </div>
         </section>
 
-        <!-- ⭐ Dynamic User Feedback Component -->
-        <section id="review-system" class="card-container">
-            <h2>Customer Experience Reviews</h2>
-            <form id="reviewForm">
-                <div class="rating-stars">
-                    <input type="radio" id="star5" name="rating" value="5"><label for="star5">★</label>
-                    <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
-                    <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
-                    <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
-                    <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
-                </div>
-                <textarea id="reviewText" placeholder="Provide feedback regarding your technical helpdesk experience..." required></textarea>
-                <button type="submit" class="btn-primary">Submit Review</button>
-            </form>
-            <div id="reviewFeedback" style="display:none;"></div>
-        </section>
-
-        <!-- 🎫 Upgraded Helpdesk Ticket Intake -->
-        <section id="ticketing-system" class="card-container">
+        <!-- 🎫 LIVE CONNECTED SUPPORT TICKET FORM -->
+        <section id="ticketing-system" class="glow-card">
+            <div class="card-glow-layer"></div>
             <h2>Submit a Support Ticket</h2>
-            <form id="ticketForm">
-                <select id="ticketCategory" required>
-                    <option value="" disabled selected>Select Core Issue Category</option>
-                    <option value="Network Infrastructure">Network Infrastructure & Wi-Fi</option>
-                    <option value="Hardware Management">Device Diagnostics & Repairs</option>
-                    <option value="Cloud & Software">Software Install & Configuration</option>
-                    <option value="Cybersecurity">Virus Removal & Access Management</option>
-                </select>
-                <select id="ticketUrgency" required>
-                    <option value="Low">Low Priority (General Question)</option>
-                    <option value="Medium" selected>Medium Priority (Standard Ticket)</option>
-                    <option value="High">High Priority (Urgent System Outage)</option>
-                </select>
-                <textarea id="ticketDesc" placeholder="Provide details about the technical faults or device issues you need fixed..." required></textarea>
-                <button type="submit" class="btn-primary">Generate Ticket</button>
+            <!-- Integrated with your Formspree endpoint -->
+            <form id="ticketForm" action="https://formspree.io/f/mppwdpjd" method="POST">
+                <div class="input-group">
+                    <label>Issue Category</label>
+                    <select name="Category" required>
+                        <option value="" disabled selected>Select Core Issue Category</option>
+                        <option value="Network Infrastructure">Network Infrastructure & Wi-Fi</option>
+                        <option value="Hardware Management">Device Diagnostics & Repairs</option>
+                        <option value="Cloud & Software">Software Install & Configuration</option>
+                        <option value="Cybersecurity">Virus Removal & Access Management</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Priority Level</label>
+                    <select name="Priority" required>
+                        <option value="Low">Low Priority (General Question)</option>
+                        <option value="Medium" selected>Medium Priority (Standard Ticket)</option>
+                        <option value="High">High Priority (Urgent System Outage)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Describe Your Issue</label>
+                    <textarea name="Description" placeholder="Provide details about the technical faults or device issues you need fixed..." required></textarea>
+                </div>
+                <!-- Redirects back to your website home after completion -->
+                <input type="hidden" name="_next" value="https://github.io">
+                <button type="submit" class="btn-cyber">Dispatch Ticket</button>
             </form>
+        </section>
 
-            <div id="ticketDashboard">
-                <h3>Active Support Operations Status</h3>
-                <ul id="ticketList">
-                    <li class="no-tickets">No active support items.</li>
-                </ul>
-            </div>
+        <!-- ⭐ LIVE CONNECTED USER REVIEWS FORM -->
+        <section id="review-system" class="glow-card">
+            <div class="card-glow-layer"></div>
+            <h2>Customer Experience Reviews</h2>
+            <!-- Integrated with your Formspree endpoint -->
+            <form id="reviewForm" action="https://formspree.io/f/mppwdpjd" method="POST">
+                <div class="star-rating-box">
+                    <p style="margin-bottom: 0.5rem; color: #a78bfa; font-size: 0.9rem;">Select Support Score:</p>
+                    <div class="rating-stars">
+                        <input type="radio" id="star5" name="RatingStars" value="5"><label for="star5">★</label>
+                        <input type="radio" id="star4" name="RatingStars" value="4"><label for="star4">★</label>
+                        <input type="radio" id="star3" name="RatingStars" value="3"><label for="star3">★</label>
+                        <input type="radio" id="star2" name="RatingStars" value="2"><label for="star2">★</label>
+                        <input type="radio" id="star1" name="RatingStars" value="1"><label for="star1">★</label>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Your Feedback</label>
+                    <textarea name="ReviewComment" placeholder="Provide feedback regarding your technical helpdesk experience..." required></textarea>
+                </div>
+                <!-- Redirects back to your website home after completion -->
+                <input type="hidden" name="_next" value="https://github.io">
+                <button type="submit" class="btn-cyber">Submit Review</button>
+            </form>
         </section>
     </main>
 
-    <script src="script.js"></script>
 </body>
 </html>
