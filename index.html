@@ -8,37 +8,55 @@
 </head>
 <body>
 
-    <!-- Ambient Grid Background Elements -->
+    <!-- Ambient Cyber Backdrop Grid Matrix -->
     <div class="cyber-grid-overlay"></div>
     <div class="ambient-glow-1"></div>
     <div class="ambient-glow-2"></div>
 
     <header class="cyber-header">
         <div class="nav-container">
-            <img src="logo.png" alt="Tharpe IT Services Logo" class="site-logo">
-            <h1>Tharpe IT Services</h1>
-            <a href="sms:+12078493939" class="btn-text-me header-text-btn">💬 Text For Help</a>
+            <div class="brand-block">
+                <img src="logo.png" alt="Tharpe IT Services Logo" class="site-logo">
+                <div class="brand-text">
+                    <h1>THARPE // IT</h1>
+                    <span class="system-status">● HELP_DESK_ONLINE</span>
+                </div>
+            </div>
         </div>
     </header>
 
-    <!-- ⚡ HIGH-CONVERTING HERO ENTRY GRID ⚡ -->
+    <!-- ⚡ CYBER-HERO SPLIT ROW INTRASTRUCTURE ⚡ -->
     <section class="hero-split-grid">
         
-        <!-- Left Side: Your Branding Picture Column -->
+        <!-- Left Side: Interactive Graphic Container with Floating Tactical Text Button -->
         <div class="banner-container">
             <img src="hero.png" alt="Tharpe IT Services Layout Banner" class="full-responsive-banner">
             <div class="banner-glow-edge"></div>
+            
+            <!-- ⚡ FLOATING TACTICAL NEON PURPLE TEXT BUTTON PINNED TO GRAPHIC ⚡ -->
+            <a href="sms:+12078493939" class="floating-sms-badge pulse-glow">
+                <span class="pulse-dot"></span>
+                💬 TEXT_FOR_IMMEDIATE_HELP: 207-849-3939
+            </a>
         </div>
 
-        <!-- Right Side: Upgraded Live Connected Support Ticket Form -->
-        <section id="ticketing-system" class="glass-card hero-form-card">
+        <!-- Right Side: Dual-Intake System (Tickets & QuickBooks Invoices) -->
+        <section id="helpdesk-matrix" class="cyber-card">
             <div class="card-accent-bar pink-purple"></div>
-            <h2>Submit a Support Ticket</h2>
-            <form id="ticketForm" action="https://formspree.io" method="POST">
+            
+            <!-- System Interface Navigation Tabs -->
+            <div class="matrix-tabs">
+                <button id="tab-ticket" class="tab-node active" onclick="switchMatrixTab('ticket')">// DISPATCH_TICKET</button>
+                <button id="tab-invoice" class="tab-node" onclick="switchMatrixTab('invoice')">// QUICKBOOKS_INVOICES</button>
+            </div>
+
+            <!-- Form A: Support Ticket Intake -->
+            <form id="ticketForm" class="matrix-form-pane" action="https://formspree.io" method="POST">
+                <input type="hidden" name="_subject" value="⚠️ NEW IT SUPPORT TICKET DISPATCHED">
                 <div class="input-group">
-                    <label>Issue Category</label>
+                    <label>SYS_CORE_CATEGORY</label>
                     <select name="Category" required>
-                        <option value="" disabled selected>Select Core Issue Category</option>
+                        <option value="" disabled selected>Select System Target...</option>
                         <option value="Network Infrastructure">Network Infrastructure & Wi-Fi</option>
                         <option value="Hardware Management">Device Diagnostics & Repairs</option>
                         <option value="Cloud & Software">Software Install & Configuration</option>
@@ -46,7 +64,7 @@
                     </select>
                 </div>
                 <div class="input-group">
-                    <label>Priority Level</label>
+                    <label>SLA_PRIORITY_LEVEL</label>
                     <select name="Priority" required>
                         <option value="Low">Low Priority (General Question)</option>
                         <option value="Medium" selected>Medium Priority (Standard Ticket)</option>
@@ -54,11 +72,34 @@
                     </select>
                 </div>
                 <div class="input-group">
-                    <label>Describe Your Issue</label>
-                    <textarea name="Description" placeholder="Provide details about the technical faults or device issues you need fixed..." required></textarea>
+                    <label>FAULT_LOG_DESCRIPTION</label>
+                    <textarea name="Description" placeholder="Provide system logs, access blockers, or fault parameters..." required></textarea>
                 </div>
                 <input type="hidden" name="_next" value="https://tharpeitservices.com">
-                <button type="submit" class="btn-cyber">Dispatch Ticket</button>
+                <button type="submit" class="btn-cyber-node">Initialize_Dispatch_Sequence</button>
+            </form>
+
+            <!-- Form B: QuickBooks Invoice & Billing Inquiry Intake -->
+            <form id="invoiceForm" class="matrix-form-pane" action="https://formspree.io" method="POST" style="display: none;">
+                <input type="hidden" name="_subject" value="💳 QUICKBOOKS BILLING INQUIRY TRANSMITTED">
+                
+                <div class="input-group">
+                    <label>QUICKBOOKS_ACCOUNT_NAME</label>
+                    <input type="text" name="QuickBooks_Client_Name" placeholder="Enter business or client name as listed on invoice..." required>
+                </div>
+                
+                <div class="input-group">
+                    <label>QB_INVOICE_NUMBER_REF</label>
+                    <input type="text" name="QuickBooks_Invoice_ID" placeholder="Enter the 4 to 6 digit QB Invoice #..." required>
+                </div>
+                
+                <div class="input-group">
+                    <label>BILLING_RESOLUTION_NOTES</label>
+                    <textarea name="Billing_Inquiry_Details" placeholder="Describe billing discrepancies, request an updated invoice link, or paste payment confirmation details..." required></textarea>
+                </div>
+                
+                <input type="hidden" name="_next" value="https://tharpeitservices.com">
+                <button type="submit" class="btn-cyber-node variant-gold">Transmit_Billing_Data</button>
             </form>
         </section>
 
@@ -66,9 +107,9 @@
 
     <main class="portal-main-grid">
         <!-- 🏢 CORE BUSINESS PROFILE PANEL -->
-        <section id="business-profile-info" class="glass-card full-width-card">
+        <section id="business-profile-info" class="cyber-card full-width-card">
             <div class="card-accent-bar blue-purple"></div>
-            <h2>Our Technical IT Solutions & Services</h2>
+            <h2>[SYS_PROFILE] // Tharpe IT Solutions</h2>
             <div class="profile-content-grid">
                 <div class="profile-text-block">
                     <p class="service-highlight-text">
@@ -77,25 +118,20 @@
                     <p class="body-narrative">
                         Backed by over <strong>15 years of professional IT experience</strong>, we deliver robust tech troubleshooting, networking optimization, and clear device solutions built directly around your small business or home infrastructure.
                     </p>
-                    
-                    <!-- Immediate Mobile Messaging Triage Action -->
-                    <div class="immediate-help-container">
-                        <a href="sms:+12078493939" class="btn-text-me pulse-glow">💬 Text Me For Immediate Help</a>
-                    </div>
                 </div>
                 
                 <div class="contact-details-badge">
-                    <h3>📬 Contact Technical Support</h3>
-                    <p><strong>Email Us:</strong> <a href="mailto:Tharpeitservices@gmail.com" class="neon-link">Tharpeitservices@gmail.com</a></p>
-                    <p><strong>Call or Text:</strong> <a href="tel:2078493939" class="accent-glow">207-849-3939</a></p>
+                    <h3>📬 TARGET_COMMS_ROUTING</h3>
+                    <p><strong>EMAIL_LINK:</strong> <a href="mailto:Tharpeitservices@gmail.com" class="neon-link">Tharpeitservices@gmail.com</a></p>
+                    <p><strong>SMS_OR_VOICE:</strong> <a href="tel:2078493939" class="accent-glow">207-849-3939</a></p>
                 </div>
             </div>
         </section>
 
         <!-- 🚀 WHAT WE ARE ALL ABOUT -->
-        <section id="about-us-section" class="glass-card full-width-card">
+        <section id="about-us-section" class="cyber-card full-width-card">
             <div class="card-accent-bar purple-pink"></div>
-            <h2>What We Are All About</h2>
+            <h2>[MISSION_PARAMETERS] // What We Are All About</h2>
             <p class="section-intro-text">At Tharpe IT Services, we believe that enterprise-grade support shouldn't come with confusing corporate jargon. We focus on building lasting technology foundations right here in our community.</p>
             
             <div class="about-features-grid">
@@ -118,12 +154,12 @@
         </section>
 
         <!-- ⭐ LIVE CONNECTED USER REVIEWS FORM -->
-        <section id="review-system" class="glass-card full-width-card">
+        <section id="review-system" class="cyber-card full-width-card">
             <div class="card-accent-bar gold-purple"></div>
-            <h2>Leave an Experience Review</h2>
+            <h2>[FEEDBACK_TELEMETRY] // Experience Reviews</h2>
             <form id="reviewForm" action="https://formspree.io" method="POST">
                 <div class="star-rating-box">
-                    <label class="input-label-style">Select Support Score</label>
+                    <label class="input-label-style">SATISFACTION_METRIC_SCORE</label>
                     <div class="rating-stars">
                         <input type="radio" id="star5" name="RatingStars" value="5"><label for="star5">★</label>
                         <input type="radio" id="star4" name="RatingStars" value="4"><label for="star4">★</label>
@@ -133,46 +169,7 @@
                     </div>
                 </div>
                 <div class="input-group">
-                    <label>Your Feedback</label>
+                    <label>CUSTOMER_NARRATIVE_LOG</label>
                     <textarea name="ReviewComment" placeholder="Provide feedback regarding your technical helpdesk experience..." required></textarea>
                 </div>
                 <input type="hidden" name="_next" value="https://tharpeitservices.com">
-                <button type="submit" class="btn-cyber">Submit Review</button>
-            </form>
-        </section>
-
-        <!-- 💬 APPROVED CUSTOMER TESTIMONIALS BOARD -->
-        <section id="approved-reviews-board" class="glass-card full-width-card">
-            <div class="card-accent-bar blue-pink"></div>
-            <h2>Approved Customer Testimonials</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="user-avatar">JD</div>
-                        <div>
-                            <h4>John D.</h4>
-                            <div class="approved-stars">★★★★★</div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Tharpe IT fixed our local business network outage in less than an hour. Exceptional troubleshooting and everything was explained simply without corporate tech jargon!"</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="user-avatar">MS</div>
-                        <div>
-                            <h4>Mary S.</h4>
-                            <div class="approved-stars">★★★★★</div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Having 15 years of experience really shows. Fast setup of our home hardware devices and a very professional attitude. Highly recommend their local services."</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="user-avatar">RK</div>
-                        <div>
-                            <h4>Robert K.</h4>
-                            <div class="approved-stars">★★★★★</div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Excellent cybersecurity check on my systems. Simple to work with, local, and incredibly helpful phone response support."</p>
-                </div>
