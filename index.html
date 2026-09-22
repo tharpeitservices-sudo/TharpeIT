@@ -138,6 +138,25 @@
             box-shadow: 0px 6px 30px rgba(255, 51, 102, 0.7) !important;
             color: #ffffff !important;
         }
+
+        /* Review Module Display Layout Components */
+        .review-card-item {
+            background: rgba(255, 255, 255, 0.03) !important;
+            border: 1px solid rgba(255, 255, 255, 0.06) !important;
+            border-radius: 12px !important;
+            padding: 20px !important;
+            margin-bottom: 16px !important;
+        }
+        .star-rating-color {
+            color: #ffbc00 !important;
+        }
+        .alert-toast-message {
+            padding: 12px !important;
+            border-radius: 8px !important;
+            margin-bottom: 15px !important;
+            font-size: 0.95rem !important;
+            display: none;
+        }
     </style>
 </head>
 <body class="bg-dark text-light">
@@ -148,7 +167,7 @@
     </a>
 
     <!-- Top Navigation Bar Layout -->
-    <nav class="navbar navbar-expand-lg navbar-dark px-4 py-4 fixed-top border-bottom border-dark" style="backdrop-filter: blur(12px); background-color: rgba(11, 7, 30, 0.8) !important; z-index: 10000 !important;">
+    <nav class="navbar navbar-expand-lg navbar-dark px-4 py-3 fixed-top border-bottom border-dark" style="backdrop-filter: blur(12px); background-color: rgba(11, 7, 30, 0.8) !important; z-index: 10000 !important;">
         <div class="container">
             <a class="navbar-brand fs-3 fw-bold text-white d-flex align-items-center" href="#">
                 <i class="bi bi-cpu text-info me-2" style="color: #ff3366 !important;"></i> Tharpe IT Services
@@ -160,20 +179,20 @@
                 <div class="navbar-nav gap-3 mt-3 mt-lg-0">
                     <a class="nav-link text-white fw-medium active" href="#">Home</a>
                     <a class="nav-link text-white-50 fw-medium" href="#support-portal">Support Portal</a>
-                    <a class="nav-link text-white-50 fw-medium" href="#about-section">About Us</a>
+                    <a class="nav-link text-white-50 fw-medium" href="#reviews-section">Customer Reviews</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- SECTION 1: Premium Template Hero Landing Section -->
+    <!-- SECTION 1: Hero Landing Section -->
     <section class="container d-flex align-items-center justify-content-center min-vh-100 pt-5 mt-5">
         <div class="row align-items-center g-5 py-5 w-100">
             <!-- Left Grid Layout Texts -->
             <div class="col-lg-7 text-start">
                 <div class="mb-4">
                     <span class="badge badge-neighborly mb-3"><i class="bi bi-heart-fill me-1 text-danger"></i> NEIGHBORLY & RELIABLE</span>
-                    <h1 class="display-3 fw-bold text-white lh-sm mb-3" style="letter-spacing: -1px;">
+                    <h1 class="display-4 fw-bold text-white lh-sm mb-3" style="letter-spacing: -1px;">
                         Technology can be complex. We make it <br><span class="premium-pink-text">simple for you.</span>
                     </h1>
                 </div>
@@ -181,28 +200,17 @@
                     Whether it's for a busy home office or personal everyday use, we take pride in simplifying your basic and complex technical needs. No confusing tech talk—just dependable support for your everyday lifestyle.
                 </p>
             </div>
-            <!-- Right Embedded Graphical Profile Avatar Placeholder -->
-            <div class="col-lg-5 text-center d-none d-lg-block">
-                <img src="hero.png" alt="Tharpe Professional Technical Profile Backdrop" class="img-fluid rounded-4 shadow-lg" style="max-height: 440px; border: 1px solid rgba(255,255,255,0.15);">
+            <!-- Right Grid Layout Branding Graphic Image -->
+            <div class="col-lg-5 text-center">
+                <img src="hero.png" alt="Tharpe IT Tech Lead Specialist Graphic" class="img-fluid rounded-4 shadow-lg border border-secondary" style="max-height: 480px; object-fit: cover;">
             </div>
         </div>
     </section>
 
-    <!-- SECTION 2: Fully Operational Formspree Ticket Helpdesk Support Form -->
-    <section id="support-portal" class="container my-5 py-5">
+    <!-- SECTION 2: Support Portal & Functional Dropdown Ticketing Module -->
+    <section id="support-portal" class="container py-5">
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <div class="glass-container-card">
-                    <div class="text-center mb-4">
-                        <span class="text-uppercase tracking-wider fw-bold small" style="color: #ff3366; letter-spacing: 2px;">Submit A Request</span>
-                        <h2 class="display-6 fw-bold text-white mt-1"><i class="bi bi-ticket-perforated me-2"></i>Support Helpdesk</h2>
-                        <p class="text-white-50 small mt-2">Fill out your information below. Submissions alert our technician hub instantly.</p>
-                    </div>
-
-                    <!-- SECURE FORMSPREE POST CONTROLS -->
-                    <form action="https://formspree.io" method="POST">
-                        <div class="mb-3 text-start">
-                            <label for="fullName" class="tharpe-label-text">Full Name</label>
-                            <input type="text" class="tharpe-input-field" id="fullName" name="name" placeholder="Enter your full name" required>
-                        </div>
-                        
+                    <span class="text-danger fw-bold uppercase small tracking-wider d-block mb-1">Submit A Request</span>
+                    <h2 class="fw-bold mb-2"><i class="bi bi-ticket-perforated-fill text-danger me-2"></i> Support Helpdesk</h2>
