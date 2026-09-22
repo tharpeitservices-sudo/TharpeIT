@@ -3,167 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tharpe IT Services Portal</title>
-    <!-- Sharp Technical Typography Suite -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Orbitron:wght@500;800&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <title>Tharpe // IT Systems</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="neon-grid-mesh"></div>
-    <div class="plasma-glow-left"></div>
-    <div class="plasma-glow-right"></div>
-
-    <!-- UPGRADED PREMIUM HEADER NAVIGATION -->
-    <header class="futuristic-navbar">
-        <div class="nav-container">
-            <div class="logo-cluster">
-                <img src="logo.png" alt="Tharpe IT Services Logo" class="site-logo">
-                <div class="logo-text">
-                    <span class="brand-headline">THARPE // IT_SYSTEMS</span>
-                    <span class="network-pulse"><span class="pulse-node"></span> CORE_DESKTOP_TRIAGE_ACTIVE</span>
-                </div>
+    <!-- Main Navigation Header Area -->
+    <header class="site-header">
+        <div class="logo-area">
+            <span class="brand-name">THARPE // IT SYSTEMS</span>
+            <div class="status-indicator">
+                <span class="status-dot"></span>
+                <span class="status-text">SYSTEMS ACTIVE // ONLINE</span>
             </div>
         </div>
     </header>
 
-    <section class="hero-split-grid">
-        <!-- Left Side: Graphic Spotlight Panel with Smooth Floating SMS Beacon -->
-        <div class="banner-viewport">
-            <img src="hero.png" alt="Tharpe IT Services Layout Banner" class="hero-render">
-            <div class="glass-shroud"></div>
-            <a href="sms:+12078493939" class="cyber-beacon-btn text-glow-pulse">
-                <span class="beacon-wave"></span>
-                💬 Click to Text Me Directly // 207-849-3939
-            </a>
-        </div>
+    <!-- Top Showcase & Support Ticket Forms Panel -->
+    <main class="main-container">
+        <section class="hero-split-grid">
+            <div class="hero-graphic-box">
+                <!-- Keep your visual design or asset background -->
+                <div class="direct-text-link">
+                    <span class="dot-accent"></span> Click to Text Me Directly // 207-449-3939
+                </div>
+            </div>
 
-        <!-- Right Side: Clean Support Ticket Form Console -->
-        <section id="console-hub" class="obsidian-card">
-            <div class="neon-purple-bar"></div>
-            <h2>Submit a Support Ticket</h2>
-            <p class="form-helper-text">Fill out the form below to request computer support. If you need a copy of an invoice or have a billing question, simply select <strong>"Other Issue / Request Invoice"</strong> from the choices below!</p>
+            <!-- UNTOUCHED Ticket Creation Form Layout -->
+            <div class="ticket-panel-card">
+                <h3>Submit a Support Ticket</h3>
+                <p class="panel-sub">Fill out the form below to request computer support. If you need a copy of an invoice or have a billing question, simply select "Other Issue / Request Invoice" from the choices below.</p>
+                
+                <form id="support-ticket-form">
+                    <div class="form-group">
+                        <label for="ticket-category">What do you need help with?</label>
+                        <select id="ticket-category" required>
+                            <option value="" disabled selected>Choose a category...</option>
+                            <option value="hardware">Hardware Repair</option>
+                            <option value="software">Software / Virus Removal</option>
+                            <option value="network">Network Setup</option>
+                            <option value="billing">Other Issue / Request Invoice</option>
+                        </select>
+                    </div>
 
-            <form id="ticketForm" class="console-form-view active" action="https://formspree.io/f/mrpbqkrv" method="POST">
-                <input type="hidden" name="_subject" value="⚠️ NEW THARPE IT SUPPORT REQUEST">
-                <div class="cyber-input-group">
-                    <label>What do you need help with?</label>
-                    <select name="Category" required>
-                        <option value="" disabled selected>Choose a category...</option>
-                        <option value="Wi-Fi & Internet">Wi-Fi & Internet Problems</option>
-                        <option value="Computer & Device Repair">Computer Repairs & Slow Devices</option>
-                        <option value="Software & Apps">Software Installs & App Setup</option>
-                        <option value="Virus & Security">Virus Removal & Cyber Security</option>
-                        <option value="Other / Request Invoice">Other Issue / Request Invoice</option>
-                    </select>
-                </div>
-                <div class="cyber-input-group">
-                    <label>How urgent is this?</label>
-                    <select name="Priority" required>
-                        <option value="Low">Low Priority (General Question)</option>
-                        <option value="Medium" selected>Medium Priority (Standard Issue)</option>
-                        <option value="High">High Priority (Urgent System Down)</option>
-                    </select>
-                </div>
-                <div class="cyber-input-group">
-                    <label>Describe the issue or details</label>
-                    <textarea name="Description" placeholder="Please type what is going wrong, or enter your invoice request details here..." required></textarea>
-                </div>
-                <input type="hidden" name="_next" value="https://tharpeitservices.com">
-                <button type="submit" class="btn-neon-action">SEND SUPPORT REQUEST</button>
-            </form>
-        </section>
-    </section>
+                    <div class="form-group">
+                        <label for="ticket-urgency">How urgent is this?</label>
+                        <select id="ticket-urgency" required>
+                            <option value="low">Low Priority</option>
+                            <option value="medium" selected>Medium Priority (Standard Issue)</option>
+                            <option value="high">High Priority / Urgent</option>
+                        </select>
+                    </div>
 
-    <main class="portal-fluid-grid">
-        <!-- 🏢 CORE BUSINESS PROFILE PANEL -->
-        <section id="business-profile-info" class="obsidian-card full-width-card">
-            <div class="neon-purple-bar blue-glow-strip"></div>
-            <h2>Our Profile // Business Overview</h2>
-            <div class="profile-content-grid">
-                <div class="profile-text-block">
-                    <p class="service-highlight-text">Providing local and simple IT services to the community.</p>
-                    <p class="body-narrative">Backed by over <strong>15 years of professional IT experience</strong>, we deliver robust tech troubleshooting, networking optimization, and clear device solutions built directly around your small business or home infrastructure.</p>
-                </div>
-                <div class="contact-details-badge">
-                    <h3>📬 Direct Contact Channels</h3>
-                    <p><strong>Email Us:</strong> <a href="mailto:Tharpeitservices@gmail.com" class="neon-link">Tharpeitservices@gmail.com</a></p>
-                    <p><strong>Call or Text:</strong> <a href="tel:2078493939" class="accent-glow">207-849-3939</a></p>
-                </div>
+                    <div class="form-group">
+                        <label for="ticket-desc">Describe the issue or details</label>
+                        <textarea id="ticket-desc" placeholder="Please type what is going wrong, or enter your invoice request details here..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-ticket-btn">Send Support Request</button>
+                </form>
             </div>
         </section>
 
-        <!-- 💰 RATE CARD & PRICING ENGINE -->
-        <section id="pricing-matrix-section" class="obsidian-card full-width-card">
-            <div class="neon-purple-bar green-glow-strip"></div>
-            <h2>Service Rates // Clear & Simple Pricing</h2>
-            <div class="pricing-matrix-grid">
-                <div class="price-tier-card">
-                    <span class="tier-tag">TIER_01 // ENTRY</span>
-                    <h3>Basic IT Support</h3>
-                    <div class="price-display"><span class="currency">$</span><span class="amount">40</span><span class="suffix">/ starting at</span></div>
-                    <ul class="tier-features-list">
-                        <li><span>✔</span> Quick System Checks</li>
-                        <li><span>✔</span> Email Setup & Fixes</li>
-                        <li><span>✔</span> App & Software Installs</li>
-                        <li><span>✔</span> General Computer Tune-Ups</li>
-                    </ul>
-                </div>
-                <div class="price-tier-card tier-highlighted">
-                    <span class="tier-tag tag-purple">TIER_02 // SYSTEM</span>
-                    <h3>Advanced Repairs</h3>
-                    <div class="price-display"><span class="currency">$</span><span class="amount">85</span><span class="suffix">/ typical scale</span></div>
-                    <ul class="tier-features-list">
-                        <li><span>✔</span> Full Virus & Spyware Removal</li>
-                        <li><span>✔</span> Wi-Fi & Smart Network Setup</li>
-                        <li><span>✔</span> Hardware Part Upgrades</li>
-                        <li><span>✔</span> Data Backups & File Transfers</li>
-                    </ul>
-                </div>
-                <div class="price-tier-card">
-                    <span class="tier-tag">TIER_03 // BUSINESS</span>
-                    <h3>Commercial Business</h3>
-                    <div class="price-display"><span class="currency">Custom Quote</span></div>
-                    <ul class="tier-features-list">
-                        <li><span>✔</span> Full Office Network Setup</li>
-                        <li><span>✔</span> Server Administration & Setup</li>
-                        <li><span>✔</span> Advanced Cyber Security</li>
-                        <li><span>✔</span> Ongoing Small Business Monitoring</li>
-                    </ul>
-                </div>
+        <!-- Company Profile & Channels Info -->
+        <section class="profile-channels-section">
+            <div class="info-column">
+                <h4>Our Profile // Business Overview</h4>
+                <p>Providing local and simple IT services to the community. Backed by over <strong>15 years of professional IT experience</strong>, we deliver robust tech troubleshooting, networking optimization, and clear device solutions built directly around your small business or home infrastructure.</p>
+            </div>
+            <div class="info-column contact-links">
+                <h4>Direct Contact Channels</h4>
+                <p><strong>Email Us:</strong> <a href="mailto:tharpeitservices@proton.me">tharpeitservices@proton.me</a></p>
+                <p><strong>Call or Text:</strong> <a href="tel:2074493939">207-449-3939</a></p>
             </div>
         </section>
 
-        <!-- 🚀 WHAT WE ARE ALL ABOUT -->
-        <section id="about-us-section" class="obsidian-card full-width-card">
-            <div class="neon-purple-bar pink-glow-strip"></div>
-            <h2>Our Mission // What We Are All About</h2>
-            <p class="section-intro-text">At Tharpe IT Services, we believe that enterprise-grade support shouldn't come with confusing corporate jargon. We focus on building lasting technology foundations right here in our community.</p>
+        <!-- Dynamic Tiered Service Cost Cards -->
+        <section class="pricing-matrix-section">
+            <h4>Service Rates // Clear & Simple Pricing</h4>
+            <div class="matrix-grid">
+                
+                <div class="price-tier-card">
+                    <span class="tier-tag">TIER 01 // ENTRY</span>
+                    <h5>Basic IT Support</h5>
+                    <div class="price-display"><sup>$</sup>40 <span>/ starting at</span></div>
+                    <ul class="tier-features">
+                        <li>Quick System Checks</li>
+                        <li>Email Setup & Fixes</li>
+                        <li>App & Software Installs</li>
+                        <li>General Computer Tune-Ups</li>
+                    </ul>
+                </div>
+
+                <div class="price-tier-card">
+                    <span class="tier-tag">TIER 02 // SYSTEM</span>
+                    <h5>Advanced Repairs</h5>
+                    <div class="price-display"><sup>$</sup>85 <span>/ typical code</span></div>
+                    <ul class="tier-features">
+                        <li>Full Virus & Spyware Removal</li>
+                        <li>Wi-Fi & Smart Network Setup</li>
+                        <li>Hardware Part Upgrades</li>
+                        <li>Data Backups & File Transfers</li>
+                    </ul>
+                </div>
+
+                <div class="price-tier-card premium-tier">
+                    <span class="tier-tag">TIER 03 // BUSINESS</span>
+                    <h5>Commercial Business</h5>
+                    <div class="price-display">Custom Quote</div>
+                    <ul class="tier-features">
+                        <li>Full Office Network Setup</li>
+                        <li>Server Administration & Setup</li>
+                        <li>Advanced Cyber Security</li>
+                        <li>Ongoing Small Business Monitoring</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Core Mission & Values Layout -->
+        <section class="mission-statement-section">
+            <h4>Our Mission // What We Are All About</h4>
+            <p class="mission-lead">At Tharpe IT Services, we believe that enterprise-grade support shouldn't come with confusing corporate jargon. We focus on building lasting technology foundations right here in our community.</p>
             
-            <div class="about-features-grid">
-                <div class="feature-pillar">
-                    <div class="pillar-icon">🤝</div>
-                    <h3>Community First</h3>
+            <div class="values-grid">
+                <div class="value-block">
+                    <h6>Community First</h6>
                     <p>We are dedicated to helping our neighbors and local businesses navigate tech challenges with friendly, reliable, on-site and remote support.</p>
                 </div>
-                <div class="feature-pillar">
-                    <div class="pillar-icon">⚡</div>
-                    <h3>Simple Solutions</h3>
+                <div class="value-block">
+                    <h6>Simple Solutions</h6>
                     <p>No unnecessary upsells. We diagnose your exact hardware or network issue and fix it using clear, straightforward methods.</p>
                 </div>
-                <div class="feature-pillar">
-                    <div class="pillar-icon">🛡️</div>
-                    <h3>15 Years of Trust</h3>
+                <div class="value-block">
+                    <h6>15 Years of Trust</h6>
                     <p>Bringing comprehensive industry expertise straight to your desktop. From malware removal to complex Wi-Fi routing, we have you covered.</p>
                 </div>
             </div>
         </section>
 
-        <!-- ⭐ LIVE REVIEWS INTAKE FORM (CONNECTED TO NEW FORMSPREE) -->
-        <section id="review-system" class="obsidian-card full-width-card">
-            <div class="neon-purple-bar gold-glow-strip"></div>
-            <h2>Leave a Review // Rate Our Service</h2>
-            <form id="reviewForm" action="https://formspree.io/f/mrpbqkrv" method="POST">
-                <div class="star-rating-box">
+        <!-- Fixed Live Customer Review System -->
+        <section class="interactive-review-box" id="review-root-section"></section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
