@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Tharpe IT Services - 4D Tactical Neon Purple Theme Layout
+   Tharpe IT Services - High-End Premium Glassmorphic Theme Layout
    ========================================================================== */
 
 * {
@@ -9,9 +9,9 @@
 }
 
 body {
-    font-family: 'Courier New', Courier, monospace, sans-serif;
-    background-color: #040207; 
-    color: #dfb2ff; 
+    font-family: 'Segoe UI', Roboto, -apple-system, sans-serif;
+    background-color: #06040a; 
+    color: #f3f4f6;
     line-height: 1.6;
     padding-bottom: 6rem;
     position: relative;
@@ -23,9 +23,9 @@ body {
     position: fixed;
     inset: 0;
     background-image: 
-        linear-gradient(to right, rgba(188, 52, 250, 0.03) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(188, 52, 250, 0.03) 1px, transparent 1px);
-    background-size: 30px 30px;
+        linear-gradient(to right, rgba(139, 92, 246, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(139, 92, 246, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
     z-index: -3;
 }
 
@@ -33,26 +33,27 @@ body {
     position: fixed;
     top: -10%; right: -10%;
     width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, transparent 70%);
     z-index: -2;
-    filter: blur(50px);
+    filter: blur(40px);
 }
 
 .ambient-glow-2 {
     position: fixed;
     bottom: 10%; left: -5%;
     width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(188, 52, 250, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(219, 39, 119, 0.1) 0%, transparent 70%);
     z-index: -2;
-    filter: blur(50px);
+    filter: blur(40px);
 }
 
 /* --- Premium Navigation Header --- */
 .cyber-header {
-    background: rgba(8, 5, 15, 0.85);
-    border-bottom: 3px solid #bc34fa; 
+    background: rgba(14, 11, 26, 0.75);
+    border-bottom: 1px solid rgba(139, 92, 246, 0.3); 
     padding: 1rem 2rem;
     backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -63,310 +64,187 @@ body {
     margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-}
-
-.brand-block {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .site-logo {
-    height: 45px;
+    height: 55px;
     width: auto;
-    border-radius: 6px;
-    border: 1px solid #bc34fa;
-    box-shadow: 0 0 15px rgba(188, 52, 250, 0.4);
+    border-radius: 10px;
+    border: 1px solid rgba(167, 139, 250, 0.3);
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
 }
 
-.brand-text h1 {
-    font-size: 1.5rem;
-    font-weight: 900;
-    color: #ffffff;
-    letter-spacing: 2px;
+h1 {
+    font-size: 1.9rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    background: linear-gradient(45deg, #ffffff 30%, #c084fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.system-status {
-    font-size: 0.75rem;
-    color: #bc34fa; 
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
-/* --- HERO SPLIT INTRASTRUCTURE GRID --- */
+/* --- ⚡ NEW SPLIT HERO LAYOUT GRID: SIDE-BY-SIDE INTAKE --- */
 .hero-split-grid {
     max-width: 1100px;
     margin: 3rem auto 0 auto;
     padding: 0 1.5rem;
     display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
+    grid-template-columns: 1.1fr 0.9fr; /* Splits layout into proportional media/form sets */
     gap: 2.5rem;
     align-items: stretch;
 }
 
 .banner-container {
     position: relative;
-    border-radius: 16px;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
-    border: 1px solid rgba(188, 52, 250, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(139, 92, 246, 0.35);
     display: flex;
 }
 
 .full-responsive-banner {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Guarantees picture sizes fill layout grids proportionately */
     display: block;
 }
 
 .banner-glow-edge {
     position: absolute;
     inset: 0;
-    box-shadow: inset 0 0 30px rgba(188, 52, 250, 0.25);
+    box-shadow: inset 0 0 25px rgba(124, 58, 237, 0.35);
     pointer-events: none;
 }
 
-/* --- 🕹️ 4D TACTICAL INTERFACE BUTTONS OVERHAUL --- */
-
-/* 1. Floating SMS Badge */
-.floating-sms-badge {
-    position: absolute;
-    bottom: 25px;
-    left: 25px;
-    right: 25px;
-    background: #0f0a1c;
-    border: 2px solid #bc34fa;
-    border-bottom: 6px solid #8b5cf6; /* Dimensional 4D base border layer */
-    color: #ffffff !important; 
-    padding: 1rem 1.25rem;
-    font-size: 0.95rem;
-    font-weight: bold;
-    border-radius: 12px;
-    text-decoration: none;
+.hero-form-card {
+    height: 100%;
     display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    backdrop-filter: blur(8px);
-    z-index: 10;
-    text-align: center;
+    flex-direction: column;
     justify-content: center;
-    transition: all 0.15s cubic-bezier(0.2, 0.8, 0.2, 1);
-    box-shadow: 0 8px 0 rgba(139, 92, 246, 0.3), 0 15px 25px rgba(0,0,0,0.6);
 }
 
-.floating-sms-badge:hover {
-    transform: translateY(2px); /* Moves down into physical 4D space on hover */
-    border-bottom-width: 4px;
-    box-shadow: 0 4px 0 rgba(139, 92, 246, 0.5), 0 10px 20px rgba(188, 52, 250, 0.4);
+/* --- Main Framework Portal Grid --- */
+main.portal-main-grid {
+    max-width: 1100px;
+    margin: 2.5rem auto;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
 }
 
-.floating-sms-badge:active {
-    transform: translateY(5px); /* Fully squishes button downwards upon real-world mouse depress */
-    border-bottom-width: 1px;
-    box-shadow: 0 1px 0 rgba(139, 92, 246, 0.8), 0 5px 10px rgba(0,0,0,0.8);
-}
-
-.pulse-dot {
-    width: 8px;
-    height: 8px;
-    background-color: #bc34fa;
-    border-radius: 50%;
-    display: inline-block;
-}
-
-/* 2. Cyber Form Node Action Control Button */
-.btn-cyber-node {
-    background: linear-gradient(135deg, #9d4edd 0%, #6200ea 100%);
-    color: #ffffff;
-    padding: 1.1rem;
-    font-size: 1rem;
-    font-weight: bold;
-    border: 1px solid #bc34fa;
-    border-bottom: 5px solid #3c0099; /* Deep 4D mechanical underline */
-    border-radius: 12px;
-    cursor: pointer;
-    font-family: inherit;
-    letter-spacing: 0.5px;
-    transition: all 0.1s ease;
-    box-shadow: 0 6px 0 rgba(60, 0, 153, 0.4), 0 10px 20px rgba(0,0,0,0.5);
-    text-shadow: 0 1px 2px rgba(0,0,0,0.8);
-}
-
-.btn-cyber-node:hover {
-    transform: translateY(2px);
-    border-bottom-width: 3px;
-    box-shadow: 0 3px 0 rgba(60, 0, 153, 0.6), 0 8px 15px rgba(188, 52, 250, 0.3);
-    background: linear-gradient(135deg, #a95ced 0%, #7112ff 100%);
-}
-
-.btn-cyber-node:active {
-    transform: translateY(4px);
-    border-bottom-width: 1px;
-    box-shadow: 0 1px 0 rgba(60, 0, 153, 1), 0 4px 8px rgba(0,0,0,0.7);
-}
-
-/* 3. Gold Variant Button for QuickBooks Invoicing */
-.btn-cyber-node.variant-gold {
-    background: linear-gradient(135deg, #e65c00 0%, #f9d423 100%);
-    border-color: #ff9900;
-    border-bottom: 5px solid #993d00;
-    box-shadow: 0 6px 0 rgba(153, 61, 0, 0.4), 0 10px 20px rgba(0,0,0,0.5);
-}
-
-.btn-cyber-node.variant-gold:hover {
-    background: linear-gradient(135deg, #ff6a00 0%, #ffe042 100%);
-    border-bottom-width: 3px;
-    box-shadow: 0 3px 0 rgba(153, 61, 0, 0.6), 0 8px 15px rgba(255, 153, 0, 0.3);
-}
-
-.btn-cyber-node.variant-gold:active {
-    transform: translateY(4px);
-    border-bottom-width: 1px;
-    box-shadow: 0 1px 0 rgba(153, 61, 0, 1), 0 4px 8px rgba(0,0,0,0.7);
-}
-
-/* 4. Navigation Headers & Comms Buttons */
-.btn-text-me {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, #7c3aed 0%, #bc34fa 100%);
-    color: #ffffff;
-    font-weight: 700;
-    text-decoration: none;
-    border: 1px solid #bc34fa;
-    border-bottom: 4px solid #4a148c;
-    box-shadow: 0 4px 0 rgba(74, 20, 140, 0.4);
-    transition: all 0.1s ease;
-}
-
-.btn-text-me:hover {
-    transform: translateY(1px);
-    border-bottom-width: 3px;
-    box-shadow: 0 3px 0 rgba(74, 20, 140, 0.6);
-}
-
-.btn-text-me:active {
-    transform: translateY(3px);
-    border-bottom-width: 1px;
-    box-shadow: 0 1px 0 rgba(74, 20, 140, 1);
-}
-
-.header-text-btn {
-    padding: 0.5rem 1.2rem;
-    font-size: 0.85rem;
-    border-radius: 8px;
-    font-family: inherit;
-}
-
-/* --- Cyber Interactive Cards --- */
-.cyber-card {
+/* --- Frosted Cyber Glass Cards --- */
+.glass-card {
     position: relative;
-    background: rgba(13, 9, 24, 0.75);
-    border-radius: 16px;
+    background: rgba(20, 16, 36, 0.6);
+    border-radius: 20px;
     padding: 2.25rem;
-    border: 1px solid rgba(188, 52, 250, 0.2);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.5),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.full-width-card { grid-column: 1 / -1; }
+.glass-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.6),
+        0 0 30px rgba(139, 92, 246, 0.15);
+    border-color: rgba(139, 92, 246, 0.25);
+}
+
+.full-width-card {
+    grid-column: 1 / -1; 
+}
+
+/* Accent Bars */
 .card-accent-bar { position: absolute; top: 0; left: 0; right: 0; height: 4px; }
-.card-accent-bar.blue-purple { background: linear-gradient(90deg, #3b82f6, #bc34fa); }
-.card-accent-bar.pink-purple { background: linear-gradient(90deg, #bc34fa, #7c3aed); }
-.card-accent-bar.gold-purple { background: linear-gradient(90deg, #fbbf24, #bc34fa); }
-.card-accent-bar.purple-pink { background: linear-gradient(90deg, #8b5cf6, #bc34fa); }
+.card-accent-bar.blue-purple { background: linear-gradient(90deg, #3b82f6, #8b5cf6); }
+.card-accent-bar.pink-purple { background: linear-gradient(90deg, #ec4899, #7c3aed); }
+.card-accent-bar.gold-purple { background: linear-gradient(90deg, #f59e0b, #a855f7); }
+.card-accent-bar.purple-pink { background: linear-gradient(90deg, #8b5cf6, #ec4899); }
 .card-accent-bar.blue-pink { background: linear-gradient(90deg, #3b82f6, #ec4899); }
 
-.cyber-card h2 {
-    font-size: 1.3rem;
+.glass-card h2 {
+    font-size: 1.45rem;
     margin-bottom: 1.5rem;
     color: #ffffff;
-    letter-spacing: 1px;
+    font-weight: 700;
 }
 
-/* --- Helpdesk Matrix Interactive Tabs System --- */
-.matrix-tabs {
-    display: flex;
-    gap: 0.5rem;
-    margin-bottom: 1.75rem;
-    border-bottom: 1px solid rgba(188, 52, 250, 0.2);
-    padding-bottom: 0.75rem;
-}
-
-.tab-node {
-    background: transparent;
-    border: 1px solid rgba(188, 52, 250, 0.3);
-    border-bottom: 3px solid rgba(188, 52, 250, 0.2);
-    color: #c084fc;
-    padding: 0.6rem 1rem;
-    border-radius: 8px;
-    cursor: pointer;
-    font-family: inherit;
-    font-size: 0.85rem;
-    font-weight: bold;
-    transition: all 0.1s ease;
-}
-
-.tab-node:hover, .tab-node.active {
-    background: rgba(188, 52, 250, 0.15);
-    border-color: #bc34fa;
-    border-bottom: 3px solid #bc34fa;
-    color: #ffffff;
-    text-shadow: 0 0 8px rgba(188, 52, 250, 0.6);
-}
-
-.tab-node.active {
-    transform: translateY(1px);
-    border-bottom-width: 1px;
-}
-
-.matrix-form-pane {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-}
-
-/* --- Input Fields Overhaul --- */
-.input-group, .star-rating-box {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.input-group label, .input-label-style {
-    font-size: 0.75rem;
-    color: #c084fc;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
-select, input[type="text"], textarea {
-    width: 100%;
-    padding: 0.85rem 1.1rem;
-    border: 1px solid rgba(188, 52, 250, 0.25);
-    border-radius: 10px;
-    background-color: #06040a;
-    color: #ffffff;
-    font-family: inherit;
-    font-size: 0.95rem;
-    transition: all 0.2s ease;
-}
-
-select:focus, input[type="text"]:focus, textarea:focus {
-    outline: none;
-    border-color: #bc34fa;
-    box-shadow: 0 0 12px rgba(188, 52, 250, 0.35);
-}
-
-textarea { height: 110px; resize: none; }
-
-/* Framework Layout Maps */
-.portal-main-grid { max-width: 1100px; margin: 2.5rem auto; padding: 0 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+/* Grid Layouts */
 .profile-content-grid { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 2.5rem; }
-.section-intro-text { font-size: 1rem; color: #a19da8; margin-bottom: 2rem; }
+.section-intro-text { font-size: 1.1rem; color: #d1d5db; margin-bottom: 2rem; max-width: 800px; }
 .about-features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
 .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+
+.feature-pillar {
+    background: rgba(10, 7, 18, 0.4);
+    border: 1px solid rgba(139, 92, 246, 0.15);
+    padding: 1.5rem;
+    border-radius: 14px;
+}
+.pillar-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+.feature-pillar h3 { font-size: 1.15rem; color: #c084fc; margin-bottom: 0.5rem; }
+.feature-pillar p { font-size: 0.95rem; color: #9ca3af; }
+
+/* Testimonials Layout Blocks */
+.testimonial-card { background: rgba(6, 4, 10, 0.5); border: 1px solid rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 14px; }
+.testimonial-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+.user-avatar { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, #7c3aed, #db2777); color: white; font-weight: bold; display: flex; align-items: center; justify-content: center; }
+.testimonial-header h4 { font-size: 1rem; color: #ffffff; }
+.approved-stars { color: #fbbf24; font-size: 0.85rem; }
+.testimonial-text { font-size: 0.95rem; color: #9ca3af; font-style: italic; }
+
+.service-highlight-text { font-size: 1.45rem; color: #c084fc; margin-bottom: 1.25rem; font-weight: 700; }
+.body-narrative { color: #9ca3af; font-size: 1.05rem; }
+
+/* Contact Badge */
+.contact-details-badge { background: rgba(10, 7, 18, 0.6); border: 1px solid rgba(139, 92, 246, 0.3); padding: 1.75rem; border-radius: 14px; }
+.contact-details-badge h3 { font-size: 1.15rem; color: #f472b6; margin-bottom: 1.25rem; }
+.contact-details-badge p { margin-bottom: 1rem; font-size: 1rem; color: #e5e7eb; }
+.neon-link { color: #a78bfa; text-decoration: none; font-weight: 600; }
+.accent-glow { color: #fbbf24; font-weight: 700; text-decoration: none; }
+
+/* Form Controls */
+.input-group, .star-rating-box { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.25rem; }
+.input-group label, .input-label-style { font-size: 0.8rem; color: #a78bfa; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
+select, textarea { width: 100%; padding: 0.85rem 1.1rem; border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 12px; background-color: rgba(6, 4, 10, 0.8); color: #ffffff; font-size: 1rem; }
+select:focus, textarea:focus { outline: none; border-color: #c084fc; }
+textarea { height: 110px; resize: none; }
+
+.btn-cyber {
+    background: linear-gradient(135deg, #7c3aed 0%, #db2777 100%);
+    color: #ffffff; padding: 0.95rem; font-size: 1.05rem; font-weight: 700; border: none; border-radius: 12px; cursor: pointer; text-transform: uppercase; letter-spacing: 0.75px;
+}
+
+/* Star Handling */
+.rating-stars { display: flex; flex-direction: row-reverse; justify-content: flex-end; gap: 0.6rem; }
+.rating-stars input { display: none; }
+.rating-stars label { font-size: 3rem; color: #1e1736; cursor: pointer; }
+.rating-stars label:hover, .rating-stars label:hover ~ label, .rating-stars input:checked ~ label { color: #fbbf24; }
+
+/* --- 💬 Direct SMS Link Integration Styles --- */
+.immediate-help-container { margin-top: 1.75rem; }
+.btn-text-me { display: inline-flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #059669 0%, #10b981 100%); color: #ffffff; padding: 1rem 2rem; font-size: 1.1rem; font-weight: 700; border-radius: 12px; text-decoration: none; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3); transition: all 0.25s ease; }
+.btn-text-me:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(16, 185, 129, 0.55); filter: brightness(1.1); color: #ffffff; }
+.header-text-btn { padding: 0.5rem 1.2rem; font-size: 0.9rem; border-radius: 8px; margin-left: auto; }
+.pulse-glow { animation: textMePulse 2s infinite alternate; }
+
+@keyframes textMePulse {
+    0% { box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3), 0 0 0 0px rgba(16, 185, 129, 0.4); }
+    100% { box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5), 0 0 0 10px rgba(16, 185, 129, 0); }
+}
+
+/* --- Responsive Layout Breakpoint Map --- */
+@media (max-width: 900px) {
+    .hero-split-grid { grid-template-columns: 1fr; margin-top: 1.5rem; gap: 1.5rem; }
+    .about-features-grid, .testimonials-grid { grid-template-columns: 1fr; }
+    main.portal-main-grid, .profile-content-grid { grid-template-columns: 1fr; }
+    .header-text-btn { display: none; }
+}
