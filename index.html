@@ -3,332 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tharpe IT Services - Local Support Hub</title>
-    <style>
-        /* --- Premium Deep Purple Design System --- */
-        :root {
-            --surface-bg: #09051c;
-            --panel-purple: rgba(18, 11, 41, 0.75);
-            --panel-hover: rgba(26, 17, 56, 0.9);
-            --input-dark: #05020c;
-            --glow-violet: #651fff;
-            --accent-pink: #ff4081;
-            --text-light: #ffffff;
-            --text-dim: #b8b4d0;
-            --border-glass: rgba(255, 255, 255, 0.08);
-            --card-radius: 20px;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: var(--surface-bg);
-            /* Gradient layers guarantee high text visibility and push content visibility to the top layer */
-            background-image: linear-gradient(to right, rgba(9, 5, 28, 0.94) 30%, rgba(9, 5, 28, 0.8) 60%, rgba(9, 5, 28, 0.35) 100%), url('hero.png');
-            background-size: cover;
-            background-position: center top;
-            background-attachment: fixed;
-            color: var(--text-light);
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* --- Floating Sticky Glass Navigation --- */
-        nav {
-            position: sticky;
-            top: 0;
-            background: rgba(9, 5, 28, 0.85);
-            border-bottom: 1px solid var(--border-glass);
-            padding: 18px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-        }
-
-        .nav-logo {
-            font-size: 1.3rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-        }
-
-        .nav-links a {
-            color: var(--text-dim);
-            text-decoration: none;
-            font-weight: 600;
-            margin-left: 30px;
-            font-size: 0.9rem;
-            transition: color 0.25s;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-pink);
-        }
-
-        /* --- Content Layout Wrapper --- */
-        .main-wrapper {
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 60px 20px;
-            position: relative;
-            z-index: 10; /* Forces text to layer explicitly on top of background vectors */
-        }
-
-        /* Two-Column Grid Setup (Forms on left, Right side stays open for picture profiles) */
-        .workspace-grid {
-            display: grid;
-            grid-template-columns: 1.15fr 0.85fr;
-            gap: 60px;
-            align-items: center;
-            margin-bottom: 100px;
-        }
-
-        .intro-block-pane {
-            padding-right: 15px;
-        }
-
-        .community-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(101, 31, 255, 0.25);
-            border: 1px solid var(--glow-violet);
-            padding: 6px 16px;
-            border-radius: 30px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 25px;
-        }
-
-        .intro-block-pane h1 {
-            font-size: 3.5rem;
-            line-height: 1.15;
-            margin: 0 0 25px 0;
-            letter-spacing: -1.5px;
-            font-weight: 800;
-        }
-
-        .intro-block-pane h1 span {
-            color: var(--accent-pink);
-        }
-
-        .intro-block-pane p {
-            font-size: 1.15rem;
-            color: var(--text-dim);
-            margin: 0 0 35px 0;
-        }
-
-        /* Glassmorphic Form Card Layout Blocks */
-        .glass-ui-card {
-            background: var(--panel-purple);
-            border: 1px solid var(--border-glass);
-            border-radius: var(--card-radius);
-            padding: 40px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
-            margin-bottom: 40px;
-            transition: transform 0.4s ease, background 0.4s ease;
-        }
-
-        .glass-ui-card:hover {
-            transform: translateY(-5px);
-            background: var(--panel-hover);
-            border-color: rgba(101, 31, 255, 0.4);
-        }
-
-        .glass-ui-card h2 {
-            font-size: 1.9rem;
-            margin: 0 0 10px 0;
-            font-weight: 800;
-        }
-
-        .form-helper-text {
-            color: var(--text-dim);
-            font-size: 0.95rem;
-            margin: 0 0 30px 0;
-        }
-
-        /* --- Clean Form Field Architecture --- */
-        .form-element-wrapper {
-            margin-bottom: 24px;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        label {
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
-            color: var(--text-dim);
-        }
-
-        input[type="text"],
-        input[type="email"],
-        select,
-        textarea {
-            width: 100%;
-            padding: 15px;
-            background-color: var(--input-dark);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 10px;
-            color: var(--text-light);
-            font-size: 1rem;
-            box-sizing: border-box;
-            transition: border-color 0.25s;
-        }
-
-        input:focus, select:focus, textarea:focus {
-            outline: none;
-            border-color: var(--accent-pink);
-        }
-
-        textarea {
-            min-height: 110px;
-            resize: vertical;
-            font-family: inherit;
-        }
-
-        .conditional-input {
-            margin-top: 12px;
-            display: none;
-        }
-
-        .action-button {
-            background: linear-gradient(135deg, var(--glow-violet), #4a148c);
-            color: var(--text-light);
-            border: none;
-            width: 100%;
-            padding: 16px;
-            font-size: 1rem;
-            font-weight: 700;
-            border-radius: 10px;
-            cursor: pointer;
-            box-shadow: 0 8px 20px rgba(101, 31, 255, 0.25);
-            transition: opacity 0.2s;
-        }
-
-        .action-button:hover {
-            opacity: 0.95;
-        }
-
-        /* --- Section 2: Bottom Review Grid Center --- */
-        .review-header-center {
-            text-align: center;
-            margin-bottom: 60px;
-            margin-top: 60px;
-        }
-
-        .review-header-center h2 {
-            font-size: 2.6rem;
-            font-weight: 800;
-            margin: 0 0 12px 0;
-        }
-
-        .reviews-split-layout {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: start;
-        }
-
-        .testimonial-container-stack {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-
-        .feedback-bubble-card {
-            background-color: rgba(22, 14, 48, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            border-radius: var(--card-radius);
-            padding: 30px;
-        }
-
-        .rating-stars {
-            color: #ffca28;
-            margin-bottom: 12px;
-            font-size: 1.1rem;
-            letter-spacing: 2px;
-        }
-
-        .feedback-text {
-            color: var(--text-dim);
-            font-style: italic;
-            margin: 0 0 15px 0;
-        }
-
-        .author-badge {
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        .inline-contact-row {
-            margin-top: 35px;
-        }
-
-        .phone-cta-link {
-            color: var(--accent-pink);
-            font-size: 1.6rem;
-            font-weight: 800;
-            text-decoration: none;
-        }
-
-        footer {
-            text-align: center;
-            padding: 80px 20px 40px 20px;
-            color: var(--text-dim);
-            font-size: 0.85rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.04);
-            margin-top: 60px;
-        }
-
-        /* Mobile Layout Configuration */
-        @media (max-width: 950px) {
-            .workspace-grid, .reviews-split-layout {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            body { 
-                background-image: linear-gradient(rgba(9, 5, 28, 0.92), rgba(9, 5, 28, 0.96)), url('hero.png');
-            }
-            .intro-block-pane h1 { font-size: 2.6rem; }
-            nav { padding: 15px 20px; }
-        }
-    </style>
+    <title>Tharpe IT Services Portal</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Top Sticky Nav Header -->
-    <nav>
-        <div class="nav-logo">💻 Tharpe IT Services</div>
-        <div class="nav-links">
-            <a href="#">Home</a>
-            <a href="#ticketing-terminal">Support Portal</a>
-            <a href="#reviews-terminal">Community Feedback</a>
+    <!-- Ambient Grid Background Elements -->
+    <div class="cyber-grid-overlay"></div>
+    <div class="ambient-glow-1"></div>
+    <div class="ambient-glow-2"></div>
+
+    <header class="cyber-header">
+        <div class="nav-container">
+            <img src="logo.png" alt="Tharpe IT Services Logo" class="site-logo">
+            <h1>Tharpe IT Services</h1>
+            <a href="sms:+12078493939" class="btn-text-me header-text-btn">💬 Text For Help</a>
         </div>
-    </nav>
+    </header>
 
-    <!-- Structural Outer Container Wrapper -->
-    <div class="main-wrapper">
+    <!-- ⚡ HIGH-CONVERTING HERO ENTRY GRID ⚡ -->
+    <section class="hero-split-grid">
+        
+        <!-- Left Side: Restored Picture Column with Inline Galaxy Purple Text -->
+        <div class="banner-container" style="display: flex; align-items: center; gap: 20px; width: 100%;">
+            <img src="hero.png" alt="Tharpe IT Services Layout Banner" class="full-responsive-banner" style="display: block;">
+            <!-- Galaxy Purple Styled Text Elements Positioned to the Right of the Image File -->
+            <div class="hero-text-label" style="color: #c39efc; font-weight: 700; font-size: 1.25rem; letter-spacing: 0.5px; font-family: 'Segoe UI', sans-serif; white-space: nowrap; text-shadow: 0 0 10px rgba(195, 158, 252, 0.3);">
+                For Your IT Needs
+            </div>
+            <div class="banner-glow-edge"></div>
+        </div>
 
-        <!-- WORKSPACE GRID SECTION 1 -->
-        <div class="workspace-grid">
-            
-            <!-- Left Grid Pane: Branding, Mission Statement & Intro Details -->
-            <div class="intro-block-pane">
-                <div class="community-tag">🤝 Neighborly & Reliable</div>
-                <h1>Technology can be complex. We make it <span>simple for you</span>.</h1>
-                <p>
-                    Whether it's for a busy home office or personal everyday use, we take pride in simplifying your basic and complex technical needs. No confusing tech talk—just dependable support for your everyday lifestyle.
-                </p>
+        <!-- Right Side: Upgraded Live Connected Support Ticket Form -->
+        <section id="ticketing-system" class="glass-card hero-form-card">
+            <div class="card-accent-bar pink-purple"></div>
+            <h2>Submit a Support Ticket</h2>
+            <form id="ticketForm" action="https://formspree.io" method="POST">
+                <div class="input-group">
+                    <label>Your Name</label>
+                    <input type="text" name="ClientName" placeholder="Enter your full name" required>
+                </div>
+                <div class="input-group">
+                    <label>Your Email Address</label>
+                    <input type="email" name="_replyto" placeholder="Enter your email address" required>
+                </div>
+                <div class="input-group">
+                    <label>Issue Category</label>
+                    <select name="Category" required>
+                        <option value="" disabled selected>Select Core Issue Category</option>
+                        <option value="Network Infrastructure">Network Infrastructure & Wi-Fi</option>
+                        <option value="Hardware Management">Device Diagnostics & Repairs</option>
+                        <option value="Cloud & Software">Software Install & Configuration</option>
+                        <option value="Cybersecurity">Virus Removal & Access Management</option>
+                        <option value="Other / General Support">Other / General Support Inquiry</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Priority Level</label>
+                    <select name="Priority" required>
+                        <option value="Low">Low Priority (General Question)</option>
+                        <option value="Medium" selected>Medium Priority (Standard Ticket)</option>
+                        <option value="High">High Priority (Urgent System Outage)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Describe Your Issue</label>
+                    <textarea name="Description" placeholder="Provide details about the technical faults or device issues you need fixed..." required></textarea>
+                </div>
+                <input type="hidden" name="_next" value="https://tharpeitservices.com">
+                <button type="submit" class="btn-cyber">Dispatch Ticket</button>
+            </form>
+        </section>
+
+    </section>
+
+    <main class="portal-main-grid">
+        <!-- 🏢 CORE BUSINESS PROFILE PANEL -->
+        <section id="business-profile-info" class="glass-card full-width-card">
+            <div class="card-accent-bar blue-purple"></div>
+            <h2>Our Technical IT Solutions & Services</h2>
+            <div class="profile-content-grid">
+                <div class="profile-text-block">
+                    <p class="service-highlight-text">
+                        Providing local and simple IT services to the community.
+                    </p>
+                    <p class="body-narrative">
+                        Backed by over <strong>15 years of professional IT experience</strong>, we deliver robust tech troubleshooting, networking optimization, and clear device solutions built directly around your small business or home infrastructure.
+                    </p>
+                    
+                    <!-- Immediate Mobile Messaging Triage Action -->
+                    <div class="immediate-help-container">
+                        <a href="sms:+12078493939" class="btn-text-me pulse-glow">💬 Text Me For Immediate Help</a>
+                    </div>
+                </div>
                 
-                <div class="inline-contact-row">
+                <div class="contact-details-badge">
+                    <h3>📬 Contact Technical Support</h3>
+                    <p><strong>Email Us:</strong> <a href="mailto:Tharpeitservices@gmail.com" class="neon-link">Tharpeitservices@gmail.com</a></p>
+                    <p><strong>Call or Text:</strong> <a href="tel:2078493939" class="accent-glow">207-849-3939</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 🚀 WHAT WE ARE ALL ABOUT -->
+        <section id="about-us-section" class="glass-card full-width-card">
+            <div class="card-accent-bar purple-pink"></div>
+            <h2>What We Are All About</h2>
+            <p class="section-intro-text">At Tharpe IT Services, we believe that enterprise-grade support shouldn't come with confusing corporate jargon. We focus on building lasting technology foundations right here in our community.</p>
+            
+            <div class="about-features-grid">
+                <div class="feature-pillar">
+                    <div class="pillar-icon">🤝</div>
+                    <h3>Community First</h3>
+                    <p>We are dedicated to helping our neighbors and local businesses navigate tech challenges with friendly, reliable, on-site and remote support.</p>
+                </div>
+                <div class="feature-pillar">
+                    <div class="pillar-icon">⚡</div>
+                    <h3>Simple Solutions</h3>
+                    <p>No unnecessary upsells. We diagnose your exact hardware or network issue and fix it using clear, straightforward methods.</p>
+                </div>
+                <div class="feature-pillar">
+                    <div class="pillar-icon">🛡️</div>
+                    <h3>15 Years of Trust</h3>
+                    <p>Bringing comprehensive industry expertise straight to your desktop. From malware removal to complex Wi-Fi routing, we have you covered.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ⭐ LIVE CONNECTED USER REVIEWS FORM -->
+        <section id="review-system" class="glass-card full-width-card">
+            <div class="card-accent-bar gold-purple"></div>
+            <h2>Leave an Experience Review</h2>
+            <form id="reviewForm" action="https://formspree.io" method="POST">
+                <div class="input-group">
+                    <label>Your Name</label>
+                    <input type="text" id="revName" name="ReviewerName" placeholder="Enter your name" required>
+                </div>
+                <div class="star-rating-box">
+                    <label class="input-label-style">Select Support Score</label>
+                    <div class="rating-stars">
+                        <input type="radio" id="star5" name="RatingStars" value="5"><label for="star5">★</label>
+                        <input type="radio" id="star4" name="RatingStars" value="4"><label for="star4">★</label>
+                        <input type="radio" id="star3" name="RatingStars" value="3"><label for="star3">★</label>
+                        <input type="radio" id="star2" name="RatingStars" value="2"><label for="star2">★</label>
+                        <input type="radio" id="star1" name="RatingStars" value="1"><label for="star1">★</label>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Your Feedback</label>
+                    <textarea id="comments" name="ReviewComment" placeholder="Provide feedback regarding your technical helpdesk experience..." required></textarea>
+                </div>
+                <input type="hidden" name="_next" value="https://tharpeitservices.com">
+                <button type="submit" class="btn-cyber">Submit Review</button>
+            </form>
+        </section>
+
+        <!-- 💬 APPROVED CUSTOMER TESTIMONIALS BOARD -->
+        <section id="approved-reviews-board" class="glass-card full-width-card">
+            <div class="card-accent-bar blue-pink"></div>
+            <h2>Approved Customer Testimonials</h2>
+            <div class="testimonials-grid" id="reviewList">
+                <!-- Live submitted client cards will load here without reloading -->
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Formspree API AJAX controller engine explicitly forced to POST
+        document.getElementById('reviewForm').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+            
+            const form = this;
+            const reviewList = document.getElementById('reviewList');
+            const nameVal = document.getElementById('revName').value;
