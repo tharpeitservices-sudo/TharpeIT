@@ -1,1 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tharpe IT Services - Provider</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <!-- Ambient / Background Elements -->
+    <div class="ambient-glow-1"></div>
+    <div class="ambient-glow-2"></div>
+
+    <!-- Header / Navigation -->
+    <header class="site-header">
+        <div class="logo-container">
+            <span class="logo-text">Tharpe IT Services</span>
+        </div>
+        <nav class="main-nav">
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#support">Support</a>
+            <a href="#reviews">Reviews</a>
+        </nav>
+    </header>
+
+    <main class="content-grid">
+        
+        <!-- SECTION 1: Support Ticket Submission Form -->
+        <section class="support-section">
+            <div class="section-header">
+                <h2>Submit a Support Ticket</h2>
+                <p>Need assistance? Fill out the form below and our team will get back to you shortly.</p>
+            </div>
+
+            <!-- FIXED OPENING TAG -->
+            <form action="https://formspree.io" method="POST" class="support-form">
+                
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Your Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Issue Category</label>
+                    <select id="category" name="category" required>
+                        <option value="" disabled selected>Select an Issue Category</option>
+                        <option value="network">Network Infrastructure & Hardware</option>
+                        <option value="diagnostics">Device Diagnostics & Repairs</option>
+                        <option value="cloud">Cloud Software & Configuration</option>
+                        <option value="security">Identity & Access Management</option>
+                        <option value="general">General Support / Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="priority">Priority Level</label>
+                    <select id="priority" name="priority" required>
+                        <option value="low">Low Priority (Generic Question)</option>
+                        <option value="medium">Medium Priority (Standard Issue)</option>
+                        <option value="high">High Priority (Urgent System Outage)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Describe Your Issue</label>
+                    <textarea id="description" name="description" placeholder="Provide details about the technical faults or device issues you are experiencing..." rows="5" required></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Submit Ticket</button>
+            </form>
+        </section>
+
+        <!-- SECTION 2: Profile & Professional Context Card -->
+        <section class="profile-section">
+            <div class="profile-card">
+                <div class="profile-header">
+                    <h3>Tharpe IT Solutions & Benchmarks</h3>
+                    <p class="profile-meta">Providing hands-on expert IT services to the community.</p>
+                </div>
+                <div class="profile-body">
+                    <p>Backed by over 10 years of professional IT experience, we deliver reliable smart tech troubleshooting, prompt repairs, and network optimizations.</p>
+                    <div class="contact-info">
+                        <p><strong>Direct Contact:</strong> <a href="mailto:tharpeitservices@gmail.com">tharpeitservices@gmail.com</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: Services & Core Features -->
+        <section id="services" class="services-section">
+            <div class="section-title">
+                <h3>What We Do Best</h3>
+                <p>Tailored IT solutions modeled to suit home networks and small business spaces alike.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h4>Community First</h4>
+                    <p>We pride ourselves on helping our neighbors and local businesses navigate tech challenges with friendly, reliable, and affordable services.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4>Hardware & Software</h4>
+                    <p>Our solutions target your exact hardware or software faults and fix them using clear, straightforward repair patterns.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4>Years of Expertise</h4>
+                    <p>Bringing comprehensive industry expertise straight to your desktop. From malware removal to complex Wi-Fi routing, we have you covered.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: Customer Reviews -->
+        <section id="reviews" class="reviews-section">
+            <div class="section-title">
+                <h3>Customer Feedback</h3>
+                <p>See what others are saying about their individual service experiences.</p>
+            </div>
+
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <p class="review-text">"The response was fast and the technician resolved my server network configuration issue perfectly in under an hour. Outstanding service!"</p>
+                    <span class="review-author">— Satisfied Customer</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Element -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Tharpe IT Services. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
