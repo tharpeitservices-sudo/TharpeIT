@@ -24,9 +24,13 @@
     <!-- ⚡ HIGH-CONVERTING HERO ENTRY GRID ⚡ -->
     <section class="hero-split-grid">
         
-        <!-- Left Side: Your Branding Picture Column -->
-        <div class="banner-container">
-            <img src="hero.png" alt="Tharpe IT Services Layout Banner" class="full-responsive-banner">
+        <!-- Left Side: Restored Picture Column with Inline Galaxy Purple Text -->
+        <div class="banner-container" style="display: flex; align-items: center; gap: 20px; width: 100%;">
+            <img src="hero.png" alt="Tharpe IT Services Layout Banner" class="full-responsive-banner" style="display: block;">
+            <!-- Galaxy Purple Styled Text Elements Positioned to the Right of the Image File -->
+            <div class="hero-text-label" style="color: #c39efc; font-weight: 700; font-size: 1.25rem; letter-spacing: 0.5px; font-family: 'Segoe UI', sans-serif; white-space: nowrap; text-shadow: 0 0 10px rgba(195, 158, 252, 0.3);">
+                For Your IT Needs
+            </div>
             <div class="banner-glow-edge"></div>
         </div>
 
@@ -133,7 +137,7 @@
             <form id="reviewForm" action="https://formspree.io" method="POST">
                 <div class="input-group">
                     <label>Your Name</label>
-                    <input type="text" name="ReviewerName" placeholder="Enter your name" required>
+                    <input type="text" id="revName" name="ReviewerName" placeholder="Enter your name" required>
                 </div>
                 <div class="star-rating-box">
                     <label class="input-label-style">Select Support Score</label>
@@ -147,21 +151,28 @@
                 </div>
                 <div class="input-group">
                     <label>Your Feedback</label>
-                    <textarea name="ReviewComment" placeholder="Provide feedback regarding your technical helpdesk experience..." required></textarea>
+                    <textarea id="comments" name="ReviewComment" placeholder="Provide feedback regarding your technical helpdesk experience..." required></textarea>
                 </div>
                 <input type="hidden" name="_next" value="https://tharpeitservices.com">
                 <button type="submit" class="btn-cyber">Submit Review</button>
             </form>
         </section>
 
-        <!-- 💬  CUSTOMER TESTIMONIALS BOARD -->
-        <section id="reviews-board" class="glass-card full-width-card">
+        <!-- 💬 APPROVED CUSTOMER TESTIMONIALS BOARD -->
+        <section id="approved-reviews-board" class="glass-card full-width-card">
             <div class="card-accent-bar blue-pink"></div>
-            <h2> Customer Testimonials</h2>
-            <div class="testimonials-grid">
-                <!-- User review feed cards go here -->
+            <h2>Approved Customer Testimonials</h2>
+            <div class="testimonials-grid" id="reviewList">
+                <!-- Live submitted client cards will load here without reloading -->
             </div>
         </section>
     </main>
-</body>
-</html>
+
+    <script>
+        // Formspree API AJAX controller engine explicitly forced to POST
+        document.getElementById('reviewForm').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+            
+            const form = this;
+            const reviewList = document.getElementById('reviewList');
+            const nameVal = document.getElementById('revName').value;
