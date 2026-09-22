@@ -19,8 +19,8 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background-color: var(--bg-deep-purple);
-            /* REPLACE 'background.jpg' WITH YOUR EXACT IMAGE FILENAME */
-            background-image: linear-gradient(rgba(11, 7, 30, 0.85), rgba(11, 7, 30, 0.9)), url('background.jpg');
+            /* Linked directly to your hero.png asset */
+            background-image: linear-gradient(rgba(11, 7, 30, 0.85), rgba(11, 7, 30, 0.9)), url('hero.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -65,12 +65,12 @@
         /* --- TWO-COLUMN GRID SYSTEM --- */
         .main-layout-grid {
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr; /* Form is slightly wider than the info column */
+            grid-template-columns: 1.2fr 0.8fr;
             gap: 40px;
             align-items: start;
         }
 
-        /* Responsive breakdown for smaller screens/tablets */
+        /* Responsive stack for phones and tablets */
         @media (max-width: 900px) {
             .main-layout-grid {
                 grid-template-columns: 1fr;
@@ -166,7 +166,7 @@
             transform: scale(0.98);
         }
 
-        /* --- Right Column: Info Cards --- */
+        /* --- Right Column: Info Sidebar Cards --- */
         .info-sidebar {
             display: flex;
             flex-direction: column;
@@ -174,7 +174,7 @@
         }
 
         .info-card-block {
-            background-color: rgba(19, 13, 43, 0.5); /* Semi-transparent purple card */
+            background-color: rgba(19, 13, 43, 0.5);
             border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 12px;
             padding: 25px;
@@ -203,19 +203,12 @@
         }
 
         footer {
-            grid-column: span 2; /* Span across both columns at the very bottom */
-            margin-top: 40px;
+            margin-top: 60px;
             font-size: 0.85rem;
             color: var(--text-muted);
             border-top: 1px solid rgba(255, 255, 255, 0.08);
             padding-top: 20px;
             text-align: center;
-        }
-
-        @media (max-width: 900px) {
-            footer {
-                grid-column: span 1;
-            }
         }
     </style>
 </head>
@@ -232,15 +225,16 @@
             </div>
         </header>
 
-        <!-- Main Layout Grid Grid -->
+        <!-- Main Layout Split Grid Layout -->
         <div class="main-layout-grid">
             
-            <!-- Left Grid Pane: Form Container -->
+            <!-- Left Side: Interactive Ticket Form Card -->
             <main class="support-ticket-form-card">
                 <h2>Support Ticket Portal</h2>
                 <p class="subtitle">Submit a request below and our team will get back to you within 24-48 hours.</p>
 
                 <form action="https://formspree.io" method="POST">
+                    
                     <div class="input-group">
                         <label for="full-name">Full Name</label>
                         <input type="text" id="full-name" name="name" placeholder="Enter your full name" required>
@@ -280,7 +274,7 @@
                 </form>
             </main>
 
-            <!-- Right Grid Pane: Sidebar Info Components -->
+            <!-- Right Side: Sidebar Info Panels -->
             <aside class="info-sidebar">
                 
                 <div class="info-card-block">
@@ -294,3 +288,15 @@
                     <p class="commitment-text">With over 15 years of dedicated IT experience, we specialize in delivering clean, fast, and simple solutions tailored directly to your home or small business infrastructure environment.</p>
                 </div>
 
+            </aside>
+
+        </div> <!-- End Grid Layout -->
+
+        <footer>
+            &copy; 2026 Tharpe IT Services. All rights reserved.
+        </footer>
+
+    </div>
+
+</body>
+</html>
