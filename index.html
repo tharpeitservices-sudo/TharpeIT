@@ -4,112 +4,109 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tharpe IT Services Portal</title>
+    <!-- Sharp Technical Typography Suite -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Orbitron:wght@500;800&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Ambient Cyber Backdrop Grid Matrix -->
-    <div class="cyber-grid-overlay"></div>
-    <div class="ambient-glow-1"></div>
-    <div class="ambient-glow-2"></div>
+    <!-- Ambient Space Mesh Elements -->
+    <div class="neon-grid-mesh"></div>
+    <div class="plasma-glow-left"></div>
+    <div class="plasma-glow-right"></div>
 
-    <header class="cyber-header">
+    <header class="futuristic-navbar">
         <div class="nav-container">
-            <div class="brand-block">
+            <div class="logo-cluster">
                 <img src="logo.png" alt="Tharpe IT Services Logo" class="site-logo">
-                <div class="brand-text">
-                    <h1>THARPE // IT</h1>
-                    <span class="system-status">● HELP_DESK_ONLINE</span>
+                <div class="logo-text">
+                    <span class="brand-headline">THARPE // IT</span>
+                    <span class="network-pulse"><span class="pulse-node"></span> SECURE_NODE_ACTIVE</span>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- ⚡ CYBER-HERO SPLIT ROW INTRASTRUCTURE ⚡ -->
+    <!-- ⚡ FUTURISTIC HERO INTERFACE MATRIX ⚡ -->
     <section class="hero-split-grid">
         
-        <!-- Left Side: Interactive Graphic Container with Floating Tactical Text Button -->
-        <div class="banner-container">
-            <img src="hero.png" alt="Tharpe IT Services Layout Banner" class="full-responsive-banner">
-            <div class="banner-glow-edge"></div>
+        <!-- Left Side: Graphic Spotlight Panel with Smooth Floating SMS Beacon -->
+        <div class="banner-viewport">
+            <img src="hero.png" alt="Tharpe IT Services Layout Banner" class="hero-render">
+            <div class="glass-shroud"></div>
             
-            <!-- ⚡ FLOATING TACTICAL NEON PURPLE TEXT BUTTON PINNED TO GRAPHIC ⚡ -->
-            <a href="sms:+12078493939" class="floating-sms-badge pulse-glow">
-                <span class="pulse-dot"></span>
-                💬 TEXT_FOR_IMMEDIATE_HELP: 207-849-3939
+            <!-- ⚡ FLOATING TACTICAL NEON PURPLE BEACON BUTTON ⚡ -->
+            <a href="sms:+12078493939" class="cyber-beacon-btn text-glow-pulse">
+                <span class="beacon-wave"></span>
+                💬 DIRECT_SMS_LINK // 207-849-3939
             </a>
         </div>
 
-        <!-- Right Side: Dual-Intake System (Tickets & QuickBooks Invoices) -->
-        <section id="helpdesk-matrix" class="cyber-card">
-            <div class="card-accent-bar pink-purple"></div>
+        <!-- Right Side: Clean Dual-Intake Helpdesk Console -->
+        <section id="console-hub" class="obsidian-card">
+            <div class="neon-purple-bar"></div>
             
-            <!-- System Interface Navigation Tabs -->
-            <div class="matrix-tabs">
-                <button id="tab-ticket" class="tab-node active" onclick="switchMatrixTab('ticket')">// DISPATCH_TICKET</button>
-                <button id="tab-invoice" class="tab-node" onclick="switchMatrixTab('invoice')">// QUICKBOOKS_INVOICES</button>
+            <!-- Ultra-Clean Technical Tab Switcher -->
+            <div class="console-tabs">
+                <button id="tab-ticket" class="tab-pill active" onclick="switchMatrixTab('ticket')">SUPPORT_TICKET</button>
+                <button id="tab-invoice" class="tab-pill" onclick="switchMatrixTab('invoice')">REQUEST_INVOICE</button>
             </div>
 
-            <!-- Form A: Support Ticket Intake -->
-            <form id="ticketForm" class="matrix-form-pane" action="https://formspree.io" method="POST">
+            <!-- Panel 01: Support Ticket Intake -->
+            <form id="ticketForm" class="console-form-view active" action="https://formspree.io" method="POST">
                 <input type="hidden" name="_subject" value="⚠️ NEW IT SUPPORT TICKET DISPATCHED">
-                <div class="input-group">
-                    <label>SYS_CORE_CATEGORY</label>
+                <div class="cyber-input-group">
+                    <label>CORE_SYSTEM_TARGET</label>
                     <select name="Category" required>
-                        <option value="" disabled selected>Select System Target...</option>
+                        <option value="" disabled selected>Select Architecture Core...</option>
                         <option value="Network Infrastructure">Network Infrastructure & Wi-Fi</option>
                         <option value="Hardware Management">Device Diagnostics & Repairs</option>
                         <option value="Cloud & Software">Software Install & Configuration</option>
                         <option value="Cybersecurity">Virus Removal & Access Management</option>
                     </select>
                 </div>
-                <div class="input-group">
-                    <label>SLA_PRIORITY_LEVEL</label>
+                <div class="cyber-input-group">
+                    <label>SLA_URGENCY_INDEX</label>
                     <select name="Priority" required>
-                        <option value="Low">Low Priority (General Question)</option>
-                        <option value="Medium" selected>Medium Priority (Standard Ticket)</option>
+                        <option value="Low">Low Priority (General Maintenance)</option>
+                        <option value="Medium" selected>Medium Priority (Standard SLA Ticket)</option>
                         <option value="High">High Priority (Urgent System Outage)</option>
                     </select>
                 </div>
-                <div class="input-group">
-                    <label>FAULT_LOG_DESCRIPTION</label>
-                    <textarea name="Description" placeholder="Provide system logs, access blockers, or fault parameters..." required></textarea>
+                <div class="cyber-input-group">
+                    <label>FAULT_LOG_SUMMARY</label>
+                    <textarea name="Description" placeholder="Enter system diagnostic parameters or error indicators..." required></textarea>
                 </div>
                 <input type="hidden" name="_next" value="https://tharpeitservices.com">
-                <button type="submit" class="btn-cyber-node">Initialize_Dispatch_Sequence</button>
+                <button type="submit" class="btn-neon-action">DISPATCH_TICKET_DATA</button>
             </form>
 
-            <!-- Form B: QuickBooks Invoice & Billing Inquiry Intake -->
-            <form id="invoiceForm" class="matrix-form-pane" action="https://formspree.io" method="POST" style="display: none;">
-                <input type="hidden" name="_subject" value="💳 QUICKBOOKS BILLING INQUIRY TRANSMITTED">
-                
-                <div class="input-group">
-                    <label>QUICKBOOKS_ACCOUNT_NAME</label>
-                    <input type="text" name="QuickBooks_Client_Name" placeholder="Enter business or client name as listed on invoice..." required>
+            <!-- Panel 02: Refined Invoice Request Portal -->
+            <div id="invoiceForm" class="console-form-view" style="display: none;">
+                <div class="invoice-routing-notice">
+                    <div class="notice-icon">📋</div>
+                    <h3>Manual Invoice Dispatch</h3>
+                    <p>To request a copy of an existing statement, submit a formal billing dispute, or coordinate direct commercial account terms, please transmit your logs directly via email routing:</p>
+                    
+                    <a href="mailto:Tharpeitservices@gmail.com" class="direct-billing-email-node">
+                        📬 Tharpeitservices@gmail.com
+                    </a>
+                    
+                    <span class="notice-footer-telemetry">// RESPONSE_ETA: &lt; 24_HOURS</span>
                 </div>
-                
-                <div class="input-group">
-                    <label>QB_INVOICE_NUMBER_REF</label>
-                    <input type="text" name="QuickBooks_Invoice_ID" placeholder="Enter the 4 to 6 digit QB Invoice #..." required>
-                </div>
-                
-                <div class="input-group">
-                    <label>BILLING_RESOLUTION_NOTES</label>
-                    <textarea name="Billing_Inquiry_Details" placeholder="Describe billing discrepancies, request an updated invoice link, or paste payment confirmation details..." required></textarea>
-                </div>
-                
-                <input type="hidden" name="_next" value="https://tharpeitservices.com">
-                <button type="submit" class="btn-cyber-node variant-gold">Transmit_Billing_Data</button>
-            </form>
+            </div>
         </section>
 
     </section>
 
-    <main class="portal-main-grid">
+    <main class="portal-fluid-grid">
+        
         <!-- 🏢 CORE BUSINESS PROFILE PANEL -->
-        <section id="business-profile-info" class="cyber-card full-width-card">
-            <div class="card-accent-bar blue-purple"></div>
-            <h2>[SYS_PROFILE] // Tharpe IT Solutions</h2>
+        <section id="business-profile-info" class="obsidian-card full-width-card">
+            <div class="neon-purple-bar blue-glow-strip"></div>
+            <h2>// CORE_METRICS // Profile Overview</h2>
             <div class="profile-content-grid">
                 <div class="profile-text-block">
                     <p class="service-highlight-text">
@@ -121,55 +118,71 @@
                 </div>
                 
                 <div class="contact-details-badge">
-                    <h3>📬 TARGET_COMMS_ROUTING</h3>
-                    <p><strong>EMAIL_LINK:</strong> <a href="mailto:Tharpeitservices@gmail.com" class="neon-link">Tharpeitservices@gmail.com</a></p>
-                    <p><strong>SMS_OR_VOICE:</strong> <a href="tel:2078493939" class="accent-glow">207-849-3939</a></p>
+                    <h3>📬 SECURE_COMMS_ROUTING</h3>
+                    <p><strong>EMAIL_DATA_STREAM:</strong> <a href="mailto:Tharpeitservices@gmail.com" class="neon-link">Tharpeitservices@gmail.com</a></p>
+                    <p><strong>SECURE_TEL_NODE:</strong> <a href="tel:2078493939" class="accent-glow">207-849-3939</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 💰 RATE CARD & PRICING ENGINE -->
+        <section id="pricing-matrix-section" class="obsidian-card full-width-card">
+            <div class="neon-purple-bar green-glow-strip"></div>
+            <h2>// RATE_CARD_METRICS // Tiered Service Pricing</h2>
+            <p class="section-intro-text">Transparent infrastructure troubleshooting rates built to fit individual parameters. Basic support configurations initialize at a baseline tier, adjusting linearly based on hardware deployment scopes or system complexities.</p>
+            
+            <div class="pricing-matrix-grid">
+                <!-- Tier 1 -->
+                <div class="price-tier-card">
+                    <span class="tier-tag">TIER_01 // BASELINE</span>
+                    <h3>Basic IT Support</h3>
+                    <div class="price-display">
+                        <span class="currency">$</span>
+                        <span class="amount">40</span>
+                        <span class="suffix">/ start</span>
+                    </div>
+                    <ul class="tier-features-list">
+                        <li><span>✔</span> Simple OS Diagnostics</li>
+                        <li><span>✔</span> Email Access Troubleshooting</li>
+                        <li><span>✔</span> Software App Installations</li>
+                        <li><span>✔</span> General Device Optimizations</li>
+                    </ul>
+                </div>
+
+                <!-- Tier 2 -->
+                <div class="price-tier-card tier-highlighted">
+                    <span class="tier-tag tag-purple">TIER_02 // SYSTEM</span>
+                    <h3>Advanced Repairs</h3>
+                    <div class="price-display">
+                        <span class="currency">$</span>
+                        <span class="amount">85</span>
+                        <span class="suffix">/ scale</span>
+                    </div>
+                    <ul class="tier-features-list">
+                        <li><span>✔</span> Complete Virus & Malware Eradication</li>
+                        <li><span>✔</span> Wi-Fi & Local Routing Configuration</li>
+                        <li><span>✔</span> Hardware Component Upgrades</li>
+                        <li><span>✔</span> Data Backup & Profile Relocations</li>
+                    </ul>
+                </div>
+
+                <!-- Tier 3 -->
+                <div class="price-tier-card">
+                    <span class="tier-tag">TIER_03 // CORE</span>
+                    <h3>Enterprise Infrastructure</h3>
+                    <div class="price-display">
+                        <span class="currency">Quote</span>
+                    </div>
+                    <ul class="tier-features-list">
+                        <li><span>✔</span> Full Topology Network Engineering</li>
+                        <li><span>✔</span> Server Administrations & Access Rules</li>
+                        <li><span>✔</span> Enterprise Cybersecurity Lockdowns</li>
+                        <li><span>✔</span> On-Site Commercial Operations Monitoring</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
         <!-- 🚀 WHAT WE ARE ALL ABOUT -->
-        <section id="about-us-section" class="cyber-card full-width-card">
-            <div class="card-accent-bar purple-pink"></div>
-            <h2>[MISSION_PARAMETERS] // What We Are All About</h2>
-            <p class="section-intro-text">At Tharpe IT Services, we believe that enterprise-grade support shouldn't come with confusing corporate jargon. We focus on building lasting technology foundations right here in our community.</p>
-            
-            <div class="about-features-grid">
-                <div class="feature-pillar">
-                    <div class="pillar-icon">🤝</div>
-                    <h3>Community First</h3>
-                    <p>We are dedicated to helping our neighbors and local businesses navigate tech challenges with friendly, reliable, on-site and remote support.</p>
-                </div>
-                <div class="feature-pillar">
-                    <div class="pillar-icon">⚡</div>
-                    <h3>Simple Solutions</h3>
-                    <p>No unnecessary upsells. We diagnose your exact hardware or network issue and fix it using clear, straightforward methods.</p>
-                </div>
-                <div class="feature-pillar">
-                    <div class="pillar-icon">🛡️</div>
-                    <h3>15 Years of Trust</h3>
-                    <p>Bringing comprehensive industry expertise straight to your desktop. From malware removal to complex Wi-Fi routing, we have you covered.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- ⭐ LIVE CONNECTED USER REVIEWS FORM -->
-        <section id="review-system" class="cyber-card full-width-card">
-            <div class="card-accent-bar gold-purple"></div>
-            <h2>[FEEDBACK_TELEMETRY] // Experience Reviews</h2>
-            <form id="reviewForm" action="https://formspree.io" method="POST">
-                <div class="star-rating-box">
-                    <label class="input-label-style">SATISFACTION_METRIC_SCORE</label>
-                    <div class="rating-stars">
-                        <input type="radio" id="star5" name="RatingStars" value="5"><label for="star5">★</label>
-                        <input type="radio" id="star4" name="RatingStars" value="4"><label for="star4">★</label>
-                        <input type="radio" id="star3" name="RatingStars" value="3"><label for="star3">★</label>
-                        <input type="radio" id="star2" name="RatingStars" value="2"><label for="star2">★</label>
-                        <input type="radio" id="star1" name="RatingStars" value="1"><label for="star1">★</label>
-                    </div>
-                </div>
-                <div class="input-group">
-                    <label>CUSTOMER_NARRATIVE_LOG</label>
-                    <textarea name="ReviewComment" placeholder="Provide feedback regarding your technical helpdesk experience..." required></textarea>
-                </div>
-                <input type="hidden" name="_next" value="https://tharpeitservices.com">
+        <section id="about-us-section" class="obsidian-card full-width-card">
+            <div class="neon-purple-bar pink-glow-strip"></div>
