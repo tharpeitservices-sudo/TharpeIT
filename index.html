@@ -5,160 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tharpe IT Services</title>
     
-    <!-- External Framework Integration -->
+    <!-- External System Files -->
     <link href="https://jsdelivr.net" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://jsdelivr.net">
-    <script src="https://jsdelivr.net" defer></script>
     <link rel="stylesheet" href="style.css">
-    
-    <!-- PREMIUM HERO STYLE INJECTION ENGINE -->
-    <style type="text/css">
-        /* Smooth scrolling behavior across navigation target points */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
-            background-color: #0b071e !important;
-        }
-
-        /* Hero Text Gradient Highlights */
-        .premium-pink-text {
-            color: #ff3377 !important;
-            background: linear-gradient(45deg, #ff3366, #ff55bb);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .badge-neighborly {
-            background-color: rgba(90, 40, 250, 0.3) !important;
-            border: 1px solid #7744ff !important;
-            color: #ddccff !important;
-            font-weight: 700;
-            letter-spacing: 1px;
-            font-size: 0.75rem;
-            padding: 8px 16px !important;
-            border-radius: 50px !important;
-        }
-
-        /* Section Layout Boxes */
-        .glass-container-card {
-            background: rgba(18, 12, 38, 0.75) !important;
-            border: 1px solid rgba(255, 255, 255, 0.08) !important;
-            border-radius: 20px !important;
-            box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.6) !important;
-            backdrop-filter: blur(12px);
-            padding: 40px !important;
-        }
-
-        /* Fully Restored Input Field Elements */
-        .tharpe-input-field {
-            display: block !important;
-            width: 100% !important;
-            padding: 12px 16px !important;
-            color: #ffffff !important;
-            background-color: #060410 !important;
-            border: 1px solid rgba(255, 255, 255, 0.15) !important;
-            border-radius: 10px !important;
-            margin-top: 6px !important;
-            margin-bottom: 4px !important;
-            transition: all 0.2s ease;
-        }
-        
-        .tharpe-input-field:focus {
-            border-color: #ff3366 !important;
-            background-color: #0c0822 !important;
-            outline: none !important;
-            box-shadow: 0px 0px 12px rgba(255, 51, 102, 0.4) !important;
-            color: #ffffff !important;
-        }
-
-        .tharpe-input-field option {
-            background-color: #0b071e !important;
-            color: #ffffff !important;
-        }
-
-        .tharpe-label-text {
-            color: #bfaecf !important;
-            font-weight: 600 !important;
-            font-size: 0.85rem !important;
-            text-transform: uppercase !important;
-            letter-spacing: 0.5px !important;
-        }
-
-        .submit-btn-premium {
-            background: linear-gradient(135deg, #ff3366, #ff55bb) !important;
-            color: #ffffff !important;
-            font-weight: 700 !important;
-            border: none !important;
-            border-radius: 10px !important;
-            padding: 14px !important;
-            transition: transform 0.2s ease;
-        }
-
-        .submit-btn-premium:hover {
-            transform: translateY(-2px);
-            box-shadow: 0px 5px 20px rgba(255, 51, 102, 0.4) !important;
-        }
-
-        /* Floating Interactive Action Anchor */
-        .tharpe-sms-action-pill {
-            position: fixed !important;
-            bottom: 24px !important;
-            right: 24px !important;
-            z-index: 99999 !important;
-            background: linear-gradient(135deg, #ff3366, #ff55bb) !important;
-            color: #ffffff !important;
-            font-weight: 700 !important;
-            border: 2px solid #ffffff !important;
-            box-shadow: 0px 4px 25px rgba(255, 51, 102, 0.5) !important;
-            border-radius: 50px !important;
-            padding: 14px 28px !important;
-            text-decoration: none !important;
-            transition: all 0.2s ease-in-out !important;
-        }
-        
-        .tharpe-sms-action-pill:hover {
-            transform: scale(1.05) !important;
-            box-shadow: 0px 6px 30px rgba(255, 51, 102, 0.7) !important;
-            color: #ffffff !important;
-        }
-    </style>
 </head>
 <body class="bg-dark text-light">
 
-    <!-- Floating Contact Helper Component -->
-    <a href="sms:+12078493939?body=Hello%20Tharpe%20IT%20Services,%20I%20need%20assistance%20with..." 
-       class="tharpe-sms-action-pill shadow-lg">
+    <!-- SMS Floating Button Shortcut -->
+    <a href="sms:+12078493939?body=Hello%20Tharpe%20IT%20Services,%20I%20need%20assistance%20with..." class="tharpe-sms-action-pill">
         <i class="bi bi-chat-text-fill me-2"></i> Text Me For Help
     </a>
 
-    <!-- Top Navigation Grid Header -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent px-4 py-4 fixed-top border-bottom border-dark" style="backdrop-filter: blur(10px); background-color: rgba(11, 7, 30, 0.8) !important;">
+    <!-- Top Sticky Navigation Bar Menu -->
+    <nav class="navbar navbar-expand-lg navbar-dark px-4 py-4 fixed-top border-bottom border-dark" style="backdrop-filter: blur(12px); background-color: rgba(11, 7, 30, 0.8) !important; z-index: 10000 !important;">
         <div class="container">
             <a class="navbar-brand fs-3 fw-bold text-white d-flex align-items-center" href="#">
                 <i class="bi bi-cpu text-info me-2" style="color: #ff3366 !important;"></i> Tharpe IT Services
             </a>
-            
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-toggle="collapse" data-bs-target="#tharpeNavMenu">
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#tharpeNavMenu">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
             <div class="collapse navbar-collapse justify-content-end" id="tharpeNavMenu">
                 <div class="navbar-nav gap-3 mt-3 mt-lg-0">
                     <a class="nav-link text-white fw-medium active" href="#">Home</a>
                     <a class="nav-link text-white-50 fw-medium" href="#support-portal">Support Portal</a>
-                    <a class="nav-link text-white-50 fw-medium" href="#community-feedback">Community Feedback</a>
+                    <a class="nav-link text-white-50 fw-medium" href="#about-section">About Us</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- SECTION 1: Premium Template Hero Container -->
+    <!-- SECTION 1: Premium Template Hero Landing Block -->
     <section class="container d-flex align-items-center justify-content-center min-vh-100 pt-5 mt-5">
         <div class="row align-items-center g-5 py-5 w-100">
-            <!-- Left Grid Layout: Copy Content -->
             <div class="col-lg-7 text-start">
                 <div class="mb-4">
                     <span class="badge badge-neighborly mb-3"><i class="bi bi-heart-fill me-1 text-danger"></i> NEIGHBORLY & RELIABLE</span>
@@ -170,37 +50,101 @@
                     Whether it's for a busy home office or personal everyday use, we take pride in simplifying your basic and complex technical needs. No confusing tech talk—just dependable support for your everyday lifestyle.
                 </p>
             </div>
-            
-            <!-- Right Grid Layout: Graphic Placeholder -->
             <div class="col-lg-5 position-relative text-center d-none d-lg-block">
-                <!-- Expects background layer layout image matching your preview profile -->
-                <img src="hero.png" alt="Tharpe Professional Care Backdrop" class="img-fluid rounded-4 shadow-sm" style="max-height: 480px; transform: scale(1.05);">
+                <img src="hero.png" alt="Tharpe Professional Care Profile" class="img-fluid rounded-4 shadow-lg" style="max-height: 440px; border: 1px solid rgba(255,255,255,0.1);">
             </div>
         </div>
     </section>
 
-    <!-- SECTION 2: Fully Managed Interactive Ticket Submission Form -->
-    <section id="support-portal" class="container my-5 py-5 target-scroll-point">
+    <!-- SECTION 2: Fully Functional Dropdown Ticket Helpdesk Formspree Container -->
+    <section id="support-portal" class="container my-5 py-5">
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <div class="glass-container-card">
                     <div class="text-center mb-4">
-                        <span class="text-uppercase tracking-wider fw-bold text-info small" style="color: #ff3366 !important; letter-spacing: 2px;">Submit A Case</span>
+                        <span class="text-uppercase tracking-wider fw-bold small" style="color: #ff3366; letter-spacing: 2px;">Submit A Request</span>
                         <h2 class="display-6 fw-bold text-white mt-1"><i class="bi bi-ticket-perforated me-2"></i>Support Helpdesk</h2>
-                        <p class="text-white-50 small mt-2">Fill out your profile configuration fields. Formspree alerts dispatch directly to our monitoring station.</p>
+                        <p class="text-white-50 small mt-2">Fill out your information below. Submissions alert our technician hub instantly.</p>
                     </div>
 
+                    <!-- FIXED FORMSPREE PIPELINE METHOD -->
                     <form action="https://formspree.io" method="POST">
-                        <div class="row g-3">
-                            <div class="col-md-6 text-start">
-                                <label for="fullName" class="tharpe-label-text">Full Name</label>
-                                <input type="text" class="tharpe-input-field" id="fullName" name="name" placeholder="Enter your full name" required>
-                            </div>
-                            
-                            <div class="col-md-6 text-start">
-                                <label for="emailAddr" class="tharpe-label-text">Email Address</label>
-                                <input type="email" class="tharpe-input-field" id="emailAddr" name="email" placeholder="Enter your email address" required>
-                            </div>
+                        <div class="mb-3 text-start">
+                            <label for="fullName" class="tharpe-label-text">Full Name</label>
+                            <input type="text" class="tharpe-input-field" id="fullName" name="name" placeholder="Enter your full name" required>
+                        </div>
+                        
+                        <div class="mb-3 text-start">
+                            <label for="emailAddr" class="tharpe-label-text">Email Address</label>
+                            <input type="email" class="tharpe-input-field" id="emailAddr" name="email" placeholder="Enter your email address" required>
+                        </div>
 
-                            <div class="col-md-6 text-start">
-                                <label for="category" class="tharpe-label-text">Issue Category</label>
+                        <div class="mb-3 text-start">
+                            <label for="category" class="tharpe-label-text">Issue Category</label>
+                            <select class="tharpe-input-field form-select" id="category" name="category" required>
+                                <option value="" disabled selected>Select Issue Category</option>
+                                <option value="Hardware">Hardware Issues & Diagnostics</option>
+                                <option value="Software">Software Installs & Operating System Errors</option>
+                                <option value="Network">Network Connectivity & Router Setup</option>
+                                <option value="Malware">Malware Removal & System Performance</option>
+                                <option value="Other">Other / General Technical Inquiry</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3 text-start">
+                            <label for="priority" class="tharpe-label-text">Priority Level</label>
+                            <select class="tharpe-input-field form-select" id="priority" name="priority" required>
+                                <option value="Low">Low Priority (Standard Response)</option>
+                                <option value="Medium" selected>Medium Priority (Flexible Scheduling)</option>
+                                <option value="High">High Priority (Urgent System Breakdown)</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3 text-start">
+                            <label for="description" class="tharpe-label-text">Issue Description</label>
+                            <textarea class="tharpe-input-field" id="description" name="description" rows="5" placeholder="Provide details about the issue or error text you have faced." required></textarea>
+                        </div>
+
+                        <div class="d-grid mt-4 pt-2">
+                            <button type="submit" class="submit-btn-premium fs-5"><i class="bi bi-send-fill me-2"></i>Submit Ticket</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: Values, Experience & Client Review Panel -->
+    <section id="about-section" class="container my-5 py-5">
+        <div class="text-center mb-5">
+            <span class="text-uppercase tracking-wider fw-bold small" style="color: #ff3366; letter-spacing: 2px;">Core Values</span>
+            <h2 class="display-5 fw-bold text-white mt-1">About Tharpe IT Services</h2>
+            <div class="mx-auto" style="height: 3px; width: 50px; background: linear-gradient(to right, #ff3366, #ff55bb); margin-top: 15px;"></div>
+        </div>
+
+        <div class="row g-4 align-items-stretch mb-5">
+            <div class="col-md-6">
+                <div class="glass-container-card h-100 mb-0">
+                    <h4 class="text-white fw-bold mb-3 d-flex align-items-center"><i class="bi bi-clock-history me-2" style="color: #ff3366;"></i> 20 Years of Experience</h4>
+                    <p class="text-white-50 mb-0" style="line-height: 1.7;">
+                        Led by Timothy Tharpe, Tharpe IT Services brings over two decades of technical field knowledge directly to your home or office floor. We specialize in fast diagnostics, secure network rollouts, remote troubleshooting support, data safety optimization, and complete technical device care tailored explicitly to local community members.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="glass-container-card h-100 mb-0 d-flex flex-column justify-content-between">
+                    <div>
+                        <h4 class="text-white fw-bold mb-3 d-flex align-items-center"><i class="bi bi-compass me-2" style="color: #ff3366;"></i> Our Mission Statement</h4>
+                        <blockquote class="blockquote p-3 rounded border-start border-3" style="background-color: rgba(6, 4, 16, 0.5) !important; border-color: #ff3366 !important;">
+                            <p class="fs-5 italic text-white mb-0">"Family and locally focused IT services for your convenience."</p>
+                        </blockquote>
+                    </div>
+                    <p class="text-white-50 mt-2 mb-0" style="line-height: 1.7;">
+                        We aim to bridge the accessibility gap by rendering top-tier professional engineering principles at affordable, family-focused rates. Your security is our absolute priority.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lisa Folk Testimonial Card Frame -->
