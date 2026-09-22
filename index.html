@@ -34,7 +34,15 @@
         <section id="ticketing-system" class="glass-card hero-form-card">
             <div class="card-accent-bar pink-purple"></div>
             <h2>Submit a Support Ticket</h2>
-            <form id="ticketForm" action="https://formspree.io/f/mrpbqkrv" method="POST">
+            <form id="ticketForm" action="https://formspree.io" method="POST">
+                <div class="input-group">
+                    <label>Your Name</label>
+                    <input type="text" name="ClientName" placeholder="Enter your name" required>
+                </div>
+                <div class="input-group">
+                    <label>Your Email</label>
+                    <input type="email" name="_replyto" placeholder="Enter your email" required>
+                </div>
                 <div class="input-group">
                     <label>Issue Category</label>
                     <select name="Category" required>
@@ -121,7 +129,11 @@
         <section id="review-system" class="glass-card full-width-card">
             <div class="card-accent-bar gold-purple"></div>
             <h2>Leave an Experience Review</h2>
-            <form id="reviewForm" action="https://formspree.io/f/mrpbqkrv" method="POST">
+            <form id="reviewForm" action="https://formspree.io" method="POST">
+                <div class="input-group">
+                    <label>Your Name</label>
+                    <input type="text" name="ReviewerName" placeholder="Enter your name" required>
+                </div>
                 <div class="star-rating-box">
                     <label class="input-label-style">Select Support Score</label>
                     <div class="rating-stars">
@@ -146,9 +158,7 @@
             <div class="card-accent-bar blue-pink"></div>
             <h2>Approved Customer Testimonials</h2>
             <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <!-- Cards will maintain their native CSS class alignments -->
-                </div>
+                <!-- User review feed cards go here -->
             </div>
         </section>
     </main>
