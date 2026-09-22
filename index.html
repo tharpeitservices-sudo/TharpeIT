@@ -4,175 +4,199 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tharpe IT Services Portal</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #1e0b36;
+            background-image: radial-gradient(circle, #2d1254 10%, #0f051d 90%);
+            color: #f1ebfc;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(45, 18, 84, 0.6);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(4px);
+            margin-bottom: 20px;
+        }
+        h1, h2 {
+            color: #bb86fc;
+            text-align: center;
+        }
+        .tagline {
+            font-style: italic;
+            text-align: center;
+            color: #a29bfe;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #e2d5f3;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #4a287a;
+            border-radius: 6px;
+            background-color: #120724;
+            color: #fff;
+            box-sizing: border-box;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #bb86fc;
+            box-shadow: 0 0 8px rgba(187, 134, 252, 0.5);
+        }
+        button {
+            background-color: #6200ee;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #bb86fc;
+            color: #120724;
+        }
+        .sms-btn {
+            background-color: #03dac6;
+            color: #120724;
+            text-align: center;
+            display: block;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        .sms-btn:hover {
+            background-color: #018786;
+            color: white;
+        }
+        .review-list {
+            margin-top: 20px;
+            background: rgba(18, 7, 36, 0.5);
+            padding: 15px;
+            border-radius: 6px;
+        }
+        .item-card {
+            border-left: 4px solid #bb86fc;
+            padding: 10px;
+            margin-bottom: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 0 6px 6px 0;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Ambient Grid Background Elements -->
-    <div class="cyber-grid-overlay"></div>
-    <div class="ambient-glow-1"></div>
-    <div class="ambient-glow-2"></div>
-
-    <header class="cyber-header">
-        <div class="nav-container">
-            <img src="logo.png" alt="Tharpe IT Services Logo" class="site-logo">
-            <h1>Tharpe IT Services</h1>
-            <a href="sms:+12078493939" class="btn-text-me header-text-btn">💬 Text For Help</a>
-        </div>
-    </header>
-
-    <!-- ⚡ HIGH-CONVERTING HERO ENTRY GRID ⚡ -->
-    <section class="hero-split-grid">
+    <div class="container">
+        <h1>Tharpe IT Services</h1>
+        <div class="tagline">"providing local and simple IT services to the community"</div>
         
-        <!-- Left Side: Your Branding Picture Column -->
-        <div class="banner-container">
-            <img src="hero.png" alt="Tharpe IT Services Layout Banner" class="full-responsive-banner">
-            <div class="banner-glow-edge"></div>
+        <a href="sms:2078493939" class="sms-btn">💬 Text Me for Immediate Help</a>
+    </div>
+
+    <!-- Ticket System Panel -->
+    <div class="container">
+        <h2>Submit a Support Ticket</h2>
+        <form action="https://formspree.io" method="POST">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="_replyto" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="issue">Describe Your IT Issue</label>
+                <textarea name="issue" id="issue" rows="4" required></textarea>
+            </div>
+            <button type="submit">Submit Ticket</button>
+        </form>
+    </div>
+
+    <!-- Review System Panel -->
+    <div class="container">
+        <h2>Leave a Customer Review</h2>
+        <form action="https://formspree.io" method="POST" id="reviewForm">
+            <div class="form-group">
+                <label for="revName">Your Name</label>
+                <input type="text" name="reviewer_name" id="revName" required>
+            </div>
+            <div class="form-group">
+                <label for="rating">Rating</label>
+                <select name="star_rating" id="rating">
+                    <option value="5">⭐⭐⭐⭐⭐ (5/5)</option>
+                    <option value="4">⭐⭐⭐⭐ (4/5)</option>
+                    <option value="3">⭐⭐⭐ (3/5)</option>
+                    <option value="2">⭐⭐ (2/5)</option>
+                    <option value="1">⭐ (1/5)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="comments">Comments</label>
+                <textarea name="review_text" id="comments" rows="3" required></textarea>
+            </div>
+            <button type="submit">Post Review</button>
+        </form>
+
+        <div class="review-list" id="reviewList">
+            <h3>Recent Reviews</h3>
+            <!-- Reviews will load dynamically here -->
         </div>
+    </div>
 
-        <!-- Right Side: Upgraded Live Connected Support Ticket Form -->
-        <section id="ticketing-system" class="glass-card hero-form-card">
-            <div class="card-accent-bar pink-purple"></div>
-            <h2>Submit a Support Ticket</h2>
-            <form id="ticketForm" action="https://formspree.io" method="POST">
-                <div class="input-group">
-                    <label>Issue Category</label>
-                    <select name="Category" required>
-                        <option value="" disabled selected>Select Core Issue Category</option>
-                        <option value="Network Infrastructure">Network Infrastructure & Wi-Fi</option>
-                        <option value="Hardware Management">Device Diagnostics & Repairs</option>
-                        <option value="Cloud & Software">Software Install & Configuration</option>
-                        <option value="Cybersecurity">Virus Removal & Access Management</option>
-                    </select>
-                </div>
-                <div class="input-group">
-                    <label>Priority Level</label>
-                    <select name="Priority" required>
-                        <option value="Low">Low Priority (General Question)</option>
-                        <option value="Medium" selected>Medium Priority (Standard Ticket)</option>
-                        <option value="High">High Priority (Urgent System Outage)</option>
-                    </select>
-                </div>
-                <div class="input-group">
-                    <label>Describe Your Issue</label>
-                    <textarea name="Description" placeholder="Provide details about the technical faults or device issues you need fixed..." required></textarea>
-                </div>
-                <input type="hidden" name="_next" value="https://tharpeitservices.com">
-                <button type="submit" class="btn-cyber">Dispatch Ticket</button>
-            </form>
-        </section>
-
-    </section>
-
-    <main class="portal-main-grid">
-        <!-- 🏢 CORE BUSINESS PROFILE PANEL -->
-        <section id="business-profile-info" class="glass-card full-width-card">
-            <div class="card-accent-bar blue-purple"></div>
-            <h2>Our Technical IT Solutions & Services</h2>
-            <div class="profile-content-grid">
-                <div class="profile-text-block">
-                    <p class="service-highlight-text">
-                        Providing local and simple IT services to the community.
-                    </p>
-                    <p class="body-narrative">
-                        Backed by over <strong>15 years of professional IT experience</strong>, we deliver robust tech troubleshooting, networking optimization, and clear device solutions built directly around your small business or home infrastructure.
-                    </p>
-                    
-                    <!-- Immediate Mobile Messaging Triage Action -->
-                    <div class="immediate-help-container">
-                        <a href="sms:+12078493939" class="btn-text-me pulse-glow">💬 Text Me For Immediate Help</a>
-                    </div>
-                </div>
-                
-                <div class="contact-details-badge">
-                    <h3>📬 Contact Technical Support</h3>
-                    <p><strong>Email Us:</strong> <a href="mailto:Tharpeitservices@gmail.com" class="neon-link">Tharpeitservices@gmail.com</a></p>
-                    <p><strong>Call or Text:</strong> <a href="tel:2078493939" class="accent-glow">207-849-3939</a></p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 🚀 WHAT WE ARE ALL ABOUT -->
-        <section id="about-us-section" class="glass-card full-width-card">
-            <div class="card-accent-bar purple-pink"></div>
-            <h2>What We Are All About</h2>
-            <p class="section-intro-text">At Tharpe IT Services, we believe that enterprise-grade support shouldn't come with confusing corporate jargon. We focus on building lasting technology foundations right here in our community.</p>
+    <script>
+        // Formspree AJAX handler to post review dynamically on submission
+        document.getElementById('reviewForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const form = this;
+            const data = new FormData(form);
             
-            <div class="about-features-grid">
-                <div class="feature-pillar">
-                    <div class="pillar-icon">🤝</div>
-                    <h3>Community First</h3>
-                    <p>We are dedicated to helping our neighbors and local businesses navigate tech challenges with friendly, reliable, on-site and remote support.</p>
-                </div>
-                <div class="feature-pillar">
-                    <div class="pillar-icon">⚡</div>
-                    <h3>Simple Solutions</h3>
-                    <p>No unnecessary upsells. We diagnose your exact hardware or network issue and fix it using clear, straightforward methods.</p>
-                </div>
-                <div class="feature-pillar">
-                    <div class="pillar-icon">🛡️</div>
-                    <h3>15 Years of Trust</h3>
-                    <p>Bringing comprehensive industry expertise straight to your desktop. From malware removal to complex Wi-Fi routing, we have you covered.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- ⭐ LIVE CONNECTED USER REVIEWS FORM -->
-        <section id="review-system" class="glass-card full-width-card">
-            <div class="card-accent-bar gold-purple"></div>
-            <h2>Leave an Experience Review</h2>
-            <form id="reviewForm" action="https://formspree.io" method="POST">
-                <div class="star-rating-box">
-                    <label class="input-label-style">Select Support Score</label>
-                    <div class="rating-stars">
-                        <input type="radio" id="star5" name="RatingStars" value="5"><label for="star5">★</label>
-                        <input type="radio" id="star4" name="RatingStars" value="4"><label for="star4">★</label>
-                        <input type="radio" id="star3" name="RatingStars" value="3"><label for="star3">★</label>
-                        <input type="radio" id="star2" name="RatingStars" value="2"><label for="star2">★</label>
-                        <input type="radio" id="star1" name="RatingStars" value="1"><label for="star1">★</label>
-                    </div>
-                </div>
-                <div class="input-group">
-                    <label>Your Feedback</label>
-                    <textarea name="ReviewComment" placeholder="Provide feedback regarding your technical helpdesk experience..." required></textarea>
-                </div>
-                <input type="hidden" name="_next" value="https://tharpeitservices.com">
-                <button type="submit" class="btn-cyber">Submit Review</button>
-            </form>
-        </section>
-
-        <!-- 💬 APPROVED CUSTOMER TESTIMONIALS BOARD -->
-        <section id="approved-reviews-board" class="glass-card full-width-card">
-            <div class="card-accent-bar blue-pink"></div>
-            <h2>Approved Customer Testimonials</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="user-avatar">JD</div>
-                        <div>
-                            <h4>John D.</h4>
-                            <div class="approved-stars">★★★★★</div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Tharpe IT fixed our local business network outage in less than an hour. Exceptional troubleshooting and everything was explained simply without corporate tech jargon!"</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="user-avatar">MS</div>
-                        <div>
-                            <h4>Mary S.</h4>
-                            <div class="approved-stars">★★★★★</div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Having 15 years of experience really shows. Fast setup of our home hardware devices and a very professional attitude. Highly recommend their local services."</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="user-avatar">RK</div>
-                        <div>
-                            <h4>Robert K.</h4>
-                            <div class="approved-stars">★★★★★</div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Excellent cybersecurity check on my systems. Simple to work with, local, and incredibly helpful phone response support."</p>
-                </div>
+            fetch(form.action, {
+                method: form.method,
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    const name = document.getElementById('revName').value;
+                    const rating = document.getElementById('rating').value;
+                    const comments = document.getElementById('comments').value;
+                    
+                    const reviewList = document.getElementById('reviewList');
+                    const card = document.createElement('div');
+                    card.className = 'item-card';
+                    card.innerHTML = `<strong>${name}</strong> - ${'⭐'.repeat(rating)}<p>${comments}</p>`;
+                    
+                    reviewList.insertBefore(card, reviewList.firstChild);
+                    form.reset();
+                    alert("Thank you for your review!");
+                } else {
+                    alert("Oops! There was a problem submitting your review.");
+                }
+            }).catch(error => {
+                alert("Oops! There was a problem submitting your review.");
+            });
+        });
+    </script>
+</body>
+</html>
