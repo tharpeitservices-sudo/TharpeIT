@@ -1,54 +1,80 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Tharpe IT Services | Professional IT Support & Solutions</title>
+<title>Tharpe IT Services | Professional IT Support & Solutions</title>
 
-  <meta
+<meta
     name="description"
     content="Tharpe IT Services provides professional IT support, network infrastructure, device repair, cloud configuration, identity and access management, cybersecurity, and general technology support."
-  >
+>
 
-  <meta
-    name="keywords"
-    content="Tharpe IT Services, IT support, computer repair, cybersecurity, networking, cloud services, device repair, Maine IT services"
-  >
+<meta name="author" content="Tharpe IT Services">
 
-  <meta name="author" content="Tharpe IT Services">
+<style>
 
-  <style>
-    :root {
-      --primary: #0b5ed7;
-      --primary-dark: #084298;
-      --secondary: #0f172a;
-      --accent: #38bdf8;
-      --light: #f8fafc;
-      --lighter: #ffffff;
-      --dark: #111827;
-      --gray: #64748b;
-      --border: #e2e8f0;
-      --success: #198754;
-      --warning: #f59e0b;
-      --danger: #dc3545;
-      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-      --radius: 16px;
-    }
+/* =========================================================
+   THARPE IT SERVICES
+   DEEP PURPLE / BLACK NEON TECH THEME
+========================================================= */
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+:root {
+    --black: #030207;
+    --black-2: #08050d;
+    --black-3: #0d0814;
 
-    html {
-      scroll-behavior: smooth;
-    }
+    --panel: #100a18;
+    --panel-2: #150d20;
 
-    body {
-      font-family:
+    /* Dark purple — intentionally NOT bright */
+    --purple: #35105f;
+    --purple-hover: #49187a;
+    --purple-dark: #21083e;
+    --purple-deep: #160528;
+
+    /* Used sparingly for borders/text */
+    --purple-accent: #8c52c9;
+    --purple-soft: #a77bd1;
+
+    --white: #ffffff;
+    --text: #e9e4ef;
+    --muted: #aaa1b5;
+
+    --border: rgba(139, 82, 201, 0.22);
+    --border-strong: rgba(139, 82, 201, 0.42);
+
+    --success: #52c78d;
+    --danger: #ff6b7a;
+    --warning: #f5b942;
+
+    --radius: 14px;
+
+    --shadow:
+        0 18px 45px rgba(0,0,0,.45);
+
+    --purple-shadow:
+        0 0 25px rgba(75, 24, 122, .22);
+}
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family:
         Inter,
         -apple-system,
         BlinkMacSystemFont,
@@ -56,1590 +82,2714 @@
         Roboto,
         Arial,
         sans-serif;
-      line-height: 1.6;
-      color: var(--dark);
-      background: var(--light);
-    }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--black);
+    overflow-x: hidden;
+}
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+img {
+    display: block;
+    max-width: 100%;
+}
 
-    button,
-    input,
-    textarea,
-    select {
-      font: inherit;
-    }
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
-    .container {
-      width: min(1150px, 92%);
-      margin: 0 auto;
-    }
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
 
-    /* =========================
-       HEADER
-    ========================= */
+button {
+    cursor: pointer;
+}
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.97);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-    }
+.container {
+    width: min(1180px, 92%);
+    margin: 0 auto;
+}
 
-    .nav {
-      min-height: 78px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 25px;
-    }
+/* =========================================================
+   GLOBAL TECH BACKGROUND
+========================================================= */
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 800;
-      font-size: 1.15rem;
-      color: var(--secondary);
-    }
+.tech-background {
+    position: relative;
+    overflow: hidden;
+}
 
-    .brand img {
-      width: 48px;
-      height: 48px;
-      object-fit: contain;
-      border-radius: 10px;
-    }
+.tech-background::before {
+    content: "";
+    position: absolute;
+    inset: 0;
 
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      list-style: none;
-    }
+    background-image:
+        linear-gradient(rgba(120, 63, 170, .035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(120, 63, 170, .035) 1px, transparent 1px);
 
-    .nav-links a {
-      font-weight: 600;
-      color: #334155;
-      transition: 0.2s ease;
-    }
+    background-size: 48px 48px;
+    pointer-events: none;
+}
 
-    .nav-links a:hover {
-      color: var(--primary);
-    }
+.tech-background::after {
+    content: "";
+    position: absolute;
+    width: 650px;
+    height: 650px;
+    border-radius: 50%;
 
-    .nav-cta {
-      padding: 10px 18px;
-      border-radius: 999px;
-      background: var(--primary);
-      color: white !important;
-    }
+    right: -350px;
+    top: -200px;
 
-    .nav-cta:hover {
-      background: var(--primary-dark);
-    }
+    background:
+        radial-gradient(
+            circle,
+            rgba(80, 25, 130, .18),
+            transparent 68%
+        );
 
-    .menu-toggle {
-      display: none;
-      border: 0;
-      background: transparent;
-      font-size: 1.8rem;
-      cursor: pointer;
-    }
+    pointer-events: none;
+}
 
-    /* =========================
-       HERO
-    ========================= */
+/* =========================================================
+   HEADER / NAVIGATION
+========================================================= */
 
-    .hero {
-      min-height: 650px;
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      background:
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(3, 2, 7, .93);
+    backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid rgba(130, 70, 180, .16);
+}
+
+.nav {
+    min-height: 76px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: white;
+    font-weight: 800;
+    letter-spacing: -.02em;
+}
+
+.brand img {
+    width: 50px;
+    height: 50px;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+
+    filter:
+        drop-shadow(0 0 8px rgba(91, 32, 145, .4));
+}
+
+.nav-links {
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #d8d1df;
+
+    font-size: .94rem;
+    font-weight: 600;
+
+    transition: .2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--purple-soft);
+}
+
+.nav-cta {
+    display: inline-flex;
+
+    padding: 10px 18px;
+
+    border-radius: 8px;
+
+    color: white !important;
+
+    background:
         linear-gradient(
-          135deg,
-          rgba(15, 23, 42, 0.94),
-          rgba(11, 94, 215, 0.86)
+            135deg,
+            #32105a,
+            #250a45
+        );
+
+    border: 1px solid rgba(147, 86, 201, .35);
+
+    box-shadow:
+        0 5px 20px rgba(36, 7, 67, .35);
+}
+
+.nav-cta:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #41146f,
+            #2d0b50
+        );
+}
+
+.menu-toggle {
+    display: none;
+
+    border: 1px solid var(--border);
+
+    color: white;
+    background: #100917;
+
+    width: 44px;
+    height: 42px;
+
+    border-radius: 8px;
+
+    font-size: 1.4rem;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 690px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(2, 1, 5, .98) 0%,
+            rgba(6, 3, 11, .95) 42%,
+            rgba(13, 5, 22, .78) 68%,
+            rgba(10, 3, 17, .68) 100%
         ),
-        url("hero.png") center/cover no-repeat;
-      color: white;
-    }
+        url("hero.png") center right / cover no-repeat;
+}
 
-    .hero-content {
-      max-width: 760px;
-      padding: 80px 0;
-    }
+/* tech grid */
 
-    .hero-badge {
-      display: inline-block;
-      padding: 8px 14px;
-      margin-bottom: 20px;
-      border: 1px solid rgba(255,255,255,.35);
-      border-radius: 999px;
-      background: rgba(255,255,255,.1);
-      font-weight: 700;
-      font-size: .9rem;
-    }
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
 
-    .hero h1 {
-      font-size: clamp(2.5rem, 6vw, 4.8rem);
-      line-height: 1.05;
-      margin-bottom: 22px;
-      letter-spacing: -0.04em;
-    }
+    background-image:
+        linear-gradient(
+            rgba(121, 62, 168, .04) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(121, 62, 168, .04) 1px,
+            transparent 1px
+        );
 
-    .hero p {
-      max-width: 680px;
-      font-size: 1.15rem;
-      color: rgba(255,255,255,.9);
-      margin-bottom: 32px;
-    }
+    background-size: 50px 50px;
 
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
+    mask-image:
+        linear-gradient(
+            90deg,
+            black,
+            transparent 80%
+        );
+}
 
-    .btn {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      gap: 8px;
-      padding: 13px 21px;
-      border: 0;
-      border-radius: 10px;
-      cursor: pointer;
-      font-weight: 700;
-      transition: .2s ease;
-    }
+/* purple glow */
 
-    .btn-primary {
-      background: white;
-      color: var(--primary-dark);
-    }
+.hero::after {
+    content: "";
+    position: absolute;
 
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(0,0,0,.2);
-    }
+    width: 600px;
+    height: 600px;
 
-    .btn-outline {
-      border: 1px solid rgba(255,255,255,.5);
-      background: rgba(255,255,255,.08);
-      color: white;
-    }
+    left: -300px;
+    bottom: -300px;
 
-    .btn-outline:hover {
-      background: rgba(255,255,255,.16);
-    }
+    border-radius: 50%;
 
-    .btn-blue {
-      background: var(--primary);
-      color: white;
-    }
+    background:
+        radial-gradient(
+            circle,
+            rgba(75, 21, 120, .22),
+            transparent 70%
+        );
 
-    .btn-blue:hover {
-      background: var(--primary-dark);
-    }
+    pointer-events: none;
+}
 
-    /* =========================
-       GENERAL SECTIONS
-    ========================= */
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
 
-    section {
-      padding: 90px 0;
-    }
+.hero-content {
+    width: min(700px, 100%);
 
-    .section-heading {
-      max-width: 720px;
-      margin: 0 auto 50px;
-      text-align: center;
-    }
+    padding: 105px 0;
+}
 
-    .section-heading span {
-      color: var(--primary);
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-      font-size: .85rem;
-    }
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
 
-    .section-heading h2 {
-      margin: 10px 0 15px;
-      font-size: clamp(2rem, 4vw, 3rem);
-      line-height: 1.15;
-      color: var(--secondary);
-    }
+    margin-bottom: 22px;
 
-    .section-heading p {
-      color: var(--gray);
-    }
+    padding: 7px 13px;
 
-    /* =========================
-       ABOUT
-    ========================= */
+    border-radius: 6px;
 
-    .about {
-      background: white;
+    border: 1px solid rgba(147, 91, 194, .35);
+
+    background: rgba(54, 15, 91, .25);
+
+    color: #c5a8df;
+
+    font-size: .78rem;
+    font-weight: 800;
+
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    max-width: 680px;
+
+    font-size: clamp(3rem, 6vw, 5.4rem);
+    line-height: .98;
+
+    letter-spacing: -.055em;
+
+    margin-bottom: 25px;
+
+    text-shadow:
+        0 5px 30px rgba(0,0,0,.5);
+}
+
+.hero h1 span {
+    color: #a47ac9;
+}
+
+.hero p {
+    max-width: 650px;
+
+    margin-bottom: 32px;
+
+    color: #c6bdcd;
+
+    font-size: 1.08rem;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.btn {
+    display: inline-flex;
+
+    justify-content: center;
+    align-items: center;
+
+    min-height: 48px;
+
+    padding: 12px 22px;
+
+    border-radius: 8px;
+
+    border: 1px solid transparent;
+
+    font-weight: 750;
+
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+/* DARK PURPLE BUTTON */
+
+.btn-primary,
+.btn-blue {
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #35105f,
+            #250a45
+        );
+
+    border-color:
+        rgba(144, 82, 196, .35);
+
+    box-shadow:
+        0 7px 24px rgba(41, 9, 73, .38);
+}
+
+.btn-primary:hover,
+.btn-blue:hover {
+
+    background:
+        linear-gradient(
+            135deg,
+            #471775,
+            #301050
+        );
+
+    border-color:
+        rgba(159, 101, 207, .55);
+
+    box-shadow:
+        0 9px 28px rgba(54, 14, 92, .48);
+}
+
+/* SECONDARY BUTTON */
+
+.btn-outline {
+
+    color: #e5ddea;
+
+    background:
+        rgba(255,255,255,.025);
+
+    border-color:
+        rgba(255,255,255,.18);
+}
+
+.btn-outline:hover {
+
+    background:
+        rgba(87, 32, 126, .14);
+
+    border-color:
+        rgba(150, 91, 198, .4);
+}
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+section {
+    position: relative;
+
+    padding: 95px 0;
+}
+
+.section-heading {
+    position: relative;
+    z-index: 2;
+
+    max-width: 750px;
+
+    margin:
+        0 auto
+        52px;
+
+    text-align: center;
+}
+
+.section-heading span {
+    display: inline-block;
+
+    color: #9870bd;
+
+    font-size: .78rem;
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: .12em;
+
+    margin-bottom: 8px;
+}
+
+.section-heading h2 {
+    margin-bottom: 14px;
+
+    color: white;
+
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.12;
+
+    letter-spacing: -.035em;
+}
+
+.section-heading p {
+    color: var(--muted);
+}
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about {
+
+    background:
+        radial-gradient(
+            circle at 15% 50%,
+            rgba(56, 15, 91, .14),
+            transparent 32%
+        ),
+        var(--black-2);
+}
+
+.about-grid {
+    position: relative;
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns:
+        .95fr 1.05fr;
+
+    gap: 65px;
+
+    align-items: center;
+}
+
+.about-image {
+    position: relative;
+}
+
+.about-image::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 18px -18px -18px 18px;
+
+    border:
+        1px solid
+        rgba(126, 69, 170, .25);
+
+    border-radius: var(--radius);
+
+    z-index: 0;
+}
+
+.about-image img {
+
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+
+    border-radius: var(--radius);
+
+    border:
+        1px solid
+        rgba(134, 77, 181, .25);
+
+    box-shadow:
+        0 25px 55px rgba(0,0,0,.55);
+}
+
+.about-text h2 {
+
+    margin-bottom: 20px;
+
+    color: white;
+
+    font-size: clamp(2rem, 4vw, 2.7rem);
+
+    line-height: 1.12;
+}
+
+.about-text p {
+
+    margin-bottom: 17px;
+
+    color: var(--muted);
+}
+
+.experience-box {
+
+    margin-top: 27px;
+
+    padding: 22px 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(54, 16, 89, .34),
+            rgba(17, 8, 26, .75)
+        );
+
+    border:
+        1px solid
+        rgba(139, 78, 187, .3);
+
+    border-left:
+        4px solid
+        #5c2387;
+
+    border-radius: 10px;
+}
+
+.experience-box strong {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: white;
+
+    font-size: 1.18rem;
+}
+
+.experience-box span {
+    color: #aaa1b4;
+}
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.services {
+
+    background:
+        linear-gradient(
+            180deg,
+            #050308,
+            #09050e
+        );
+}
+
+.services-grid {
+
+    position: relative;
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+.service-card {
+
+    padding: 30px;
+
+    border-radius: var(--radius);
+
+    border:
+        1px solid
+        rgba(126, 71, 169, .17);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(20, 11, 29, .96),
+            rgba(10, 6, 15, .96)
+        );
+
+    box-shadow:
+        0 12px 30px
+        rgba(0,0,0,.2);
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+}
+
+.service-card:hover {
+
+    transform:
+        translateY(-6px);
+
+    border-color:
+        rgba(137, 78, 183, .42);
+
+    box-shadow:
+        0 18px 40px
+        rgba(0,0,0,.4),
+        0 0 25px
+        rgba(64, 20, 99, .13);
+}
+
+.service-icon {
+
+    width: 52px;
+    height: 52px;
+
+    display: grid;
+
+    place-items: center;
+
+    margin-bottom: 20px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #35105c,
+            #1f0936
+        );
+
+    border:
+        1px solid
+        rgba(139, 82, 185, .3);
+
+    font-size: 1.35rem;
+}
+
+.service-card h3 {
+
+    margin-bottom: 10px;
+
+    color: white;
+
+    font-size: 1.1rem;
+}
+
+.service-card p {
+
+    color: var(--muted);
+
+    font-size: .94rem;
+}
+
+/* =========================================================
+   WHY US
+========================================================= */
+
+.why {
+    background: var(--black-2);
+}
+
+.why-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+.why-card {
+
+    padding: 32px 25px;
+
+    text-align: center;
+
+    border-radius: var(--radius);
+
+    border:
+        1px solid
+        rgba(129, 72, 172, .19);
+
+    background:
+        #0e0815;
+}
+
+.why-card strong {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: white;
+
+    font-size: 1.15rem;
+}
+
+.why-card p {
+    color: var(--muted);
+}
+
+/* =========================================================
+   SUPPORT
+========================================================= */
+
+.support {
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(65, 18, 102, .15),
+            transparent 35%
+        ),
+        #050308;
+}
+
+.form-card {
+
+    position: relative;
+    z-index: 2;
+
+    max-width: 860px;
+
+    margin: auto;
+
+    padding: 42px;
+
+    border-radius: var(--radius);
+
+    border:
+        1px solid
+        rgba(132, 74, 177, .25);
+
+    background:
+        linear-gradient(
+            145deg,
+            #120a1a,
+            #0b0710
+        );
+
+    box-shadow:
+        var(--shadow);
+}
+
+.form-intro {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+.form-intro h3 {
+
+    margin-bottom: 7px;
+
+    color: white;
+
+    font-size: 1.75rem;
+}
+
+.form-intro p {
+    color: var(--muted);
+}
+
+.form-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 18px;
+}
+
+.form-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.form-group.full {
+    grid-column: 1 / -1;
+}
+
+label {
+
+    color: #ded6e4;
+
+    font-weight: 700;
+
+    font-size: .92rem;
+}
+
+input,
+textarea,
+select {
+
+    width: 100%;
+
+    padding: 13px 14px;
+
+    color: white;
+
+    background:
+        #08050c;
+
+    border:
+        1px solid
+        rgba(130, 83, 163, .3);
+
+    border-radius: 8px;
+
+    outline: none;
+
+    transition: .2s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+
+    color: #6f6777;
+}
+
+select option {
+
+    color: white;
+
+    background:
+        #0b0710;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+
+    border-color:
+        #6c3494;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(87, 33, 126, .16);
+}
+
+textarea {
+
+    min-height: 150px;
+
+    resize: vertical;
+}
+
+.required {
+    color: #ba78d9;
+}
+
+.form-note {
+
+    margin-top: 10px;
+
+    color: #817889;
+
+    font-size: .85rem;
+}
+
+/* =========================================================
+   REVIEWS
+========================================================= */
+
+.reviews {
+
+    background:
+        #08050c;
+}
+
+.reviews-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+
+    margin-bottom: 55px;
+}
+
+.review-card {
+
+    padding: 28px;
+
+    border-radius: var(--radius);
+
+    border:
+        1px solid
+        rgba(131, 74, 175, .2);
+
+    background:
+        #100918;
+}
+
+.stars {
+
+    margin-bottom: 15px;
+
+    color: #b884d8;
+
+    letter-spacing: 2px;
+
+    font-size: 1.1rem;
+}
+
+.review-card p {
+
+    margin-bottom: 20px;
+
+    color: #aaa0b2;
+
+    font-style: italic;
+}
+
+.reviewer {
+
+    color: white;
+
+    font-weight: 800;
+}
+
+.review-form {
+
+    max-width: 800px;
+
+    margin: auto;
+
+    padding: 40px;
+
+    border-radius: var(--radius);
+
+    border:
+        1px solid
+        rgba(133, 75, 177, .25);
+
+    background:
+        #0e0815;
+}
+
+.rating-input {
+
+    display: flex;
+
+    flex-direction: row-reverse;
+
+    justify-content: flex-end;
+
+    gap: 4px;
+}
+
+.rating-input input {
+    display: none;
+}
+
+.rating-input label {
+
+    color: #3e3447;
+
+    cursor: pointer;
+
+    font-size: 2rem;
+
+    transition: .15s ease;
+}
+
+.rating-input label:hover,
+.rating-input label:hover ~ label,
+.rating-input input:checked ~ label {
+
+    color: #a56dcc;
+}
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta {
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1e0736,
+            #0d0417 60%,
+            #050208
+        );
+
+    border-top:
+        1px solid
+        rgba(132, 73, 177, .18);
+
+    border-bottom:
+        1px solid
+        rgba(132, 73, 177, .18);
+}
+
+.cta h2 {
+
+    margin-bottom: 14px;
+
+    color: white;
+
+    font-size:
+        clamp(2rem, 4vw, 3rem);
+}
+
+.cta p {
+
+    max-width: 680px;
+
+    margin:
+        0 auto 25px;
+
+    color: #aaa0b3;
+}
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact {
+
+    background:
+        #050308;
+}
+
+.contact-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.contact-card {
+
+    padding: 30px;
+
+    text-align: center;
+
+    border-radius: var(--radius);
+
+    border:
+        1px solid
+        rgba(130, 74, 173, .19);
+
+    background:
+        #0d0713;
+}
+
+.contact-card h3 {
+
+    margin-bottom: 9px;
+
+    color: white;
+}
+
+.contact-card p {
+
+    color: var(--muted);
+}
+
+.contact-card a {
+
+    color: #aa79cf;
+
+    font-weight: 700;
+}
+
+.contact-card a:hover {
+
+    color: #c39ae1;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    padding: 35px 0;
+
+    color: #777080;
+
+    background:
+        #020104;
+
+    border-top:
+        1px solid
+        rgba(117, 65, 155, .13);
+}
+
+.footer-inner {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.footer-brand {
+
+    color: white;
+
+    font-weight: 800;
+}
+
+.footer-links {
+
+    display: flex;
+
+    gap: 18px;
+}
+
+.footer-links a:hover {
+
+    color: #ad7cd0;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .services-grid,
+    .reviews-grid,
+    .why-grid,
+    .contact-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
     .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
+
+        grid-template-columns: 1fr;
+
+        gap: 45px;
     }
 
-    .about-image img {
-      width: 100%;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
+    .nav-links {
+
+        display: none;
+
+        position: absolute;
+
+        top: 76px;
+        left: 0;
+
+        width: 100%;
+
+        padding: 24px;
+
+        flex-direction: column;
+
+        background:
+            rgba(5, 3, 8, .98);
+
+        border-bottom:
+            1px solid
+            var(--border);
     }
 
-    .about-text h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      color: var(--secondary);
+    .nav-links.active {
+        display: flex;
     }
 
-    .about-text p {
-      color: var(--gray);
-      margin-bottom: 18px;
+    .menu-toggle {
+        display: grid;
+        place-items: center;
     }
 
-    .experience-box {
-      margin-top: 25px;
-      padding: 22px;
-      border-left: 4px solid var(--primary);
-      background: var(--light);
-      border-radius: 10px;
+}
+
+@media (max-width: 650px) {
+
+    section {
+        padding: 70px 0;
     }
 
-    .experience-box strong {
-      display: block;
-      font-size: 1.4rem;
-      color: var(--secondary);
+    .hero {
+
+        min-height: 650px;
+
+        background:
+            linear-gradient(
+                rgba(2,1,5,.87),
+                rgba(3,1,6,.95)
+            ),
+            url("hero.png")
+            center / cover no-repeat;
     }
 
-    /* =========================
-       SERVICES
-    ========================= */
+    .hero-content {
 
-    .services {
-      background: var(--light);
+        padding:
+            80px 0;
+
+        text-align: center;
     }
 
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+    .hero h1 {
+
+        font-size:
+            clamp(2.7rem, 13vw, 4rem);
     }
 
-    .service-card {
-      padding: 30px;
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: 0 5px 20px rgba(15,23,42,.04);
-      transition: .25s ease;
+    .hero-buttons {
+
+        flex-direction: column;
     }
 
-    .service-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow);
-      border-color: rgba(11,94,215,.25);
+    .btn {
+        width: 100%;
     }
 
-    .service-icon {
-      width: 54px;
-      height: 54px;
-      display: grid;
-      place-items: center;
-      border-radius: 14px;
-      background: #e8f1ff;
-      color: var(--primary);
-      font-size: 1.5rem;
-      margin-bottom: 20px;
-    }
-
-    .service-card h3 {
-      margin-bottom: 10px;
-      color: var(--secondary);
-    }
-
-    .service-card p {
-      color: var(--gray);
-    }
-
-    /* =========================
-       WHY THARPE
-    ========================= */
-
-    .why {
-      background: white;
-    }
-
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
-
-    .why-card {
-      padding: 30px;
-      border-radius: var(--radius);
-      background: var(--light);
-      text-align: center;
-    }
-
-    .why-card strong {
-      display: block;
-      font-size: 1.2rem;
-      margin-bottom: 8px;
-    }
-
-    .why-card p {
-      color: var(--gray);
-    }
-
-    /* =========================
-       TICKETS
-    ========================= */
-
-    .support {
-      background:
-        linear-gradient(135deg, #eff6ff, #f8fafc);
-    }
-
-    .form-card {
-      max-width: 850px;
-      margin: auto;
-      background: white;
-      padding: 40px;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      border: 1px solid var(--border);
-    }
-
-    .form-intro {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .form-intro h3 {
-      font-size: 1.8rem;
-      margin-bottom: 8px;
-    }
-
-    .form-intro p {
-      color: var(--gray);
-    }
-
+    .services-grid,
+    .reviews-grid,
+    .why-grid,
+    .contact-grid,
     .form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
 
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
+        grid-template-columns: 1fr;
     }
 
     .form-group.full {
-      grid-column: 1 / -1;
+        grid-column: auto;
     }
 
-    label {
-      font-weight: 700;
-      color: #334155;
-    }
-
-    input,
-    textarea,
-    select {
-      width: 100%;
-      padding: 13px 14px;
-      border: 1px solid #cbd5e1;
-      border-radius: 9px;
-      outline: none;
-      background: white;
-      color: var(--dark);
-      transition: .2s ease;
-    }
-
-    input:focus,
-    textarea:focus,
-    select:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(11,94,215,.1);
-    }
-
-    textarea {
-      min-height: 150px;
-      resize: vertical;
-    }
-
-    .required {
-      color: var(--danger);
-    }
-
-    .form-note {
-      margin-top: 12px;
-      color: var(--gray);
-      font-size: .9rem;
-    }
-
-    /* =========================
-       REVIEWS
-    ========================= */
-
-    .reviews {
-      background: white;
-    }
-
-    .reviews-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-      margin-bottom: 55px;
-    }
-
-    .review-card {
-      padding: 28px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: white;
-      box-shadow: 0 5px 18px rgba(15,23,42,.04);
-    }
-
-    .stars {
-      color: #f59e0b;
-      letter-spacing: 2px;
-      font-size: 1.2rem;
-      margin-bottom: 15px;
-    }
-
-    .review-card p {
-      color: #475569;
-      font-style: italic;
-      margin-bottom: 20px;
-    }
-
-    .reviewer {
-      font-weight: 800;
-      color: var(--secondary);
-    }
-
+    .form-card,
     .review-form {
-      max-width: 800px;
-      margin: auto;
-      padding: 40px;
-      background: var(--light);
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-    }
 
-    .rating-input {
-      display: flex;
-      flex-direction: row-reverse;
-      justify-content: flex-end;
-      gap: 5px;
-    }
-
-    .rating-input input {
-      display: none;
-    }
-
-    .rating-input label {
-      cursor: pointer;
-      font-size: 2rem;
-      color: #cbd5e1;
-      transition: .15s ease;
-    }
-
-    .rating-input label:hover,
-    .rating-input label:hover ~ label,
-    .rating-input input:checked ~ label {
-      color: #f59e0b;
-    }
-
-    /* =========================
-       CONTACT
-    ========================= */
-
-    .contact {
-      background: var(--secondary);
-      color: white;
-    }
-
-    .contact .section-heading h2 {
-      color: white;
-    }
-
-    .contact .section-heading p {
-      color: #cbd5e1;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .contact-card {
-      padding: 30px;
-      text-align: center;
-      border: 1px solid rgba(255,255,255,.1);
-      border-radius: var(--radius);
-      background: rgba(255,255,255,.05);
-    }
-
-    .contact-card h3 {
-      margin-bottom: 8px;
-    }
-
-    .contact-card p {
-      color: #cbd5e1;
-    }
-
-    .contact-card a {
-      color: #7dd3fc;
-      font-weight: 700;
-    }
-
-    /* =========================
-       CTA
-    ========================= */
-
-    .cta {
-      background: var(--primary);
-      color: white;
-      text-align: center;
-    }
-
-    .cta h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      margin-bottom: 15px;
-    }
-
-    .cta p {
-      max-width: 700px;
-      margin: 0 auto 25px;
-      color: rgba(255,255,255,.9);
-    }
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-      background: #020617;
-      color: #94a3b8;
-      padding: 35px 0;
+        padding:
+            26px 20px;
     }
 
     .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
 
-    .footer-brand {
-      color: white;
-      font-weight: 800;
+        flex-direction: column;
+
+        text-align: center;
     }
 
     .footer-links {
-      display: flex;
-      gap: 18px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
     }
 
-    .footer-links a:hover {
-      color: white;
-    }
+}
 
-    /* =========================
-       RESPONSIVE
-    ========================= */
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
 
-    @media (max-width: 900px) {
+:focus-visible {
 
-      .services-grid,
-      .reviews-grid,
-      .why-grid,
-      .contact-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+    outline:
+        2px solid
+        #8954ae;
 
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
+    outline-offset:
+        3px;
+}
 
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 78px;
-        left: 0;
-        width: 100%;
-        padding: 20px;
-        flex-direction: column;
-        background: white;
-        border-bottom: 1px solid var(--border);
-      }
+::selection {
 
-      .nav-links.active {
-        display: flex;
-      }
+    background:
+        #3d135f;
 
-      .menu-toggle {
-        display: block;
-      }
-    }
+    color: white;
+}
 
-    @media (max-width: 650px) {
-
-      section {
-        padding: 65px 0;
-      }
-
-      .hero {
-        min-height: 600px;
-      }
-
-      .services-grid,
-      .reviews-grid,
-      .why-grid,
-      .contact-grid,
-      .form-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .form-group.full {
-        grid-column: auto;
-      }
-
-      .form-card,
-      .review-form {
-        padding: 25px;
-      }
-
-      .footer-inner {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .hero-buttons {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .btn {
-        width: 100%;
-      }
-    }
-  </style>
+</style>
 </head>
 
 <body>
 
-  <!-- =========================
-       HEADER
-  ========================== -->
+<!-- ======================================================
+     HEADER
+====================================================== -->
 
-  <header>
-    <div class="container nav">
+<header>
 
-      <a href="#home" class="brand">
-        <img src="logo.png" alt="Tharpe IT Services logo">
-        <span>Tharpe IT Services</span>
-      </a>
+<div class="container nav">
 
-      <button
+    <a href="#home" class="brand">
+
+        <img
+            src="logo.png"
+            alt="Tharpe IT Services logo"
+        >
+
+        <span>
+            Tharpe IT Services
+        </span>
+
+    </a>
+
+
+    <button
         class="menu-toggle"
         id="menuToggle"
         aria-label="Open navigation menu"
-      >
+        aria-expanded="false"
+    >
         ☰
-      </button>
+    </button>
 
-      <nav>
-        <ul class="nav-links" id="navLinks">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#support">Support</a></li>
-          <li><a href="#reviews">Reviews</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li>
-            <a href="#support" class="nav-cta">
-              Open Support Ticket
-            </a>
-          </li>
+
+    <nav>
+
+        <ul
+            class="nav-links"
+            id="navLinks"
+        >
+
+            <li>
+                <a href="#home">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="#about">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="#services">
+                    Services
+                </a>
+            </li>
+
+            <li>
+                <a href="#support">
+                    Support
+                </a>
+            </li>
+
+            <li>
+                <a href="#reviews">
+                    Reviews
+                </a>
+            </li>
+
+            <li>
+                <a href="#contact">
+                    Contact
+                </a>
+            </li>
+
+            <li>
+                <a
+                    href="#support"
+                    class="nav-cta"
+                >
+                    Open Support Ticket
+                </a>
+            </li>
+
         </ul>
-      </nav>
 
-    </div>
-  </header>
+    </nav>
 
+</div>
 
-  <!-- =========================
-       HERO
-  ========================== -->
+</header>
 
-  <main>
 
-    <section class="hero" id="home">
-      <div class="container">
+<main>
 
-        <div class="hero-content">
+<!-- ======================================================
+     HERO
+====================================================== -->
 
-          <span class="hero-badge">
-            Professional IT Services & Support
-          </span>
+<section
+    class="hero"
+    id="home"
+>
 
-          <h1>
-            Technology Support You Can Count On.
-          </h1>
+<div class="container">
 
-          <p>
-            Tharpe IT Services provides reliable technology solutions for
-            individuals, families, and local businesses. From computer
-            repairs and networking to cybersecurity, cloud services, and
-            general IT support, we're here to help keep your technology
-            working.
-          </p>
+<div class="hero-content">
 
-          <div class="hero-buttons">
-            <a href="#support" class="btn btn-primary">
-              Submit a Support Ticket
-            </a>
+    <span class="hero-badge">
+        Professional IT Services & Support
+    </span>
 
-            <a href="#services" class="btn btn-outline">
-              Explore Services
-            </a>
-          </div>
+    <h1>
+        Technology Support
+        <span>You Can Count On.</span>
+    </h1>
 
-        </div>
+    <p>
+        Tharpe IT Services provides reliable technology
+        solutions for individuals, families, and local
+        businesses. From computer repairs and networking
+        to cybersecurity, cloud services, and general IT
+        support, we're here to help keep your technology
+        working.
+    </p>
 
-      </div>
-    </section>
+    <div class="hero-buttons">
 
-
-    <!-- =========================
-         ABOUT
-    ========================== -->
-
-    <section class="about" id="about">
-      <div class="container">
-
-        <div class="section-heading">
-          <span>About Tharpe IT Services</span>
-          <h2>Professional Technology Help With a Local Focus</h2>
-          <p>
-            Technology shouldn't be frustrating. Our goal is to make
-            technology easier to understand, use, maintain, and protect.
-          </p>
-        </div>
-
-        <div class="about-grid">
-
-          <div class="about-image">
-            <img
-              src="hero.png"
-              alt="Tharpe IT Services"
-            >
-          </div>
-
-          <div class="about-text">
-
-            <h2>IT support built around your needs.</h2>
-
-            <p>
-              Tharpe IT Services provides professional IT support with a
-              focus on practical solutions and dependable service.
-            </p>
-
-            <p>
-              Whether you need help diagnosing a computer problem, setting
-              up a network, configuring cloud software, improving security,
-              managing accounts, or simply getting technology working
-              again, we're here to help.
-            </p>
-
-            <p>
-              We also understand the needs of local businesses and the
-              importance of keeping technology reliable and secure.
-            </p>
-
-            <div class="experience-box">
-              <strong>10+ Years of Professional IT Experience</strong>
-              <span>
-                Experience supporting technology, troubleshooting problems,
-                and helping people get the most from their systems.
-              </span>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- =========================
-         SERVICES
-    ========================== -->
-
-    <section class="services" id="services">
-
-      <div class="container">
-
-        <div class="section-heading">
-          <span>What We Do</span>
-          <h2>IT Services</h2>
-          <p>
-            Practical technology services designed to keep your systems
-            working and your information protected.
-          </p>
-        </div>
-
-        <div class="services-grid">
-
-          <article class="service-card">
-            <div class="service-icon">🌐</div>
-            <h3>Network Infrastructure & Hardware</h3>
-            <p>
-              Network setup, troubleshooting, hardware configuration,
-              connectivity issues, and infrastructure support.
-            </p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon">💻</div>
-            <h3>Device Diagnostics & Repairs</h3>
-            <p>
-              Troubleshooting computers and devices, diagnosing hardware
-              and software problems, and helping restore reliable operation.
-            </p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon">☁️</div>
-            <h3>Cloud Software & Configuration</h3>
-            <p>
-              Assistance with cloud-based software, configurations,
-              accounts, applications, and technology workflows.
-            </p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon">🔐</div>
-            <h3>Identity & Access Management</h3>
-            <p>
-              Account access, authentication, permissions, identity
-              management, and helping users securely access the resources
-              they need.
-            </p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon">🛡️</div>
-            <h3>Cybersecurity</h3>
-            <p>
-              Security-focused technology support designed to help protect
-              devices, accounts, networks, and information.
-            </p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon">🧰</div>
-            <h3>General IT Support</h3>
-            <p>
-              Need help with something technology-related? Submit a support
-              ticket and we'll start by understanding the problem.
-            </p>
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         WHY US
-    ========================== -->
-
-    <section class="why">
-
-      <div class="container">
-
-        <div class="section-heading">
-          <span>Why Tharpe IT Services</span>
-          <h2>Technology Help Without the Headache</h2>
-        </div>
-
-        <div class="why-grid">
-
-          <div class="why-card">
-            <strong>Experienced</strong>
-            <p>
-              More than 10 years of professional IT experience.
-            </p>
-          </div>
-
-          <div class="why-card">
-            <strong>Local & Personal</strong>
-            <p>
-              A community-focused approach to technology support.
-            </p>
-          </div>
-
-          <div class="why-card">
-            <strong>Security Minded</strong>
-            <p>
-              Security is considered throughout the technology support
-              process.
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         SUPPORT TICKET
-    ========================== -->
-
-    <section class="support" id="support">
-
-      <div class="container">
-
-        <div class="section-heading">
-          <span>Customer Support</span>
-          <h2>Submit a Support Ticket</h2>
-          <p>
-            Tell us what's going on and provide as much information as
-            possible so we can better understand your request.
-          </p>
-        </div>
-
-        <div class="form-card">
-
-          <div class="form-intro">
-            <h3>Support Request</h3>
-            <p>
-              Complete the form below to submit your IT support request.
-            </p>
-          </div>
-
-          <form
-            action="https://formspree.io/f/mkjgrzbz"
-            method="POST"
-          >
-
-            <input
-              type="hidden"
-              name="_subject"
-              value="New Tharpe IT Services Support Ticket"
-            >
-
-            <input
-              type="hidden"
-              name="form_type"
-              value="Support Ticket"
-            >
-
-            <div class="form-grid">
-
-              <div class="form-group">
-                <label for="ticket-name">
-                  Name <span class="required">*</span>
-                </label>
-
-                <input
-                  type="text"
-                  id="ticket-name"
-                  name="name"
-                  required
-                  placeholder="Your name"
-                >
-              </div>
-
-
-              <div class="form-group">
-                <label for="ticket-email">
-                  Email <span class="required">*</span>
-                </label>
-
-                <input
-                  type="email"
-                  id="ticket-email"
-                  name="email"
-                  required
-                  placeholder="you@example.com"
-                >
-              </div>
-
-
-              <div class="form-group">
-                <label for="ticket-phone">
-                  Phone
-                </label>
-
-                <input
-                  type="tel"
-                  id="ticket-phone"
-                  name="phone"
-                  placeholder="Your phone number"
-                >
-              </div>
-
-
-              <div class="form-group">
-                <label for="ticket-category">
-                  Issue Category <span class="required">*</span>
-                </label>
-
-                <select
-                  id="ticket-category"
-                  name="issue_category"
-                  required
-                >
-                  <option value="">Select an issue</option>
-                  <option value="Network / Internet">
-                    Network / Internet
-                  </option>
-                  <option value="Computer / Device">
-                    Computer / Device
-                  </option>
-                  <option value="Hardware">
-                    Hardware
-                  </option>
-                  <option value="Software">
-                    Software
-                  </option>
-                  <option value="Cloud Services">
-                    Cloud Services
-                  </option>
-                  <option value="Identity / Access">
-                    Identity / Access
-                  </option>
-                  <option value="Cybersecurity">
-                    Cybersecurity
-                  </option>
-                  <option value="Email">
-                    Email
-                  </option>
-                  <option value="General IT Support">
-                    General IT Support
-                  </option>
-                  <option value="Other">
-                    Other
-                  </option>
-                </select>
-              </div>
-
-
-              <div class="form-group">
-                <label for="priority">
-                  Priority <span class="required">*</span>
-                </label>
-
-                <select
-                  id="priority"
-                  name="priority"
-                  required
-                >
-                  <option value="">Select priority</option>
-                  <option value="Low">Low</option>
-                  <option value="Normal">Normal</option>
-                  <option value="High">High</option>
-                  <option value="Urgent">Urgent</option>
-                </select>
-              </div>
-
-
-              <div class="form-group full">
-                <label for="description">
-                  Describe the Problem <span class="required">*</span>
-                </label>
-
-                <textarea
-                  id="description"
-                  name="description"
-                  required
-                  placeholder="Please describe the issue, what you were doing when it happened, and anything you've already tried."
-                ></textarea>
-              </div>
-
-
-              <div class="form-group full">
-
-                <button
-                  type="submit"
-                  class="btn btn-blue"
-                >
-                  Submit Support Ticket
-                </button>
-
-                <p class="form-note">
-                  Your support request will be sent securely through
-                  Formspree to Tharpe IT Services.
-                </p>
-
-              </div>
-
-            </div>
-
-          </form>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         REVIEWS
-    ========================== -->
-
-    <section class="reviews" id="reviews">
-
-      <div class="container">
-
-        <div class="section-heading">
-          <span>Customer Feedback</span>
-          <h2>What Customers Say</h2>
-          <p>
-            Customer experiences help others understand what it's like
-            working with Tharpe IT Services.
-          </p>
-        </div>
-
-
-        <div class="reviews-grid">
-
-          <article class="review-card">
-
-            <div class="stars">
-              ★★★★★
-            </div>
-
-            <p>
-              Customer feedback from Lisa F.
-            </p>
-
-            <div class="reviewer">
-              Lisa F.
-            </div>
-
-          </article>
-
-
-          <article class="review-card">
-
-            <div class="stars">
-              ★★★★★
-            </div>
-
-            <p>
-              Customer feedback from Haley R.
-            </p>
-
-            <div class="reviewer">
-              Haley R.
-            </div>
-
-          </article>
-
-
-          <article class="review-card">
-
-            <div class="stars">
-              ★★★★★
-            </div>
-
-            <p>
-              Customer feedback from Carol T.
-            </p>
-
-            <div class="reviewer">
-              Carol T.
-            </div>
-
-          </article>
-
-        </div>
-
-
-        <!-- REVIEW SUBMISSION -->
-
-        <div class="review-form">
-
-          <div class="form-intro">
-            <h3>Leave a Review</h3>
-            <p>
-              Tell us about your experience with Tharpe IT Services.
-            </p>
-          </div>
-
-          <form
-            action="https://formspree.io/f/mkjgrzbz"
-            method="POST"
-          >
-
-            <input
-              type="hidden"
-              name="_subject"
-              value="New Tharpe IT Services Customer Review"
-            >
-
-            <input
-              type="hidden"
-              name="form_type"
-              value="Customer Review"
-            >
-
-            <div class="form-grid">
-
-              <div class="form-group">
-                <label for="review-name">
-                  Name <span class="required">*</span>
-                </label>
-
-                <input
-                  type="text"
-                  id="review-name"
-                  name="name"
-                  required
-                  placeholder="Your name"
-                >
-              </div>
-
-
-              <div class="form-group">
-                <label for="review-email">
-                  Email
-                </label>
-
-                <input
-                  type="email"
-                  id="review-email"
-                  name="email"
-                  placeholder="you@example.com"
-                >
-              </div>
-
-
-              <div class="form-group full">
-
-                <label>
-                  Your Rating <span class="required">*</span>
-                </label>
-
-                <div class="rating-input">
-
-                  <input
-                    type="radio"
-                    id="star5"
-                    name="rating"
-                    value="5"
-                    required
-                  >
-                  <label for="star5" title="5 stars">★</label>
-
-                  <input
-                    type="radio"
-                    id="star4"
-                    name="rating"
-                    value="4"
-                  >
-                  <label for="star4" title="4 stars">★</label>
-
-                  <input
-                    type="radio"
-                    id="star3"
-                    name="rating"
-                    value="3"
-                  >
-                  <label for="star3" title="3 stars">★</label>
-
-                  <input
-                    type="radio"
-                    id="star2"
-                    name="rating"
-                    value="2"
-                  >
-                  <label for="star2" title="2 stars">★</label>
-
-                  <input
-                    type="radio"
-                    id="star1"
-                    name="rating"
-                    value="1"
-                  >
-                  <label for="star1" title="1 star">★</label>
-
-                </div>
-
-              </div>
-
-
-              <div class="form-group full">
-
-                <label for="review">
-                  Your Review <span class="required">*</span>
-                </label>
-
-                <textarea
-                  id="review"
-                  name="review"
-                  required
-                  placeholder="Tell us about your experience..."
-                ></textarea>
-
-              </div>
-
-
-              <div class="form-group full">
-
-                <button
-                  type="submit"
-                  class="btn btn-blue"
-                >
-                  Submit My Review
-                </button>
-
-                <p class="form-note">
-                  Thank you for taking the time to provide feedback.
-                </p>
-
-              </div>
-
-            </div>
-
-          </form>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         CTA
-    ========================== -->
-
-    <section class="cta">
-
-      <div class="container">
-
-        <h2>Need IT Help?</h2>
-
-        <p>
-          Don't let a technology problem slow you down. Submit a support
-          ticket and tell us what you need help with.
-        </p>
-
-        <a href="#support" class="btn btn-primary">
-          Open a Support Ticket
+        <a
+            href="#support"
+            class="btn btn-primary"
+        >
+            Submit a Support Ticket
         </a>
 
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         CONTACT
-    ========================== -->
-
-    <section class="contact" id="contact">
-
-      <div class="container">
-
-        <div class="section-heading">
-          <span>Contact</span>
-          <h2>Get in Touch</h2>
-          <p>
-            Have a question or need technology assistance?
-            Reach out to Tharpe IT Services.
-          </p>
-        </div>
-
-        <div class="contact-grid">
-
-          <div class="contact-card">
-            <h3>📧 Email</h3>
-
-            <p>
-              <a href="mailto:tharpeitservices@gmail.com">
-                tharpeitservices@gmail.com
-              </a>
-            </p>
-          </div>
-
-
-          <div class="contact-card">
-            <h3>🛠️ Support</h3>
-
-            <p>
-              Use the online support ticket form to submit a request.
-            </p>
-
-            <br>
-
-            <a href="#support">
-              Submit a Ticket →
-            </a>
-          </div>
-
-
-          <div class="contact-card">
-            <h3>⭐ Reviews</h3>
-
-            <p>
-              Share your experience with Tharpe IT Services.
-            </p>
-
-            <br>
-
-            <a href="#reviews">
-              Leave a Review →
-            </a>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-  <!-- =========================
-       FOOTER
-  ========================== -->
-
-  <footer>
-
-    <div class="container footer-inner">
-
-      <div>
-        <div class="footer-brand">
-          Tharpe IT Services
-        </div>
-
-        <div>
-          Professional IT Services & Support
-        </div>
-      </div>
-
-      <div class="footer-links">
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#support">Support</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#contact">Contact</a>
-      </div>
-
-      <div>
-        © <span id="year"></span> Tharpe IT Services
-      </div>
+        <a
+            href="#services"
+            class="btn btn-outline"
+        >
+            Explore Services
+        </a>
 
     </div>
 
-  </footer>
+</div>
+
+</div>
+
+</section>
 
 
-  <!-- =========================
-       JAVASCRIPT
-  ========================== -->
+<!-- ======================================================
+     ABOUT
+====================================================== -->
 
-  <script>
+<section
+    class="about tech-background"
+    id="about"
+>
 
-    /* Mobile navigation */
+<div class="container">
 
-    const menuToggle = document.getElementById("menuToggle");
-    const navLinks = document.getElementById("navLinks");
+<div class="section-heading">
 
-    menuToggle.addEventListener("click", function () {
-      navLinks.classList.toggle("active");
+    <span>
+        About Tharpe IT Services
+    </span>
+
+    <h2>
+        Professional Technology Help With a Local Focus
+    </h2>
+
+    <p>
+        Technology shouldn't be frustrating.
+        Our goal is to make technology easier to understand,
+        use, maintain, and protect.
+    </p>
+
+</div>
+
+
+<div class="about-grid">
+
+<div class="about-image">
+
+    <img
+        src="hero.png"
+        alt="Tharpe IT Services"
+    >
+
+</div>
+
+
+<div class="about-text">
+
+    <h2>
+        IT support built around your needs.
+    </h2>
+
+    <p>
+        Tharpe IT Services provides professional IT
+        support with a focus on practical solutions
+        and dependable service.
+    </p>
+
+    <p>
+        Whether you need help diagnosing a computer
+        problem, setting up a network, configuring
+        cloud software, improving security, managing
+        accounts, or simply getting technology working
+        again, we're here to help.
+    </p>
+
+    <p>
+        We also understand the needs of local businesses
+        and the importance of keeping technology reliable
+        and secure.
+    </p>
+
+    <div class="experience-box">
+
+        <strong>
+            10+ Years of Professional IT Experience
+        </strong>
+
+        <span>
+            Experience supporting technology,
+            troubleshooting problems, and helping people
+            get the most from their systems.
+        </span>
+
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     SERVICES
+====================================================== -->
+
+<section
+    class="services tech-background"
+    id="services"
+>
+
+<div class="container">
+
+<div class="section-heading">
+
+    <span>
+        What We Do
+    </span>
+
+    <h2>
+        IT Services
+    </h2>
+
+    <p>
+        Practical technology services designed to keep
+        your systems working and your information protected.
+    </p>
+
+</div>
+
+
+<div class="services-grid">
+
+<article class="service-card">
+
+    <div class="service-icon">
+        🌐
+    </div>
+
+    <h3>
+        Network Infrastructure & Hardware
+    </h3>
+
+    <p>
+        Network setup, troubleshooting, hardware
+        configuration, connectivity issues, and
+        infrastructure support.
+    </p>
+
+</article>
+
+
+<article class="service-card">
+
+    <div class="service-icon">
+        💻
+    </div>
+
+    <h3>
+        Device Diagnostics & Repairs
+    </h3>
+
+    <p>
+        Troubleshooting computers and devices,
+        diagnosing hardware and software problems,
+        and helping restore reliable operation.
+    </p>
+
+</article>
+
+
+<article class="service-card">
+
+    <div class="service-icon">
+        ☁️
+    </div>
+
+    <h3>
+        Cloud Software & Configuration
+    </h3>
+
+    <p>
+        Assistance with cloud-based software,
+        configurations, accounts, applications,
+        and technology workflows.
+    </p>
+
+</article>
+
+
+<article class="service-card">
+
+    <div class="service-icon">
+        🔐
+    </div>
+
+    <h3>
+        Identity & Access Management
+    </h3>
+
+    <p>
+        Account access, authentication, permissions,
+        identity management, and helping users securely
+        access the resources they need.
+    </p>
+
+</article>
+
+
+<article class="service-card">
+
+    <div class="service-icon">
+        🛡️
+    </div>
+
+    <h3>
+        Cybersecurity
+    </h3>
+
+    <p>
+        Security-focused technology support designed
+        to help protect devices, accounts, networks,
+        and information.
+    </p>
+
+</article>
+
+
+<article class="service-card">
+
+    <div class="service-icon">
+        🧰
+    </div>
+
+    <h3>
+        General IT Support
+    </h3>
+
+    <p>
+        Need help with something technology-related?
+        Submit a support ticket and we'll start by
+        understanding the problem.
+    </p>
+
+</article>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     WHY THARPE
+====================================================== -->
+
+<section class="why tech-background">
+
+<div class="container">
+
+<div class="section-heading">
+
+    <span>
+        Why Tharpe IT Services
+    </span>
+
+    <h2>
+        Technology Help Without the Headache
+    </h2>
+
+</div>
+
+
+<div class="why-grid">
+
+<div class="why-card">
+
+    <strong>
+        Experienced
+    </strong>
+
+    <p>
+        More than 10 years of professional
+        IT experience.
+    </p>
+
+</div>
+
+
+<div class="why-card">
+
+    <strong>
+        Local & Personal
+    </strong>
+
+    <p>
+        A community-focused approach
+        to technology support.
+    </p>
+
+</div>
+
+
+<div class="why-card">
+
+    <strong>
+        Security Minded
+    </strong>
+
+    <p>
+        Security is considered throughout
+        the technology support process.
+    </p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     SUPPORT TICKET
+====================================================== -->
+
+<section
+    class="support tech-background"
+    id="support"
+>
+
+<div class="container">
+
+<div class="section-heading">
+
+    <span>
+        Customer Support
+    </span>
+
+    <h2>
+        Submit a Support Ticket
+    </h2>
+
+    <p>
+        Tell us what's going on and provide as much
+        information as possible so we can better
+        understand your request.
+    </p>
+
+</div>
+
+
+<div class="form-card">
+
+<div class="form-intro">
+
+    <h3>
+        Support Request
+    </h3>
+
+    <p>
+        Complete the form below to submit
+        your IT support request.
+    </p>
+
+</div>
+
+
+<form
+    action="https://formspree.io/f/mkjgrzbz"
+    method="POST"
+>
+
+<input
+    type="hidden"
+    name="_subject"
+    value="New Tharpe IT Services Support Ticket"
+>
+
+<input
+    type="hidden"
+    name="form_type"
+    value="Support Ticket"
+>
+
+
+<div class="form-grid">
+
+
+<div class="form-group">
+
+<label for="ticket-name">
+
+    Name
+    <span class="required">*</span>
+
+</label>
+
+<input
+    type="text"
+    id="ticket-name"
+    name="name"
+    required
+    placeholder="Your name"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="ticket-email">
+
+    Email
+    <span class="required">*</span>
+
+</label>
+
+<input
+    type="email"
+    id="ticket-email"
+    name="email"
+    required
+    placeholder="you@example.com"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="ticket-phone">
+    Phone
+</label>
+
+<input
+    type="tel"
+    id="ticket-phone"
+    name="phone"
+    placeholder="Your phone number"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="ticket-category">
+
+    Issue Category
+    <span class="required">*</span>
+
+</label>
+
+
+<select
+    id="ticket-category"
+    name="issue_category"
+    required
+>
+
+<option value="">
+    Select an issue
+</option>
+
+<option value="Network / Internet">
+    Network / Internet
+</option>
+
+<option value="Computer / Device">
+    Computer / Device
+</option>
+
+<option value="Hardware">
+    Hardware
+</option>
+
+<option value="Software">
+    Software
+</option>
+
+<option value="Cloud Services">
+    Cloud Services
+</option>
+
+<option value="Identity / Access">
+    Identity / Access
+</option>
+
+<option value="Cybersecurity">
+    Cybersecurity
+</option>
+
+<option value="Email">
+    Email
+</option>
+
+<option value="General IT Support">
+    General IT Support
+</option>
+
+<option value="Other">
+    Other
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="priority">
+
+    Priority
+    <span class="required">*</span>
+
+</label>
+
+
+<select
+    id="priority"
+    name="priority"
+    required
+>
+
+<option value="">
+    Select priority
+</option>
+
+<option value="Low">
+    Low
+</option>
+
+<option value="Normal">
+    Normal
+</option>
+
+<option value="High">
+    High
+</option>
+
+<option value="Urgent">
+    Urgent
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group full">
+
+<label for="description">
+
+    Describe the Problem
+    <span class="required">*</span>
+
+</label>
+
+<textarea
+    id="description"
+    name="description"
+    required
+    placeholder="Please describe the issue, what you were doing when it happened, and anything you've already tried."
+></textarea>
+
+</div>
+
+
+<div class="form-group full">
+
+<button
+    type="submit"
+    class="btn btn-blue"
+>
+
+    Submit Support Ticket
+
+</button>
+
+<p class="form-note">
+
+    Your support request will be sent securely
+    through Formspree to Tharpe IT Services.
+
+</p>
+
+</div>
+
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     REVIEWS
+====================================================== -->
+
+<section
+    class="reviews tech-background"
+    id="reviews"
+>
+
+<div class="container">
+
+
+<div class="section-heading">
+
+    <span>
+        Customer Feedback
+    </span>
+
+    <h2>
+        What Customers Say
+    </h2>
+
+    <p>
+        Customer experiences help others understand
+        what it's like working with Tharpe IT Services.
+    </p>
+
+</div>
+
+
+<div class="reviews-grid">
+
+
+<article class="review-card">
+
+<div class="stars">
+    ★★★★★
+</div>
+
+<p>
+    Customer feedback from Lisa F.
+</p>
+
+<div class="reviewer">
+    Lisa F.
+</div>
+
+</article>
+
+
+<article class="review-card">
+
+<div class="stars">
+    ★★★★★
+</div>
+
+<p>
+    Customer feedback from Haley R.
+</p>
+
+<div class="reviewer">
+    Haley R.
+</div>
+
+</article>
+
+
+<article class="review-card">
+
+<div class="stars">
+    ★★★★★
+</div>
+
+<p>
+    Customer feedback from Carol T.
+</p>
+
+<div class="reviewer">
+    Carol T.
+</div>
+
+</article>
+
+
+</div>
+
+
+<!-- REVIEW SUBMISSION -->
+
+
+<div class="review-form">
+
+<div class="form-intro">
+
+<h3>
+    Leave a Review
+</h3>
+
+<p>
+    Tell us about your experience
+    with Tharpe IT Services.
+</p>
+
+</div>
+
+
+<form
+    action="https://formspree.io/f/mkjgrzbz"
+    method="POST"
+>
+
+<input
+    type="hidden"
+    name="_subject"
+    value="New Tharpe IT Services Customer Review"
+>
+
+<input
+    type="hidden"
+    name="form_type"
+    value="Customer Review"
+>
+
+
+<div class="form-grid">
+
+
+<div class="form-group">
+
+<label for="review-name">
+
+    Name
+    <span class="required">*</span>
+
+</label>
+
+<input
+    type="text"
+    id="review-name"
+    name="name"
+    required
+    placeholder="Your name"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="review-email">
+    Email
+</label>
+
+<input
+    type="email"
+    id="review-email"
+    name="email"
+    placeholder="you@example.com"
+>
+
+</div>
+
+
+<div class="form-group full">
+
+<label>
+
+    Your Rating
+    <span class="required">*</span>
+
+</label>
+
+
+<div class="rating-input">
+
+
+<input
+    type="radio"
+    id="star5"
+    name="rating"
+    value="5"
+    required
+>
+
+<label
+    for="star5"
+    title="5 stars"
+>
+    ★
+</label>
+
+
+<input
+    type="radio"
+    id="star4"
+    name="rating"
+    value="4"
+>
+
+<label
+    for="star4"
+    title="4 stars"
+>
+    ★
+</label>
+
+
+<input
+    type="radio"
+    id="star3"
+    name="rating"
+    value="3"
+>
+
+<label
+    for="star3"
+    title="3 stars"
+>
+    ★
+</label>
+
+
+<input
+    type="radio"
+    id="star2"
+    name="rating"
+    value="2"
+>
+
+<label
+    for="star2"
+    title="2 stars"
+>
+    ★
+</label>
+
+
+<input
+    type="radio"
+    id="star1"
+    name="rating"
+    value="1"
+>
+
+<label
+    for="star1"
+    title="1 star"
+>
+    ★
+</label>
+
+
+</div>
+
+</div>
+
+
+<div class="form-group full">
+
+<label for="review">
+
+    Your Review
+    <span class="required">*</span>
+
+</label>
+
+<textarea
+    id="review"
+    name="review"
+    required
+    placeholder="Tell us about your experience..."
+></textarea>
+
+</div>
+
+
+<div class="form-group full">
+
+<button
+    type="submit"
+    class="btn btn-blue"
+>
+
+    Submit My Review
+
+</button>
+
+<p class="form-note">
+
+    Thank you for taking the time
+    to provide feedback.
+
+</p>
+
+</div>
+
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     CTA
+====================================================== -->
+
+<section class="cta">
+
+<div class="container">
+
+<h2>
+    Need IT Help?
+</h2>
+
+<p>
+    Don't let a technology problem slow you down.
+    Submit a support ticket and tell us what you
+    need help with.
+</p>
+
+<a
+    href="#support"
+    class="btn btn-primary"
+>
+    Open a Support Ticket
+</a>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     CONTACT
+====================================================== -->
+
+<section
+    class="contact tech-background"
+    id="contact"
+>
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>
+    Contact
+</span>
+
+<h2>
+    Get in Touch
+</h2>
+
+<p>
+    Have a question or need technology assistance?
+    Reach out to Tharpe IT Services.
+</p>
+
+</div>
+
+
+<div class="contact-grid">
+
+
+<div class="contact-card">
+
+<h3>
+    📧 Email
+</h3>
+
+<p>
+
+<a href="mailto:tharpeitservices@gmail.com">
+    tharpeitservices@gmail.com
+</a>
+
+</p>
+
+</div>
+
+
+<div class="contact-card">
+
+<h3>
+    🛠️ Support
+</h3>
+
+<p>
+    Use the online support ticket form
+    to submit a request.
+</p>
+
+<br>
+
+<a href="#support">
+    Submit a Ticket →
+</a>
+
+</div>
+
+
+<div class="contact-card">
+
+<h3>
+    ⭐ Reviews
+</h3>
+
+<p>
+    Share your experience with
+    Tharpe IT Services.
+</p>
+
+<br>
+
+<a href="#reviews">
+    Leave a Review →
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- ======================================================
+     FOOTER
+====================================================== -->
+
+<footer>
+
+<div class="container footer-inner">
+
+<div>
+
+<div class="footer-brand">
+    Tharpe IT Services
+</div>
+
+<div>
+    Professional IT Services & Support
+</div>
+
+</div>
+
+
+<div class="footer-links">
+
+<a href="#home">
+    Home
+</a>
+
+<a href="#services">
+    Services
+</a>
+
+<a href="#support">
+    Support
+</a>
+
+<a href="#reviews">
+    Reviews
+</a>
+
+<a href="#contact">
+    Contact
+</a>
+
+</div>
+
+
+<div>
+
+©
+<span id="year"></span>
+Tharpe IT Services
+
+</div>
+
+</div>
+
+</footer>
+
+
+<!-- ======================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script>
+
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
+
+const menuToggle =
+    document.getElementById("menuToggle");
+
+const navLinks =
+    document.getElementById("navLinks");
+
+
+menuToggle.addEventListener(
+    "click",
+    function () {
+
+        const isOpen =
+            navLinks.classList.toggle("active");
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            isOpen
+        );
+
+    }
+);
+
+
+/* Close menu when a link is clicked */
+
+document
+    .querySelectorAll("#navLinks a")
+    .forEach(function (link) {
+
+        link.addEventListener(
+            "click",
+            function () {
+
+                navLinks
+                    .classList
+                    .remove("active");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+        );
+
     });
 
 
-    /* Close mobile navigation after clicking a link */
+/* =========================================================
+   COPYRIGHT YEAR
+========================================================= */
 
-    document.querySelectorAll("#navLinks a").forEach(function (link) {
+document.getElementById("year").textContent =
+    new Date().getFullYear();
 
-      link.addEventListener("click", function () {
-        navLinks.classList.remove("active");
-      });
+
+/* =========================================================
+   SMOOTH SCROLL
+========================================================= */
+
+document
+    .querySelectorAll('a[href^="#"]')
+    .forEach(function (anchor) {
+
+        anchor.addEventListener(
+            "click",
+            function (event) {
+
+                const targetId =
+                    this.getAttribute("href");
+
+                if (
+                    !targetId ||
+                    targetId === "#"
+                ) {
+                    return;
+                }
+
+                const target =
+                    document.querySelector(
+                        targetId
+                    );
+
+                if (target) {
+
+                    event.preventDefault();
+
+                    target.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+
+                }
+
+            }
+        );
 
     });
 
-
-    /* Automatically update copyright year */
-
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
-
-
-    /* Smoothly scroll to sections */
-
-    document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
-
-      anchor.addEventListener("click", function (event) {
-
-        const targetId = this.getAttribute("href");
-
-        if (targetId === "#") {
-          return;
-        }
-
-        const target = document.querySelector(targetId);
-
-        if (target) {
-
-          event.preventDefault();
-
-          target.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-          });
-
-        }
-
-      });
-
-    });
-
-  </script>
+</script>
 
 </body>
 </html>
-```
