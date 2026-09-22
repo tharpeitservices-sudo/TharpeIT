@@ -8,8 +8,8 @@
         /* --- Premium Deep Purple & Glassmorphic Variables --- */
         :root {
             --surface-bg: #09051c;
-            --panel-purple: rgba(22, 14, 48, 0.65);
-            --panel-hover: rgba(30, 20, 66, 0.85);
+            --panel-purple: rgba(18, 11, 41, 0.7);
+            --panel-hover: rgba(26, 17, 56, 0.85);
             --input-dark: #05020c;
             --glow-violet: #651fff;
             --accent-pink: #ff4081;
@@ -26,10 +26,10 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background-color: var(--surface-bg);
-            /* Double tint layer guarantees optimal text readability over your hero image background */
-            background-image: linear-gradient(rgba(9, 5, 28, 0.82), rgba(9, 5, 28, 0.94)), url('hero.png');
+            /* Carefully optimized gradient tracking protects readability while highlighting your profile photo on the right */
+            background-image: linear-gradient(to right, rgba(9, 5, 28, 0.92) 30%, rgba(9, 5, 28, 0.75) 60%, rgba(9, 5, 28, 0.4) 100%), url('hero.png');
             background-size: cover;
-            background-position: center;
+            background-position: center top;
             background-attachment: fixed;
             color: var(--text-light);
             margin: 0;
@@ -42,7 +42,7 @@
         nav {
             position: sticky;
             top: 0;
-            background: rgba(9, 5, 28, 0.8);
+            background: rgba(9, 5, 28, 0.85);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--border-glass);
@@ -77,21 +77,21 @@
         }
 
         .main-wrapper {
-            max-width: 1200px;
+            max-width: 1300px;
             margin: 0 auto;
             padding: 60px 20px;
         }
 
-        /* --- Layout Grid Systems --- */
+        /* --- Layout Grid Systems (Flipped to protect right side) --- */
         .workspace-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            /* CHANGED: Forms/Text occupy the left, leaving the right 50% clear for your photo */
+            grid-template-columns: 1.1fr 0.9fr;
             gap: 60px;
             align-items: center;
             margin-bottom: 120px;
         }
 
-        /* Narrative Side Cards */
         .intro-block-pane {
             padding-right: 10px;
         }
@@ -138,8 +138,8 @@
             border-radius: var(--card-radius);
             padding: 40px;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s, border-color 0.4s;
         }
 
@@ -163,7 +163,7 @@
             margin: 0 0 30px 0;
         }
 
-        /* --- Clean, Accessible Form Inputs --- */
+        /* --- Clean Form Inputs --- */
         .form-element-wrapper {
             margin-bottom: 24px;
             display: flex;
@@ -206,14 +206,12 @@
             font-family: inherit;
         }
 
-        /* Custom display toggle for "Other" field entry input */
         .conditional-input {
             margin-top: 12px;
             display: none;
             border-color: var(--glow-violet);
         }
 
-        /* Interactive Buttons */
         .action-button {
             background: linear-gradient(135deg, var(--glow-violet), #4a148c);
             color: var(--text-light);
@@ -237,7 +235,7 @@
             transform: scale(0.99);
         }
 
-        /* --- Section 2: Bottom Connected Review Hub --- */
+        /* --- Section 2: Bottom Review Hub --- */
         .section-break-line {
             border: 0;
             height: 1px;
@@ -271,7 +269,7 @@
         }
 
         .feedback-bubble-card {
-            background-color: rgba(22, 14, 48, 0.4);
+            background-color: rgba(22, 14, 48, 0.5);
             border: 1px solid rgba(255, 255, 255, 0.04);
             border-radius: var(--card-radius);
             padding: 30px;
@@ -339,4 +337,4 @@
                 grid-template-columns: 1fr;
                 gap: 45px;
             }
-            body { padding: 0; }
+            body { 
