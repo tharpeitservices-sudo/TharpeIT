@@ -3,144 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support - Nexus</title>
+    <title>Tharpe IT Services</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Main Container -->
-    <div class="support-container">
-        
-        <!-- Header Section -->
-        <header class="support-header">
-            <h1>Need help? We've got your back.</h1>
-            <p>Choose the support path that best fits your needs.</p>
+    <div class="container">
+        <!-- HEADER SECTION -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">&#128187;</span>
+                <span class="logo-text">Tharpe IT Services</span>
+            </div>
+            <div class="tagline">
+                <p>Providing local and simple IT services to the community.</p>
+            </div>
+            <div class="status-indicator">
+                <span class="status-dot online"></span> Online
+            </div>
         </header>
 
-        <!-- Selection Section -->
-        <div class="support-options">
-            
-            <!-- Left Side: For Everyone (Free Plan) -->
-            <div class="support-card free-tier">
-                <h2>Community Support</h2>
-                <p>Get answers from our community forum and public documentation.</p>
-                
-                <!-- Open Free Support Form -->
+        <!-- MAIN SUPPORT TICKET CONTAINER -->
+        <main class="main-content">
+            <section class="support-portal">
+                <div class="portal-header">
+                    <h2>Support Ticket Portal</h2>
+                    <p>Submit a request below and our team will get back to you within 24-48 hours.</p>
+                </div>
+
+                <!-- FREE/COMMUNITY SUPPORT TICKET FORM -->
                 <!-- Updated with your correct Formspree URL -->
-                <form action="https://formspree.io" method="POST">
-                    
-                    <div class="input-group">
-                        <label for="free-name">Full Name</label>
-                        <input type="text" id="free-name" name="name" placeholder="Your full name" required>
+                <form action="https://formspree.io" method="POST" class="support-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
                     </div>
 
-                    <div class="input-group">
-                        <label for="free-email">Email Address</label>
-                        <input type="email" id="free-email" name="email" placeholder="Your email address" required>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
                     </div>
 
-                    <div class="input-group">
-                        <label for="free-issue">Issue Category</label>
-                        <select id="free-issue" name="category" required>
-                            <option value="" disabled selected>Select an option</option>
-                            <option value="account">Account Access / Login Issues</option>
-                            <option value="billing">Billing & Invoicing Questions</option>
-                            <option value="bug">Report a Bug / Software Malfunction</option>
-                            <option value="feature">Feature Request / Enhancement Idea</option>
-                            <option value="general">General Support / General Documentation</option>
+                    <div class="form-group">
+                        <label for="service">Service Requested</label>
+                        <select id="service" name="service" required>
+                            <option value="" disabled selected>Select a service...</option>
+                            <option value="hardware">Hardware Repair & Diagnostics</option>
+                            <option value="software">Virus / Malware Removal & Tune-up</option>
+                            <option value="network">Network Setup & Troubleshooting</option>
+                            <option value="consulting">IT Consulting & Device Setup</option>
+                            <option value="other">Other / General Inquiry</option>
                         </select>
                     </div>
 
-                    <div class="input-group">
-                        <label for="free-priority">Priority Level</label>
-                        <select id="free-priority" name="priority" required>
-                            <option value="low">Low (Standard Review)</option>
-                            <option value="medium">Medium (Next Available Agent)</option>
-                            <option value="high">High (Urgent Security / Critical System Issues)</option>
+                    <div class="form-group">
+                        <label for="priority">Priority Level</label>
+                        <select id="priority" name="priority" required>
+                            <option value="low">Low - General Question / Routine Checkup</option>
+                            <option value="medium">Medium - Slow Performance / Non-Critical Issue</option>
+                            <option value="high">High - Urgent Security / Critical System Down</option>
                         </select>
                     </div>
 
-                    <div class="input-group">
-                        <label for="free-message">Description</label>
-                        <textarea id="free-message" name="message" placeholder="Details about the technical issues or general inquiries you have" required></textarea>
+                    <div class="form-group">
+                        <label for="message">Detailed Description</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Please describe the technical issues or requests you have in detail..." required></textarea>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Submit Ticket</button>
+                    <button type="submit" class="submit-btn">Submit Ticket</button>
                 </form>
-            </div>
+            </section>
 
-            <!-- Right Side: Dedicated Support (Paid Tier) -->
-            <div class="support-card paid-tier">
-                <h2>Priority Integration Support</h2>
-                
-                <div class="features-list">
-                    <div class="feature-item">
-                        <strong>Dedicated Slack Channel</strong>
-                        <p>Direct communication with our engineering team.</p>
-                    </div>
-                    <div class="feature-item">
-                        <strong>Guaranteed 1-Hour SLA</strong>
-                        <p>Providing minor fixes & patches to the community.</p>
-                    </div>
-                    <div class="feature-item">
-                        <strong>Custom Deployments</strong>
-                        <p>Tailored directly into your infrastructure environment.</p>
+            <!-- SIDEBAR INFO SECTION -->
+            <aside class="info-sidebar">
+                <div class="info-card">
+                    <h3>Direct Support Line</h3>
+                    <p>Need immediate assistance? Give us a call or text directly.</p>
+                    <div class="contact-details">
+                        <a href="tel:2078493939" class="contact-link">&#128222; 207-849-3939</a>
                     </div>
                 </div>
 
-                <div class="pricing-cta">
-                    <p class="price">$499<span>/month</span></p>
-                    <p class="subtext">Billed monthly per organization.</p>
-                    <a href="#paid-support-form" class="btn btn-secondary">Upgrade to Priority Support</a>
+                <div class="info-card">
+                    <h3>Our Commitment</h3>
+                    <p>With over 15 years of dedicated IT experience, we specialize in delivering clean, fast, and simple solutions tailored directly to your home or small business infrastructure environment.</p>
                 </div>
-            </div>
+            </aside>
+        </main>
 
-        </div>
-
-        <!-- Divider Line -->
-        <hr class="section-divider">
-
-        <!-- Bottom Section: Paid Tier Ticket Submission -->
-        <div id="paid-support-form" class="paid-form-section">
-            <header class="section-header">
-                <h2>Submit Priority Support Ticket</h2>
-                <p>For active Enterprise and Premium integrations.</p>
-            </header>
-
-            <!-- Open Paid Support Form -->
-            <!-- Updated with your correct Formspree URL -->
-            <form action="https://formspree.io" method="POST">
-                
-                <div class="form-grid">
-                    <div class="input-group">
-                        <label for="paid-name">Full Name</label>
-                        <input type="text" id="paid-name" name="name" placeholder="Your full name" required>
-                    </div>
-
-                    <div class="input-group">
-                        <label for="paid-email">Organization Email</label>
-                        <input type="email" id="paid-email" name="email" placeholder="company@domain.com" required>
-                    </div>
-                </div>
-
-                <div class="input-group">
-                    <label for="paid-env">Environment Type</label>
-                    <select id="paid-env" name="environment" required>
-                        <option value="" disabled selected>Select active environment</option>
-                        <option value="production">Production (Live Users Impacted)</option>
-                        <option value="staging">Staging / Pre-release Testing</option>
-                        <option value="development">Local Development Environment</option>
-                    </select>
-                </div>
-
-                <div class="input-group">
-                    <label for="paid-logs">Error Logs / System Diagnostics</label>
-                    <textarea id="paid-logs" name="logs" placeholder="Paste relevant error codes, console outputs, or stack traces here..." rows="6"></textarea>
-                </div>
-
-                <button type="submit" class="btn btn-dark">Submit Priority Request</button>
-            </form>
-        </div>
-
+        <!-- FOOTER SECTION -->
+        <footer class="footer">
+            <p>&copy; 2026 Tharpe IT Services. All rights reserved.</p>
+        </footer>
     </div>
 
 </body>
