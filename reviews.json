@@ -3,20 +3,20 @@
     {
       "avatar": "LF",
       "name": "Lisa F.",
-      "stars": "★★★★★",
+      "rating": 5,
       "text": "Tharpe IT fixed MY network outage and network setup Exceptional troubleshooting and everything was explained simply without corporate tech jargon!"
-    ,
+    },
     {
       "avatar": "HR",
       "name": "Haley R.",
-      "stars": "★★★★★",
+      "rating": 5,
       "text": "Having 15 years of experience really shows. Fast setup of our security system to our network system for our tv and the computers are all set up and a very professional attitude. Highly recommend their local services."
     },
     {
       "avatar": "CT",
       "name": "Carol T.",
-      "stars": "★★★★★",
-      "text": "Excellent cybersecurity check on my systems. Simple to work with, local, and incredibly helpful with making sure i was comfortable with my entire system and set up
+      "rating": 5,
+      "text": "Excellent cybersecurity check on my systems. Simple to work with, local, and incredibly helpful with making sure i was comfortable with my entire system and set up."
     }
   ]
 }
