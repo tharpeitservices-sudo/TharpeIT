@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const newReview = {
                 name: name,
                 rating: rating,
-                comment: comment,
+                text: comment, // Matches your custom reviews.json property structure
                 date: new Date().toLocaleDateString()
             };
 
@@ -67,7 +67,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const response = await fetch('reviews.json');
             if (!response.ok) throw new Error('Reviews system structure not found');
             
-            const staticReviews = await response.json();
+            const data = await response.json();
+            // Pointing directly to your custom "customer_reviews" array layout key
+            const staticReviews = data.customer_reviews || [];
             
             // Clear loading spinner placeholder state
             reviewsContainer.innerHTML = '';
@@ -93,6 +95,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function renderReviewCard(review, insertAtTop) {
+        if (!reviewsContainer) return;
+        
         const card = document.createElement('div');
         card.className = 'review-card-item';
 
@@ -106,13 +110,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
+        // Using your "review.text" parameter model key map
         card.innerHTML = `
             <div class="d-flex justify-content-between align-items-center mb-2">
                 <h5 class="mb-0 fw-bold">${escapeHTML(review.name)}</h5>
                 <span class="text-white-50 small">${review.date || 'Recent'}</span>
             </div>
             <div class="mb-2">${stars}</div>
-            <p class="mb-0 text-light-50 italic font-sm">"${escapeHTML(review.comment)}"</p>
+            <p class="mb-0 text-light-50 italic" style="font-size: 0.95rem; color: #bfaecf !important;">"${escapeHTML(review.text || review.comment || '')}"</p>
         `;
 
         if (insertAtTop && reviewsContainer.firstChild) {
