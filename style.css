@@ -1,250 +1,133 @@
 /* ==========================================================================
-   Tharpe IT Services - High-End Premium Glassmorphic Theme Layout
+   THARPE IT SERVICES - OFFICIAL WORKSPACE STYLESHEET
    ========================================================================== */
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+/* Core Reset and Galactic Backdrop Setup */
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    overflow-x: hidden !important;
+    scroll-behavior: smooth !important;
+    background-color: #0b071e !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
 }
 
+/* Base Body Nebula Filter wrapper */
 body {
-    font-family: 'Segoe UI', Roboto, -apple-system, sans-serif;
-    background-color: #06040a; 
-    color: #f3f4f6;
-    line-height: 1.6;
-    padding-bottom: 6rem;
-    position: relative;
-    overflow-x: hidden;
+    background-image: radial-gradient(circle at 80% 20%, rgba(90, 40, 250, 0.15) 0%, transparent 50%),
+                      radial-gradient(circle at 20% 80%, rgba(255, 51, 102, 0.1) 0%, transparent 50%) !important;
+    background-attachment: fixed !important;
+    color: #ffffff !important;
 }
 
-/* --- Ambient Depth Background Matrix --- */
-.cyber-grid-overlay {
-    position: fixed;
-    inset: 0;
-    background-image: 
-        linear-gradient(to right, rgba(139, 92, 246, 0.03) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(139, 92, 246, 0.03) 1px, transparent 1px);
-    background-size: 40px 40px;
-    z-index: -3;
+/* Premium Typography Rules */
+.premium-pink-text {
+    color: #ff3377 !important;
+    background: linear-gradient(45deg, #ff3366, #ff55bb) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    display: inline-block !important;
 }
 
-.ambient-glow-1 {
-    position: fixed;
-    top: -10%; right: -10%;
-    width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, transparent 70%);
-    z-index: -2;
-    filter: blur(40px);
+.badge-neighborly {
+    background-color: rgba(90, 40, 250, 0.25) !important;
+    border: 1px solid rgba(119, 68, 255, 0.6) !important;
+    color: #ddccff !important;
+    font-weight: 700 !important;
+    letter-spacing: 1px !important;
+    font-size: 0.75rem !important;
+    padding: 8px 16px !important;
+    border-radius: 50px !important;
+    display: inline-block !important;
 }
 
-.ambient-glow-2 {
-    position: fixed;
-    bottom: 10%; left: -5%;
-    width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(219, 39, 119, 0.1) 0%, transparent 70%);
-    z-index: -2;
-    filter: blur(40px);
+/* Glassmorphic Container Cards (Fixes Broken Ticket Layouts) */
+.glass-container-card {
+    background: rgba(18, 12, 38, 0.85) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 20px !important;
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.6) !important;
+    backdrop-filter: blur(12px) !important;
+    padding: 40px !important;
+    margin-bottom: 30px !important;
 }
 
-/* --- Premium Navigation Header --- */
-.cyber-header {
-    background: rgba(14, 11, 26, 0.75);
-    border-bottom: 1px solid rgba(139, 92, 246, 0.3); 
-    padding: 1rem 2rem;
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    position: sticky;
-    top: 0;
-    z-index: 100;
+/* High Contrast Input Fields (Fixes Stretched/Invisible Form) */
+.tharpe-input-field {
+    display: block !important;
+    width: 100% !important;
+    padding: 12px 16px !important;
+    font-size: 1rem !important;
+    color: #ffffff !important;
+    background-color: #060410 !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 10px !important;
+    margin-top: 6px !important;
+    margin-bottom: 16px !important;
+    box-sizing: border-box !important;
+    transition: all 0.2s ease !important;
 }
 
-.nav-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
+.tharpe-input-field:focus {
+    border-color: #ff3366 !important;
+    background-color: #0c0822 !important;
+    outline: none !important;
+    box-shadow: 0px 0px 12px rgba(255, 51, 102, 0.4) !important;
 }
 
-.site-logo {
-    height: 55px;
-    width: auto;
-    border-radius: 10px;
-    border: 1px solid rgba(167, 139, 250, 0.3);
-    box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+.tharpe-input-field option {
+    background-color: #0b071e !important;
+    color: #ffffff !important;
 }
 
-h1 {
-    font-size: 1.9rem;
-    font-weight: 800;
-    letter-spacing: 0.5px;
-    background: linear-gradient(45deg, #ffffff 30%, #c084fc 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.tharpe-label-text {
+    color: #bfaecf !important;
+    font-weight: 600 !important;
+    font-size: 0.85rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    display: block !important;
 }
 
-/* --- ⚡ NEW SPLIT HERO LAYOUT GRID: SIDE-BY-SIDE INTAKE --- */
-.hero-split-grid {
-    max-width: 1100px;
-    margin: 3rem auto 0 auto;
-    padding: 0 1.5rem;
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr; /* Splits layout into proportional media/form sets */
-    gap: 2.5rem;
-    align-items: stretch;
+/* Buttons and Action Elements */
+.submit-btn-premium {
+    background: linear-gradient(135deg, #ff3366, #ff55bb) !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    border: none !important;
+    border-radius: 10px !important;
+    padding: 14px !important;
+    width: 100% !important;
+    cursor: pointer !important;
+    transition: transform 0.2s ease !important;
 }
 
-.banner-container {
-    position: relative;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-    border: 1px solid rgba(139, 92, 246, 0.35);
-    display: flex;
+.submit-btn-premium:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0px 5px 20px rgba(255, 51, 102, 0.5) !important;
 }
 
-.full-responsive-banner {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Guarantees picture sizes fill layout grids proportionately */
-    display: block;
+/* Floating "Text Me For Help" Action Button */
+.tharpe-sms-action-pill {
+    position: fixed !important;
+    bottom: 24px !important;
+    right: 24px !important;
+    z-index: 999999 !important;
+    background: linear-gradient(135deg, #ff3366, #ff55bb) !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    border: 2px solid #ffffff !important;
+    box-shadow: 0px 4px 25px rgba(255, 51, 102, 0.5) !important;
+    border-radius: 50px !important;
+    padding: 14px 28px !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
 }
 
-.banner-glow-edge {
-    position: absolute;
-    inset: 0;
-    box-shadow: inset 0 0 25px rgba(124, 58, 237, 0.35);
-    pointer-events: none;
-}
-
-.hero-form-card {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-/* --- Main Framework Portal Grid --- */
-main.portal-main-grid {
-    max-width: 1100px;
-    margin: 2.5rem auto;
-    padding: 0 1.5rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
-}
-
-/* --- Frosted Cyber Glass Cards --- */
-.glass-card {
-    position: relative;
-    background: rgba(20, 16, 36, 0.6);
-    border-radius: 20px;
-    padding: 2.25rem;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    box-shadow: 
-        0 15px 35px rgba(0, 0, 0, 0.5),
-        inset 0 1px 1px rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.glass-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 
-        0 20px 40px rgba(0, 0, 0, 0.6),
-        0 0 30px rgba(139, 92, 246, 0.15);
-    border-color: rgba(139, 92, 246, 0.25);
-}
-
-.full-width-card {
-    grid-column: 1 / -1; 
-}
-
-/* Accent Bars */
-.card-accent-bar { position: absolute; top: 0; left: 0; right: 0; height: 4px; }
-.card-accent-bar.blue-purple { background: linear-gradient(90deg, #3b82f6, #8b5cf6); }
-.card-accent-bar.pink-purple { background: linear-gradient(90deg, #ec4899, #7c3aed); }
-.card-accent-bar.gold-purple { background: linear-gradient(90deg, #f59e0b, #a855f7); }
-.card-accent-bar.purple-pink { background: linear-gradient(90deg, #8b5cf6, #ec4899); }
-.card-accent-bar.blue-pink { background: linear-gradient(90deg, #3b82f6, #ec4899); }
-
-.glass-card h2 {
-    font-size: 1.45rem;
-    margin-bottom: 1.5rem;
-    color: #ffffff;
-    font-weight: 700;
-}
-
-/* Grid Layouts */
-.profile-content-grid { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 2.5rem; }
-.section-intro-text { font-size: 1.1rem; color: #d1d5db; margin-bottom: 2rem; max-width: 800px; }
-.about-features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-.testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-
-.feature-pillar {
-    background: rgba(10, 7, 18, 0.4);
-    border: 1px solid rgba(139, 92, 246, 0.15);
-    padding: 1.5rem;
-    border-radius: 14px;
-}
-.pillar-icon { font-size: 2rem; margin-bottom: 0.5rem; }
-.feature-pillar h3 { font-size: 1.15rem; color: #c084fc; margin-bottom: 0.5rem; }
-.feature-pillar p { font-size: 0.95rem; color: #9ca3af; }
-
-/* Testimonials Layout Blocks */
-.testimonial-card { background: rgba(6, 4, 10, 0.5); border: 1px solid rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 14px; }
-.testimonial-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
-.user-avatar { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, #7c3aed, #db2777); color: white; font-weight: bold; display: flex; align-items: center; justify-content: center; }
-.testimonial-header h4 { font-size: 1rem; color: #ffffff; }
-.approved-stars { color: #fbbf24; font-size: 0.85rem; }
-.testimonial-text { font-size: 0.95rem; color: #9ca3af; font-style: italic; }
-
-.service-highlight-text { font-size: 1.45rem; color: #c084fc; margin-bottom: 1.25rem; font-weight: 700; }
-.body-narrative { color: #9ca3af; font-size: 1.05rem; }
-
-/* Contact Badge */
-.contact-details-badge { background: rgba(10, 7, 18, 0.6); border: 1px solid rgba(139, 92, 246, 0.3); padding: 1.75rem; border-radius: 14px; }
-.contact-details-badge h3 { font-size: 1.15rem; color: #f472b6; margin-bottom: 1.25rem; }
-.contact-details-badge p { margin-bottom: 1rem; font-size: 1rem; color: #e5e7eb; }
-.neon-link { color: #a78bfa; text-decoration: none; font-weight: 600; }
-.accent-glow { color: #fbbf24; font-weight: 700; text-decoration: none; }
-
-/* Form Controls */
-.input-group, .star-rating-box { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.25rem; }
-.input-group label, .input-label-style { font-size: 0.8rem; color: #a78bfa; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
-select, textarea { width: 100%; padding: 0.85rem 1.1rem; border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 12px; background-color: rgba(6, 4, 10, 0.8); color: #ffffff; font-size: 1rem; }
-select:focus, textarea:focus { outline: none; border-color: #c084fc; }
-textarea { height: 110px; resize: none; }
-
-.btn-cyber {
-    background: linear-gradient(135deg, #7c3aed 0%, #db2777 100%);
-    color: #ffffff; padding: 0.95rem; font-size: 1.05rem; font-weight: 700; border: none; border-radius: 12px; cursor: pointer; text-transform: uppercase; letter-spacing: 0.75px;
-}
-
-/* Star Handling */
-.rating-stars { display: flex; flex-direction: row-reverse; justify-content: flex-end; gap: 0.6rem; }
-.rating-stars input { display: none; }
-.rating-stars label { font-size: 3rem; color: #1e1736; cursor: pointer; }
-.rating-stars label:hover, .rating-stars label:hover ~ label, .rating-stars input:checked ~ label { color: #fbbf24; }
-
-/* --- 💬 Direct SMS Link Integration Styles --- */
-.immediate-help-container { margin-top: 1.75rem; }
-.btn-text-me { display: inline-flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #059669 0%, #10b981 100%); color: #ffffff; padding: 1rem 2rem; font-size: 1.1rem; font-weight: 700; border-radius: 12px; text-decoration: none; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3); transition: all 0.25s ease; }
-.btn-text-me:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(16, 185, 129, 0.55); filter: brightness(1.1); color: #ffffff; }
-.header-text-btn { padding: 0.5rem 1.2rem; font-size: 0.9rem; border-radius: 8px; margin-left: auto; }
-.pulse-glow { animation: textMePulse 2s infinite alternate; }
-
-@keyframes textMePulse {
-    0% { box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3), 0 0 0 0px rgba(16, 185, 129, 0.4); }
-    100% { box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5), 0 0 0 10px rgba(16, 185, 129, 0); }
-}
-
-/* --- Responsive Layout Breakpoint Map --- */
-@media (max-width: 900px) {
-    .hero-split-grid { grid-template-columns: 1fr; margin-top: 1.5rem; gap: 1.5rem; }
-    .about-features-grid, .testimonials-grid { grid-template-columns: 1fr; }
-    main.portal-main-grid, .profile-content-grid { grid-template-columns: 1fr; }
-    .header-text-btn { display: none; }
+.tharpe-sms-action-pill:hover {
+    transform: scale(1.05) !important;
+    box-shadow: 0px 6px 30px rgba(255, 51, 102, 0.7) !important;
+    color: #ffffff !important;
 }
