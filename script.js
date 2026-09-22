@@ -1,68 +1,58 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // ==========================================
-    // 1. UNTOUCHED SUPPORT TICKET HANDLING
-    // ==========================================
-    const supportForm = document.getElementById("support-ticket-form");
-    if (supportForm) {
-        supportForm.addEventListener("submit", (e) => {
-            e.preventDefault();
-            alert("Support Request logged successfully!");
-            supportForm.reset();
-        });
-    }
+// ==========================================================================
+// THARPE IT SYSTEMS - MODULAR STAR REVIEW COMPONENT INTERFACE
+// ==========================================================================
+(function() {
+    function initializeReviewWidget() {
+        const reviewForm = document.getElementById("live-user-review-form") || document.getElementById("fallback-review-form");
+        const reviewsWall = document.getElementById("live-reviews-display-wall") || document.getElementById("fallback-reviews-render-wall");
 
-    // ==========================================
-    // 2. LIVE INTERACTIVE CUSTOMER REVIEW SYSTEM
-    // ==========================================
-    const reviewForm = document.getElementById("live-user-review-form");
-    const reviewsWall = document.getElementById("live-reviews-display-wall");
+        if (!reviewForm || !reviewsWall) return;
 
-    if (reviewForm && reviewsWall) {
-        // Loads reviews from browser local memory, or keeps a default 5-star review if empty
-        let activeReviews = JSON.parse(localStorage.getItem("tharpe_reviews_list")) || [
+        // Loads reviews from browser persistent memory cache layout safely
+        let dataset = JSON.parse(localStorage.getItem("tharpe_dynamic_reviews")) || [
             { rating: 5, msg: "Outstanding support. Cleared out my malware configuration instantly." }
         ];
 
-        // Function to build out and display the reviews list on the screen
-        function renderReviewsToWall() {
+        function refreshDisplay() {
             reviewsWall.innerHTML = "";
-            activeReviews.forEach(item => {
-                const card = document.createElement("div");
-                card.className = "review-post-card";
-                card.innerHTML = `
-                    <div class="card-stars-line">${"★".repeat(item.rating)}${"☆".repeat(5 - item.rating)}</div>
-                    <div class="card-message">${item.msg}</div>
+            dataset.forEach(post => {
+                const element = document.createElement("div");
+                element.className = "review-post-card";
+                element.innerHTML = `
+                    <div class="card-stars-line" style="color: #a855f7; margin-bottom: 4px;">${"★".repeat(post.rating)}${"☆".repeat(5 - post.rating)}</div>
+                    <div class="card-message" style="color: #d1d1d1; font-size: 0.9rem;">${post.msg}</div>
                 `;
-                reviewsWall.appendChild(card);
+                reviewsWall.appendChild(element);
             });
         }
 
-        // Handles what happens when a user clicks "Submit Review"
-        reviewForm.addEventListener("submit", (e) => {
-            e.preventDefault();
-            const checkedStar = document.querySelector('input[name="review-stars"]:checked');
-            const message = document.getElementById("review-text-input").value.trim();
+        reviewForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+            const inputRating = reviewForm.querySelector('input[type="radio"]:checked');
+            const inputText = reviewForm.querySelector("textarea") ? reviewForm.querySelector("textarea").value.trim() : "";
 
-            if (!checkedStar) {
-                alert("Please click on a star rating level before submitting your review.");
+            if (!inputRating) {
+                alert("Please click on a star rating option before submitting your review.");
                 return;
             }
 
-            // Save the new review to the dataset list
-            activeReviews.unshift({
-                rating: parseInt(checkedStar.value),
-                msg: message
+            dataset.unshift({
+                rating: parseInt(inputRating.value),
+                msg: inputText
             });
 
-            // Write the updated list back into browser memory
-            localStorage.setItem("tharpe_reviews_list", JSON.stringify(activeReviews));
-            
-            // Clear out the input boxes and update the user display wall
+            localStorage.setItem("tharpe_dynamic_reviews", JSON.stringify(dataset));
             reviewForm.reset();
-            renderReviewsToWall();
+            refreshDisplay();
         });
 
-        // Initialize and display the reviews wall when the page loads
-        renderReviewsToWall();
+        refreshDisplay();
     }
-});
+
+    // Runs checking loop safely across standard window runtime boots
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initializeReviewWidget);
+    } else {
+        initializeReviewWidget();
+    }
+})();
