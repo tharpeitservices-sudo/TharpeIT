@@ -4,46 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tharpe IT Services</title>
-    <!-- Alpine JS -->
-    <script src="https://jsdelivr.net" defer></script>
     <!-- Bootstrap CSS Framework -->
     <link href="https://jsdelivr.net" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://jsdelivr.net">
+    <!-- Alpine JS -->
+    <script src="https://jsdelivr.net" defer></script>
     <!-- Local Stylesheet -->
     <link rel="stylesheet" href="style.css">
     
-    <!-- Custom Style Injection to Force High Visibility Over Galaxy Backgrounds -->
+    <!-- HIGH-VISIBILITY CORE CONTAINMENT STYLES -->
     <style>
-        .force-visible-card {
-            background-color: rgba(26, 21, 44, 0.85) !important;
-            border: 1px solid rgba(13, 202, 240, 0.3) !important;
-            backdrop-filter: blur(10px);
+        /* Forces the background layout grid to scale correctly regardless of custom style overrides */
+        .custom-hero-row {
+            display: flex !important;
+            flex-wrap: wrap !important;
+            align-items: center !important;
         }
-        .force-visible-input {
-            background-color: rgba(10, 10, 15, 0.9) !important;
+        
+        /* Clean Glassmorphic Ticket Container */
+        .glass-ticket-card {
+            background: rgba(20, 16, 38, 0.92) !important;
+            border: 2px solid #0dcaf0 !important;
+            border-radius: 16px !important;
+            box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.7) !important;
+            padding: 30px !important;
+        }
+
+        /* High Contrast Text Input Styling */
+        .form-visible-input {
+            background-color: #110e22 !important;
             color: #ffffff !important;
-            border: 1px solid rgba(13, 202, 240, 0.4) !important;
+            border: 1px solid rgba(13, 202, 240, 0.5) !important;
+            border-radius: 6px !important;
+            padding: 10px !important;
         }
-        .force-visible-input::placeholder {
-            color: rgba(255, 255, 255, 0.5) !important;
+        
+        .form-visible-input:focus {
+            border-color: #0dcaf0 !important;
+            box-shadow: 0 0 8px rgba(13, 202, 240, 0.5) !important;
+            background-color: #16122c !important;
+            color: #ffffff !important;
         }
-        .text-readable-muted {
-            color: #d1cbe3 !important;
+
+        /* Dropdown Options List Fix */
+        .form-visible-input option {
+            background-color: #110e22 !important;
+            color: #ffffff !important;
+        }
+
+        .text-muted-readable {
+            color: #b0a9ca !important;
+        }
+
+        /* Floating Button Optimization */
+        .floating-sms-action {
+            border: 2px solid #ffffff !important;
+            box-shadow: 0px 0px 20px rgba(13, 202, 240, 0.7) !important;
+            transition: transform 0.2s ease-in-out;
+            z-index: 9999 !important;
+        }
+        
+        .floating-sms-action:hover {
+            transform: scale(1.05);
+            color: #000000 !important;
         }
     </style>
 </head>
 <body class="bg-dark text-light">
 
-    <!-- Floating Text Support Button -->
+    <!-- Floating Text Support Action Button -->
     <a href="sms:+12078493939?body=Hello%20Tharpe%20IT%20Services,%20I%20need%20assistance%20with..." 
-       class="btn btn-info text-dark fw-bold position-fixed bottom-0 end-0 m-4 px-4 py-3 rounded-pill shadow-lg z-3" 
-       style="border: 2px solid #fff; box-shadow: 0px 0px 15px rgba(13, 202, 240, 0.6) !important;">
+       class="btn btn-info text-dark fw-bold position-fixed bottom-0 end-0 m-4 px-4 py-3 rounded-pill floating-sms-action">
         <i class="bi bi-chat-text-fill me-2"></i> Text Me For Help
     </a>
 
-    <!-- Navbar Section -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent px-4 py-3 border-b border-secondary">
+    <!-- Navigation Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent px-4 py-3 border-bottom border-secondary">
         <div class="container-fluid">
             <a class="navbar-brand fs-3 fw-bold text-info" href="#">
                 <i class="bi bi-cpu text-info"></i> Tharpe IT Services
@@ -54,61 +91,64 @@
         </div>
     </nav>
 
-    <!-- Page 1: Hero Section & Ticketing System Container -->
+    <!-- Main Section Structure -->
     <div class="container my-5">
-        <div class="row align-items-center g-5">
-            <!-- Left Side: Hero Text -->
+        <div class="row custom-hero-row g-5">
+            
+            <!-- Information Panel Display -->
             <div class="col-lg-6 text-start">
                 <div class="mb-4">
                     <span class="badge bg-info text-dark uppercase p-2 px-3 fw-bold mb-3">Community First Tech Support</span>
-                    <h1 class="display-4 fw-bold lh-sm text-white">Reliable & Simple <br><span class="text-info">IT Solutions</span></h1>
+                    <h1 class="display-4 fw-bold lh-sm text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.9);">
+                        Reliable & Simple <br><span class="text-info">IT Solutions</span>
+                    </h1>
                 </div>
-                <p class="lead text-white mb-4" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.8);">
+                <p class="lead text-white mb-4" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.8); line-height: 1.6;">
                     Don't let technical breakdowns interrupt your day. Whether you are dealing with a slow device, home network issues, or small business infrastructure security, we deliver rapid, professional support right where you are.
                 </p>
             </div>
 
-            <!-- Right Side: Interactive Ticket Submission Form -->
+            <!-- Isolated Input Card Container -->
             <div class="col-lg-6">
-                <div class="card text-light p-4 shadow-lg rounded-4 border-0 force-visible-card">
-                    <h3 class="mb-3 text-info fw-bold"><i class="bi bi-ticket-perforated-fill me-2"></i>Submit a Support Ticket</h3>
-                    <p class="small text-white mb-4 opacity-75">Fill out your configuration profile. Submissions instantly alert our technician desk.</p>
+                <div class="glass-ticket-card">
+                    <h3 class="mb-2 text-info fw-bold"><i class="bi bi-ticket-perforated-fill me-2"></i>Submit a Support Ticket</h3>
+                    <p class="small text-white opacity-75 mb-4">Fill out your profile configuration. Submissions instantly update our local technician desk.</p>
                     
                     <form action="https://formspree.io" method="POST">
                         <div class="mb-3">
                             <label for="fullName" class="form-label small fw-bold text-white">Full Name</label>
-                            <input type="text" class="form-control force-visible-input p-2" id="fullName" name="name" placeholder="Enter your full name" required>
+                            <input type="text" class="form-control form-visible-input w-100" id="fullName" name="name" placeholder="Enter your full name" required>
                         </div>
                         
                         <div class="mb-3">
                             <label for="emailAddr" class="form-label small fw-bold text-white">Email Address</label>
-                            <input type="email" class="form-control force-visible-input p-2" id="emailAddr" name="email" placeholder="Enter your email address" required>
+                            <input type="email" class="form-control form-visible-input w-100" id="emailAddr" name="email" placeholder="Enter your email address" required>
                         </div>
 
                         <div class="mb-3">
                             <label for="category" class="form-label small fw-bold text-white">Issue Category</label>
-                            <select class="form-select force-visible-input p-2" id="category" name="category" required>
-                                <option value="" disabled selected class="text-dark">Select Issue Category</option>
-                                <option value="Hardware" class="text-dark">Hardware Issues & Diagnostics</option>
-                                <option value="Software" class="text-dark">Software Installs & Operating System Errors</option>
-                                <option value="Network" class="text-dark">Network Connectivity & Router Setup</option>
-                                <option value="Malware" class="text-dark">Malware Removal & System Performance</option>
-                                <option value="Other" class="text-dark">Other / General Technical Inquiry</option>
+                            <select class="form-select form-visible-input w-100" id="category" name="category" required>
+                                <option value="" disabled selected>Select Issue Category</option>
+                                <option value="Hardware">Hardware Issues & Diagnostics</option>
+                                <option value="Software">Software Installs & Operating System Errors</option>
+                                <option value="Network">Network Connectivity & Router Setup</option>
+                                <option value="Malware">Malware Removal & System Performance</option>
+                                <option value="Other">Other / General Technical Inquiry</option>
                             </select>
                         </div>
 
                         <div class="mb-3">
                             <label for="priority" class="form-label small fw-bold text-white">Priority</label>
-                            <select class="form-select force-visible-input p-2" id="priority" name="priority" required>
-                                <option value="Low" class="text-dark">Low Priority (Standard Response)</option>
-                                <option value="Medium" selected class="text-dark">Medium Priority (Flexible Scheduling)</option>
-                                <option value="High" class="text-dark">High Priority (Urgent System Breakdown)</option>
+                            <select class="form-select form-visible-input w-100" id="priority" name="priority" required>
+                                <option value="Low">Low Priority (Standard Response)</option>
+                                <option value="Medium" selected>Medium Priority (Flexible Scheduling)</option>
+                                <option value="High">High Priority (Urgent System Breakdown)</option>
                             </select>
                         </div>
 
                         <div class="mb-3">
                             <label for="description" class="form-label small fw-bold text-white">Issue Description</label>
-                            <textarea class="form-control force-visible-input p-2" id="description" name="description" rows="4" placeholder="Provide detailed information about the technical issues or error messages you have faced." required></textarea>
+                            <textarea class="form-control form-visible-input w-100" id="description" name="description" rows="4" placeholder="Provide detailed information about the technical issues or error messages you have faced." required></textarea>
                         </div>
 
                         <div class="d-grid mt-4">
@@ -117,51 +157,35 @@
                     </form>
                 </div>
             </div>
+            
         </div>
     </div>
 
     <hr class="border-secondary my-5 container opacity-25">
 
-    <!-- Page 2: About Us, Core Values, Mission & Customer Feedback Content -->
+    <!-- Information Layout Panels -->
     <div class="container my-5">
         
-        <!-- Section Header -->
         <div class="text-center mb-5">
             <h2 class="display-5 fw-bold text-info">About Tharpe IT Services</h2>
             <div class="bg-info mx-auto" style="height: 3px; width: 60px; margin-top: 15px;"></div>
         </div>
 
-        <div class="row g-4 align-items-stretch">
-            <!-- Column 1: Our Profile & Background -->
+        <div class="row g-4 align-items-stretch custom-hero-row">
+            <!-- Profile Column -->
             <div class="col-md-6">
-                <div class="p-4 rounded-4 h-100 shadow-sm force-visible-card">
+                <div class="glass-ticket-card h-100">
                     <h4 class="text-info mb-3"><i class="bi bi-person-badge-fill me-2"></i>20 Years of Trusted Experience</h4>
-                    <p class="text-readable-muted">
+                    <p class="text-muted-readable" style="line-height: 1.6;">
                         Led by Timothy Tharpe, Tharpe IT Services brings over two decades of technical field knowledge directly to your home or office floor. We specialize in fast diagnostics, secure network rollouts, remote troubleshooting support, data safety optimization, and complete technical device care tailored explicitly to local community members.
                     </p>
-                    <p class="text-readable-muted mb-0">
+                    <p class="text-muted-readable mb-0">
                         Our foundational approach values clarity over confusing industry jargon, giving you reliable transparency from check-in to resolution.
                     </p>
                 </div>
             </div>
 
-            <!-- Column 2: Our Foundational Mission -->
+            <!-- Mission Column -->
             <div class="col-md-6">
-                <div class="p-4 rounded-4 h-100 shadow-sm force-visible-card d-flex flex-column justify-content-between">
+                <div class="glass-ticket-card h-100 d-flex flex-column justify-content-between">
                     <div>
-                        <h4 class="text-info mb-3"><i class="bi bi-compass-fill me-2"></i>Our Mission Statement</h4>
-                        <blockquote class="blockquote bg-dark p-3 rounded border-start border-info border-3 mb-0" style="background-color: rgba(0,0,0,0.4) !important;">
-                            <p class="fs-5 italic text-white mb-0">"Providing local and simple IT services to the community."</p>
-                        </blockquote>
-                    </div>
-                    <p class="text-readable-muted mt-3 mb-0">
-                        We aim to bridge the accessibility gap by rendering top-tier professional engineering principles at affordable, family-focused rates. Your security is our absolute priority.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Strategic Expertise Highlights -->
-        <div class="row g-4 mt-4">
-            <div class="col-md-4">
-                <div class="p-4 rounded-4 shadow-sm h-100 text-center force-visible-card">
