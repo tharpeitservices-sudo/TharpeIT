@@ -23,13 +23,13 @@
                 <img src="logo.png" alt="Tharpe IT Services Logo" class="site-logo">
                 <div class="logo-text">
                     <span class="brand-headline">THARPE // IT</span>
-                    <span class="network-pulse"><span class="pulse-node"></span> SECURE_NODE_ACTIVE</span>
+                    <span class="network-pulse"><span class="pulse-node"></span> SERVICE_ONLINE</span>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- ⚡ FUTURISTIC HERO INTERFACE MATRIX ⚡ -->
+    <!-- ⚡ INTERACTIVE HERO LAYOUT ⚡ -->
     <section class="hero-split-grid">
         
         <!-- Left Side: Graphic Spotlight Panel with Smooth Floating SMS Beacon -->
@@ -40,63 +40,50 @@
             <!-- ⚡ FLOATING TACTICAL NEON PURPLE BEACON BUTTON ⚡ -->
             <a href="sms:+12078493939" class="cyber-beacon-btn text-glow-pulse">
                 <span class="beacon-wave"></span>
-                💬 DIRECT_SMS_LINK // 207-849-3939
+                💬 Click to Text Me Directly // 207-849-3939
             </a>
         </div>
 
-        <!-- Right Side: Clean Dual-Intake Helpdesk Console -->
+        <!-- Right Side: Clean Support Ticket Form Console -->
         <section id="console-hub" class="obsidian-card">
             <div class="neon-purple-bar"></div>
             
-            <!-- Ultra-Clean Technical Tab Switcher -->
-            <div class="console-tabs">
-                <button id="tab-ticket" class="tab-pill active" onclick="switchMatrixTab('ticket')">SUPPORT_TICKET</button>
-                <button id="tab-invoice" class="tab-pill" onclick="switchMatrixTab('invoice')">REQUEST_INVOICE</button>
-            </div>
+            <h2>Need Support or an Invoice?</h2>
+            <p class="form-helper-text">Fill out the quick form below to request computer support. If you need a copy of an invoice or have a billing question, simply select <strong>"Other Issue / Request Invoice"</strong> from the choices below!</p>
 
-            <!-- Panel 01: Support Ticket Intake -->
+            <!-- Support Ticket Intake Form -->
             <form id="ticketForm" class="console-form-view active" action="https://formspree.io" method="POST">
-                <input type="hidden" name="_subject" value="⚠️ NEW IT SUPPORT TICKET DISPATCHED">
+                <input type="hidden" name="_subject" value="⚠️ NEW THARPE IT SUPPORT REQUEST">
+                
                 <div class="cyber-input-group">
-                    <label>CORE_SYSTEM_TARGET</label>
+                    <label>What do you need help with?</label>
                     <select name="Category" required>
-                        <option value="" disabled selected>Select Architecture Core...</option>
-                        <option value="Network Infrastructure">Network Infrastructure & Wi-Fi</option>
-                        <option value="Hardware Management">Device Diagnostics & Repairs</option>
-                        <option value="Cloud & Software">Software Install & Configuration</option>
-                        <option value="Cybersecurity">Virus Removal & Access Management</option>
+                        <option value="" disabled selected>Choose a category...</option>
+                        <option value="Wi-Fi & Internet">Wi-Fi & Internet Problems</option>
+                        <option value="Computer & Device Repair">Computer Repairs & Slow Devices</option>
+                        <option value="Software & Apps">Software Installs & App Setup</option>
+                        <option value="Virus & Security">Virus Removal & Cyber Security</option>
+                        <option value="Other / Request Invoice">Other Issue / Request Invoice</option>
                     </select>
                 </div>
+                
                 <div class="cyber-input-group">
-                    <label>SLA_URGENCY_INDEX</label>
+                    <label>How urgent is this?</label>
                     <select name="Priority" required>
-                        <option value="Low">Low Priority (General Maintenance)</option>
-                        <option value="Medium" selected>Medium Priority (Standard SLA Ticket)</option>
-                        <option value="High">High Priority (Urgent System Outage)</option>
+                        <option value="Low">Low Priority (General Question)</option>
+                        <option value="Medium" selected>Medium Priority (Standard Issue)</option>
+                        <option value="High">High Priority (Urgent System Down)</option>
                     </select>
                 </div>
+                
                 <div class="cyber-input-group">
-                    <label>FAULT_LOG_SUMMARY</label>
-                    <textarea name="Description" placeholder="Enter system diagnostic parameters or error indicators..." required></textarea>
+                    <label>Describe the issue or details</label>
+                    <textarea name="Description" placeholder="Please type what is going wrong, or enter your invoice request details here..." required></textarea>
                 </div>
+                
                 <input type="hidden" name="_next" value="https://tharpeitservices.com">
-                <button type="submit" class="btn-neon-action">DISPATCH_TICKET_DATA</button>
+                <button type="submit" class="btn-neon-action">SEND SUPPORT REQUEST</button>
             </form>
-
-            <!-- Panel 02: Refined Invoice Request Portal -->
-            <div id="invoiceForm" class="console-form-view" style="display: none;">
-                <div class="invoice-routing-notice">
-                    <div class="notice-icon">📋</div>
-                    <h3>Manual Invoice Dispatch</h3>
-                    <p>To request a copy of an existing statement, submit a formal billing dispute, or coordinate direct commercial account terms, please transmit your logs directly via email routing:</p>
-                    
-                    <a href="mailto:Tharpeitservices@gmail.com" class="direct-billing-email-node">
-                        📬 Tharpeitservices@gmail.com
-                    </a>
-                    
-                    <span class="notice-footer-telemetry">// RESPONSE_ETA: &lt; 24_HOURS</span>
-                </div>
-            </div>
         </section>
 
     </section>
@@ -106,7 +93,7 @@
         <!-- 🏢 CORE BUSINESS PROFILE PANEL -->
         <section id="business-profile-info" class="obsidian-card full-width-card">
             <div class="neon-purple-bar blue-glow-strip"></div>
-            <h2>// CORE_METRICS // Profile Overview</h2>
+            <h2>Our Profile // Business Overview</h2>
             <div class="profile-content-grid">
                 <div class="profile-text-block">
                     <p class="service-highlight-text">
@@ -118,9 +105,9 @@
                 </div>
                 
                 <div class="contact-details-badge">
-                    <h3>📬 SECURE_COMMS_ROUTING</h3>
-                    <p><strong>EMAIL_DATA_STREAM:</strong> <a href="mailto:Tharpeitservices@gmail.com" class="neon-link">Tharpeitservices@gmail.com</a></p>
-                    <p><strong>SECURE_TEL_NODE:</strong> <a href="tel:2078493939" class="accent-glow">207-849-3939</a></p>
+                    <h3>📬 Direct Contact Channels</h3>
+                    <p><strong>Email Us:</strong> <a href="mailto:Tharpeitservices@gmail.com" class="neon-link">Tharpeitservices@gmail.com</a></p>
+                    <p><strong>Call or Text:</strong> <a href="tel:2078493939" class="accent-glow">207-849-3939</a></p>
                 </div>
             </div>
         </section>
@@ -128,24 +115,24 @@
         <!-- 💰 RATE CARD & PRICING ENGINE -->
         <section id="pricing-matrix-section" class="obsidian-card full-width-card">
             <div class="neon-purple-bar green-glow-strip"></div>
-            <h2>// RATE_CARD_METRICS // Tiered Service Pricing</h2>
-            <p class="section-intro-text">Transparent infrastructure troubleshooting rates built to fit individual parameters. Basic support configurations initialize at a baseline tier, adjusting linearly based on hardware deployment scopes or system complexities.</p>
+            <h2>Service Rates // Clear & Simple Pricing</h2>
+            <p class="section-intro-text">Fair, straightforward pricing built for everyone. Simple troubleshooting setups start at a flat entry rate, adjusting depending on the scale or complexity of the repair.</p>
             
             <div class="pricing-matrix-grid">
                 <!-- Tier 1 -->
                 <div class="price-tier-card">
-                    <span class="tier-tag">TIER_01 // BASELINE</span>
+                    <span class="tier-tag">TIER_01 // ENTRY</span>
                     <h3>Basic IT Support</h3>
                     <div class="price-display">
                         <span class="currency">$</span>
                         <span class="amount">40</span>
-                        <span class="suffix">/ start</span>
+                        <span class="suffix">/ starting at</span>
                     </div>
                     <ul class="tier-features-list">
-                        <li><span>✔</span> Simple OS Diagnostics</li>
-                        <li><span>✔</span> Email Access Troubleshooting</li>
-                        <li><span>✔</span> Software App Installations</li>
-                        <li><span>✔</span> General Device Optimizations</li>
+                        <li><span>✔</span> Quick System Checks</li>
+                        <li><span>✔</span> Email Setup & Fixes</li>
+                        <li><span>✔</span> App & Software Installs</li>
+                        <li><span>✔</span> General Computer Tune-Ups</li>
                     </ul>
                 </div>
 
@@ -156,28 +143,28 @@
                     <div class="price-display">
                         <span class="currency">$</span>
                         <span class="amount">85</span>
-                        <span class="suffix">/ scale</span>
+                        <span class="suffix">/ typical scale</span>
                     </div>
                     <ul class="tier-features-list">
-                        <li><span>✔</span> Complete Virus & Malware Eradication</li>
-                        <li><span>✔</span> Wi-Fi & Local Routing Configuration</li>
-                        <li><span>✔</span> Hardware Component Upgrades</li>
-                        <li><span>✔</span> Data Backup & Profile Relocations</li>
+                        <li><span>✔</span> Full Virus & Spyware Removal</li>
+                        <li><span>✔</span> Wi-Fi & Smart Network Setup</li>
+                        <li><span>✔</span> Hardware Part Upgrades</li>
+                        <li><span>✔</span> Data Backups & File Transfers</li>
                     </ul>
                 </div>
 
                 <!-- Tier 3 -->
                 <div class="price-tier-card">
-                    <span class="tier-tag">TIER_03 // CORE</span>
-                    <h3>Enterprise Infrastructure</h3>
+                    <span class="tier-tag">TIER_03 // BUSINESS</span>
+                    <h3>Commercial Business</h3>
                     <div class="price-display">
-                        <span class="currency">Quote</span>
+                        <span class="currency">Custom Quote</span>
                     </div>
                     <ul class="tier-features-list">
-                        <li><span>✔</span> Full Topology Network Engineering</li>
-                        <li><span>✔</span> Server Administrations & Access Rules</li>
-                        <li><span>✔</span> Enterprise Cybersecurity Lockdowns</li>
-                        <li><span>✔</span> On-Site Commercial Operations Monitoring</li>
+                        <li><span>✔</span> Full Office Network Setup</li>
+                        <li><span>✔</span> Server Administration & Setup</li>
+                        <li><span>✔</span> Advanced Cyber Security</li>
+                        <li><span>✔</span> Ongoing Small Business Monitoring</li>
                     </ul>
                 </div>
             </div>
@@ -186,3 +173,15 @@
         <!-- 🚀 WHAT WE ARE ALL ABOUT -->
         <section id="about-us-section" class="obsidian-card full-width-card">
             <div class="neon-purple-bar pink-glow-strip"></div>
+            <h2>Our Mission // What We Are All About</h2>
+            <p class="section-intro-text">At Tharpe IT Services, we believe that enterprise-grade support shouldn't come with confusing corporate jargon. We focus on building lasting technology foundations right here in our community.</p>
+            
+            <div class="about-features-grid">
+                <div class="feature-pillar">
+                    <div class="pillar-icon">🤝</div>
+                    <h3>Community First</h3>
+                    <p>We are dedicated to helping our neighbors and local businesses navigate tech challenges with friendly, reliable, on-site and remote support.</p>
+                </div>
+                <div class="feature-pillar">
+                    <div class="pillar-icon">⚡</div>
+                    <h3>Simple Solutions</h3>
