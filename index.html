@@ -4,11 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tharpe // IT Systems</title>
+    <!-- Primary Stylesheet Hook -->
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Fail-Safe Embedded Theme Layer (Restores your precise cyber dark design instantly) -->
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: #06050a !important; color: #ffffff !important; font-family: system-ui, -apple-system, sans-serif; padding-bottom: 60px; }
+        .main-container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        
+        /* Header Fix */
+        .site-header { background: #0c0b12; padding: 20px 30px; border-bottom: 1px solid #1a1726; margin-bottom: 30px; }
+        .brand-name { font-weight: bold; letter-spacing: 1.5px; font-size: 1.1rem; }
+        .status-indicator { display: flex; align-items: center; gap: 6px; font-size: 0.75rem; color: #8b8b93; margin-top: 4px; }
+        .status-dot { width: 8px; height: 8px; background: #00ff66; border-radius: 50%; box-shadow: 0 0 8px #00ff66; }
+        
+        /* Grid Alignment */
+        .hero-split-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-bottom: 40px; }
+        .hero-graphic-box { background: linear-gradient(145deg, #130f2b, #0c0b12); border: 1px solid #1e1938; border-radius: 8px; min-height: 340px; display: flex; align-items: flex-end; padding: 20px; }
+        .direct-text-link { background: rgba(12, 11, 18, 0.9); border: 1px solid #2f2754; padding: 8px 16px; border-radius: 20px; font-size: 0.8rem; color: #e1e1e6; }
+        
+        /* Support Ticket Container */
+        .ticket-panel-card { background: #0c0b12; border: 1px solid #1a1726; border-radius: 8px; padding: 25px; }
+        .ticket-panel-card h3 { font-size: 1.25rem; margin-bottom: 8px; }
+        .panel-sub { font-size: 0.8rem; color: #8b8b93; margin-bottom: 20px; }
+        .form-group { margin-bottom: 16px; }
+        .form-group label { display: block; font-size: 0.75rem; color: #b4b4bc; margin-bottom: 6px; text-transform: uppercase; }
+        .form-group select, .form-group textarea { width: 100%; background: #06050a; border: 1px solid #231f36; border-radius: 4px; padding: 10px; color: #fff; font-family: inherit; }
+        .form-group textarea { min-height: 90px; resize: vertical; }
+        .submit-ticket-btn { width: 100%; background: #7c3aed; color: #fff; border: none; padding: 12px; font-weight: bold; border-radius: 4px; cursor: pointer; text-transform: uppercase; }
+        
+        /* Generic Grid Content */
+        h4 { font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; color: #a855f7; margin-bottom: 15px; border-bottom: 1px solid #1a1726; padding-bottom: 6px; }
+        .profile-channels-section { display: grid; grid-template-columns: 2fr 1fr; gap: 30px; margin-bottom: 40px; }
+        @media(max-width:768px){ .profile-channels-section { grid-template-columns: 1fr; } }
+        
+        /* Price Cards */
+        .matrix-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .price-tier-card { background: #0c0b12; border: 1px solid #1a1726; padding: 20px; border-radius: 6px; }
+        .tier-tag { font-size: 0.65rem; color: #a855f7; font-weight: bold; }
+        .price-display { font-size: 1.75rem; font-weight: bold; margin: 10px 0; }
+        .tier-features { list-style: none; font-size: 0.8rem; color: #b4b4bc; }
+        .tier-features li { padding: 4px 0; border-top: 1px solid #1a1726; }
+        
+        /* Mission & Info blocks */
+        .mission-statement-section { margin: 40px 0; }
+        .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .value-block h6 { color: #a855f7; font-size: 0.9rem; margin-bottom: 4px; }
+        .value-block p { font-size: 0.8rem; color: #8b8b93; }
+
+        /* Review Container Styles */
+        .interactive-review-box { background: #0c0b12; border: 1px solid #1a1726; border-radius: 8px; padding: 25px; margin-top: 4px; }
+        .review-composer { display: flex; flex-direction: column; gap: 15px; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #1a1726; }
+        .star-input-group { display: flex; flex-direction: row-reverse; justify-content: flex-end; gap: 6px; }
+        .star-input-group input { display: none; }
+        .star-input-group label { font-size: 1.75rem; color: #231f36; cursor: pointer; }
+        .star-input-group input:checked ~ label, .star-input-group label:hover, .star-input-group label:hover ~ label { color: #a855f7; }
+        .review-composer textarea { width: 100%; background: #06050a; border: 1px solid #231f36; border-radius: 4px; padding: 10px; color: #fff; min-height: 70px; }
+        .post-review-btn { background: #a855f7; color: #fff; border: none; padding: 10px 18px; font-weight: bold; border-radius: 4px; cursor: pointer; align-self: flex-start; }
+        .review-post-card { background: #06050a; border: 1px solid #1a1726; padding: 12px; border-radius: 4px; margin-bottom: 10px; }
+        .card-stars-line { color: #a855f7; margin-bottom: 2px; }
+        .card-message { font-size: 0.85rem; color: #d1d1d6; }
+    </style>
 </head>
 <body>
 
-    <!-- Main Navigation Header Area -->
     <header class="site-header">
         <div class="logo-area">
             <span class="brand-name">THARPE // IT SYSTEMS</span>
@@ -19,24 +79,21 @@
         </div>
     </header>
 
-    <!-- Top Showcase & Support Ticket Forms Panel -->
     <main class="main-container">
         <section class="hero-split-grid">
             <div class="hero-graphic-box">
-                <!-- Keep your visual design or asset background -->
                 <div class="direct-text-link">
-                    <span class="dot-accent"></span> Click to Text Me Directly // 207-449-3939
+                    Click to Text Me Directly // 207-449-3939
                 </div>
             </div>
 
-            <!-- UNTOUCHED Ticket Creation Form Layout -->
+            <!-- Ticket Section -->
             <div class="ticket-panel-card">
                 <h3>Submit a Support Ticket</h3>
-                <p class="panel-sub">Fill out the form below to request computer support. If you need a copy of an invoice or have a billing question, simply select "Other Issue / Request Invoice" from the choices below.</p>
-                
+                <p class="panel-sub">Fill out the form below to request computer support.</p>
                 <form id="support-ticket-form">
                     <div class="form-group">
-                        <label for="ticket-category">What do you need help with?</label>
+                        <label>What do you need help with?</label>
                         <select id="ticket-category" required>
                             <option value="" disabled selected>Choose a category...</option>
                             <option value="hardware">Hardware Repair</option>
@@ -45,108 +102,59 @@
                             <option value="billing">Other Issue / Request Invoice</option>
                         </select>
                     </div>
-
                     <div class="form-group">
-                        <label for="ticket-urgency">How urgent is this?</label>
+                        <label>How urgent is this?</label>
                         <select id="ticket-urgency" required>
                             <option value="low">Low Priority</option>
                             <option value="medium" selected>Medium Priority (Standard Issue)</option>
                             <option value="high">High Priority / Urgent</option>
                         </select>
                     </div>
-
                     <div class="form-group">
-                        <label for="ticket-desc">Describe the issue or details</label>
-                        <textarea id="ticket-desc" placeholder="Please type what is going wrong, or enter your invoice request details here..." required></textarea>
+                        <label>Describe the issue or details</label>
+                        <textarea id="ticket-desc" placeholder="Please type what is going wrong..." required></textarea>
                     </div>
-
                     <button type="submit" class="submit-ticket-btn">Send Support Request</button>
                 </form>
             </div>
         </section>
 
-        <!-- Company Profile & Channels Info -->
         <section class="profile-channels-section">
-            <div class="info-column">
+            <div>
                 <h4>Our Profile // Business Overview</h4>
-                <p>Providing local and simple IT services to the community. Backed by over <strong>15 years of professional IT experience</strong>, we deliver robust tech troubleshooting, networking optimization, and clear device solutions built directly around your small business or home infrastructure.</p>
+                <p style="color:#b4b4bc; font-size:0.9rem;">Providing local and simple IT services to the community. Backed by over 15 years of professional IT experience, we deliver tech troubleshooting and home infrastructure solutions.</p>
             </div>
-            <div class="info-column contact-links">
+            <div>
                 <h4>Direct Contact Channels</h4>
-                <p><strong>Email Us:</strong> <a href="mailto:tharpeitservices@proton.me">tharpeitservices@proton.me</a></p>
-                <p><strong>Call or Text:</strong> <a href="tel:2074493939">207-449-3939</a></p>
+                <p style="font-size:0.9rem;">Email: <a href="mailto:tharpeitservices@proton.me">tharpeitservices@proton.me</a></p>
+                <p style="font-size:0.9rem;">Call/Text: <a href="tel:2074493939">207-449-3939</a></p>
             </div>
         </section>
 
-        <!-- Dynamic Tiered Service Cost Cards -->
-        <section class="pricing-matrix-section">
+        <section style="margin-bottom: 40px;">
             <h4>Service Rates // Clear & Simple Pricing</h4>
             <div class="matrix-grid">
-                
                 <div class="price-tier-card">
                     <span class="tier-tag">TIER 01 // ENTRY</span>
                     <h5>Basic IT Support</h5>
-                    <div class="price-display"><sup>$</sup>40 <span>/ starting at</span></div>
-                    <ul class="tier-features">
-                        <li>Quick System Checks</li>
-                        <li>Email Setup & Fixes</li>
-                        <li>App & Software Installs</li>
-                        <li>General Computer Tune-Ups</li>
-                    </ul>
+                    <div class="price-display">$40</div>
+                    <ul class="tier-features"><li>Quick System Checks</li><li>Email Setup</li><li>App Installs</li></ul>
                 </div>
-
                 <div class="price-tier-card">
                     <span class="tier-tag">TIER 02 // SYSTEM</span>
                     <h5>Advanced Repairs</h5>
-                    <div class="price-display"><sup>$</sup>85 <span>/ typical code</span></div>
-                    <ul class="tier-features">
-                        <li>Full Virus & Spyware Removal</li>
-                        <li>Wi-Fi & Smart Network Setup</li>
-                        <li>Hardware Part Upgrades</li>
-                        <li>Data Backups & File Transfers</li>
-                    </ul>
+                    <div class="price-display">$85</div>
+                    <ul class="tier-features"><li>Virus Removal</li><li>Wi-Fi Setup</li><li>Hardware Upgrades</li></ul>
                 </div>
-
-                <div class="price-tier-card premium-tier">
+                <div class="price-tier-card">
                     <span class="tier-tag">TIER 03 // BUSINESS</span>
                     <h5>Commercial Business</h5>
                     <div class="price-display">Custom Quote</div>
-                    <ul class="tier-features">
-                        <li>Full Office Network Setup</li>
-                        <li>Server Administration & Setup</li>
-                        <li>Advanced Cyber Security</li>
-                        <li>Ongoing Small Business Monitoring</li>
-                    </ul>
+                    <ul class="tier-features"><li>Office Network Setup</li><li>Server Administration</li><li>Cyber Security</li></ul>
                 </div>
-
             </div>
         </section>
 
-        <!-- Core Mission & Values Layout -->
         <section class="mission-statement-section">
             <h4>Our Mission // What We Are All About</h4>
-            <p class="mission-lead">At Tharpe IT Services, we believe that enterprise-grade support shouldn't come with confusing corporate jargon. We focus on building lasting technology foundations right here in our community.</p>
-            
             <div class="values-grid">
-                <div class="value-block">
-                    <h6>Community First</h6>
-                    <p>We are dedicated to helping our neighbors and local businesses navigate tech challenges with friendly, reliable, on-site and remote support.</p>
-                </div>
-                <div class="value-block">
-                    <h6>Simple Solutions</h6>
-                    <p>No unnecessary upsells. We diagnose your exact hardware or network issue and fix it using clear, straightforward methods.</p>
-                </div>
-                <div class="value-block">
-                    <h6>15 Years of Trust</h6>
-                    <p>Bringing comprehensive industry expertise straight to your desktop. From malware removal to complex Wi-Fi routing, we have you covered.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Fixed Live Customer Review System -->
-        <section class="interactive-review-box" id="review-root-section"></section>
-    </main>
-
-    <script src="script.js"></script>
-</body>
-</html>
