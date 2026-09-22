@@ -5,19 +5,149 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tharpe IT Services</title>
     
-    <!-- External System Files -->
+    <!-- External Framework Integration Systems -->
     <link href="https://jsdelivr.net" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://jsdelivr.net">
-    <link rel="stylesheet" href="style.css">
+
+    <!-- ALL LIVE WEBPAGE EMBEDDED STYLES (BYPASSES EXTERNAL CONFLICTS) -->
+    <style type="text/css">
+        html, body {
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+            overflow-x: hidden !important;
+            scroll-behavior: smooth !important;
+            background-color: #0b071e !important;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+        }
+
+        body {
+            background-image: radial-gradient(circle at 80% 20%, rgba(90, 40, 250, 0.15) 0%, transparent 50%),
+                              radial-gradient(circle at 20% 80%, rgba(255, 51, 102, 0.1) 0%, transparent 50%) !important;
+            background-attachment: fixed !important;
+            color: #ffffff !important;
+        }
+
+        /* Premium Text Alignment */
+        .premium-pink-text {
+            color: #ff3377 !important;
+            background: linear-gradient(45deg, #ff3366, #ff55bb) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            display: inline-block !important;
+        }
+
+        .badge-neighborly {
+            background-color: rgba(90, 40, 250, 0.25) !important;
+            border: 1px solid rgba(119, 68, 255, 0.6) !important;
+            color: #ddccff !important;
+            font-weight: 700 !important;
+            letter-spacing: 1px !important;
+            font-size: 0.75rem !important;
+            padding: 8px 16px !important;
+            border-radius: 50px !important;
+            display: inline-block !important;
+        }
+
+        /* Glassmorphic Container Panels (Locks alignment layout shapes) */
+        .glass-container-card {
+            background: rgba(18, 12, 38, 0.85) !important;
+            border: 1px solid rgba(255, 255, 255, 0.08) !important;
+            border-radius: 20px !important;
+            box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.6) !important;
+            backdrop-filter: blur(12px) !important;
+            padding: 40px !important;
+            margin-bottom: 30px !important;
+        }
+
+        /* High-Contrast Inputs */
+        .tharpe-input-field {
+            display: block !important;
+            width: 100% !important;
+            padding: 12px 16px !important;
+            font-size: 1rem !important;
+            color: #ffffff !important;
+            background-color: #060410 !important;
+            border: 1px solid rgba(255, 255, 255, 0.15) !important;
+            border-radius: 10px !important;
+            margin-top: 6px !important;
+            margin-bottom: 16px !important;
+            box-sizing: border-box !important;
+            transition: all 0.2s ease !important;
+        }
+        
+        .tharpe-input-field:focus {
+            border-color: #ff3366 !important;
+            background-color: #0c0822 !important;
+            outline: none !important;
+            box-shadow: 0px 0px 12px rgba(255, 51, 102, 0.4) !important;
+            color: #ffffff !important;
+        }
+
+        .tharpe-input-field option {
+            background-color: #0b071e !important;
+            color: #ffffff !important;
+        }
+
+        .tharpe-label-text {
+            color: #bfaecf !important;
+            font-weight: 600 !important;
+            font-size: 0.85rem !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.5px !important;
+            display: block !important;
+        }
+
+        .submit-btn-premium {
+            background: linear-gradient(135deg, #ff3366, #ff55bb) !important;
+            color: #ffffff !important;
+            font-weight: 700 !important;
+            border: none !important;
+            border-radius: 10px !important;
+            padding: 14px !important;
+            width: 100% !important;
+            cursor: pointer !important;
+            transition: transform 0.2s ease !important;
+        }
+
+        .submit-btn-premium:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0px 5px 20px rgba(255, 51, 102, 0.5) !important;
+        }
+
+        /* Fixed Floating SMS Pill */
+        .tharpe-sms-action-pill {
+            position: fixed !important;
+            bottom: 24px !important;
+            right: 24px !important;
+            z-index: 999999 !important;
+            background: linear-gradient(135deg, #ff3366, #ff55bb) !important;
+            color: #ffffff !important;
+            font-weight: 700 !important;
+            border: 2px solid #ffffff !important;
+            box-shadow: 0px 4px 25px rgba(255, 51, 102, 0.5) !important;
+            border-radius: 50px !important;
+            padding: 14px 28px !important;
+            text-decoration: none !important;
+            display: inline-flex !important;
+            align-items: center !important;
+        }
+
+        .tharpe-sms-action-pill:hover {
+            transform: scale(1.05) !important;
+            box-shadow: 0px 6px 30px rgba(255, 51, 102, 0.7) !important;
+            color: #ffffff !important;
+        }
+    </style>
 </head>
 <body class="bg-dark text-light">
 
-    <!-- SMS Floating Button Shortcut -->
+    <!-- Floating SMS Text Support Button -->
     <a href="sms:+12078493939?body=Hello%20Tharpe%20IT%20Services,%20I%20need%20assistance%20with..." class="tharpe-sms-action-pill">
         <i class="bi bi-chat-text-fill me-2"></i> Text Me For Help
     </a>
 
-    <!-- Top Sticky Navigation Bar Menu -->
+    <!-- Top Navigation Bar Layout -->
     <nav class="navbar navbar-expand-lg navbar-dark px-4 py-4 fixed-top border-bottom border-dark" style="backdrop-filter: blur(12px); background-color: rgba(11, 7, 30, 0.8) !important; z-index: 10000 !important;">
         <div class="container">
             <a class="navbar-brand fs-3 fw-bold text-white d-flex align-items-center" href="#">
@@ -36,9 +166,10 @@
         </div>
     </nav>
 
-    <!-- SECTION 1: Premium Template Hero Landing Block -->
+    <!-- SECTION 1: Premium Template Hero Landing Section -->
     <section class="container d-flex align-items-center justify-content-center min-vh-100 pt-5 mt-5">
         <div class="row align-items-center g-5 py-5 w-100">
+            <!-- Left Grid Layout Texts -->
             <div class="col-lg-7 text-start">
                 <div class="mb-4">
                     <span class="badge badge-neighborly mb-3"><i class="bi bi-heart-fill me-1 text-danger"></i> NEIGHBORLY & RELIABLE</span>
@@ -50,13 +181,14 @@
                     Whether it's for a busy home office or personal everyday use, we take pride in simplifying your basic and complex technical needs. No confusing tech talk—just dependable support for your everyday lifestyle.
                 </p>
             </div>
-            <div class="col-lg-5 position-relative text-center d-none d-lg-block">
-                <img src="hero.png" alt="Tharpe Professional Care Profile" class="img-fluid rounded-4 shadow-lg" style="max-height: 440px; border: 1px solid rgba(255,255,255,0.1);">
+            <!-- Right Embedded Graphical Profile Avatar Placeholder -->
+            <div class="col-lg-5 text-center d-none d-lg-block">
+                <img src="hero.png" alt="Tharpe Professional Technical Profile Backdrop" class="img-fluid rounded-4 shadow-lg" style="max-height: 440px; border: 1px solid rgba(255,255,255,0.15);">
             </div>
         </div>
     </section>
 
-    <!-- SECTION 2: Fully Functional Dropdown Ticket Helpdesk Formspree Container -->
+    <!-- SECTION 2: Fully Operational Formspree Ticket Helpdesk Support Form -->
     <section id="support-portal" class="container my-5 py-5">
         <div class="row justify-content-center">
             <div class="col-lg-8">
@@ -67,84 +199,10 @@
                         <p class="text-white-50 small mt-2">Fill out your information below. Submissions alert our technician hub instantly.</p>
                     </div>
 
-                    <!-- FIXED FORMSPREE PIPELINE METHOD -->
+                    <!-- SECURE FORMSPREE POST CONTROLS -->
                     <form action="https://formspree.io" method="POST">
                         <div class="mb-3 text-start">
                             <label for="fullName" class="tharpe-label-text">Full Name</label>
                             <input type="text" class="tharpe-input-field" id="fullName" name="name" placeholder="Enter your full name" required>
                         </div>
                         
-                        <div class="mb-3 text-start">
-                            <label for="emailAddr" class="tharpe-label-text">Email Address</label>
-                            <input type="email" class="tharpe-input-field" id="emailAddr" name="email" placeholder="Enter your email address" required>
-                        </div>
-
-                        <div class="mb-3 text-start">
-                            <label for="category" class="tharpe-label-text">Issue Category</label>
-                            <select class="tharpe-input-field form-select" id="category" name="category" required>
-                                <option value="" disabled selected>Select Issue Category</option>
-                                <option value="Hardware">Hardware Issues & Diagnostics</option>
-                                <option value="Software">Software Installs & Operating System Errors</option>
-                                <option value="Network">Network Connectivity & Router Setup</option>
-                                <option value="Malware">Malware Removal & System Performance</option>
-                                <option value="Other">Other / General Technical Inquiry</option>
-                            </select>
-                        </div>
-
-                        <div class="mb-3 text-start">
-                            <label for="priority" class="tharpe-label-text">Priority Level</label>
-                            <select class="tharpe-input-field form-select" id="priority" name="priority" required>
-                                <option value="Low">Low Priority (Standard Response)</option>
-                                <option value="Medium" selected>Medium Priority (Flexible Scheduling)</option>
-                                <option value="High">High Priority (Urgent System Breakdown)</option>
-                            </select>
-                        </div>
-
-                        <div class="mb-3 text-start">
-                            <label for="description" class="tharpe-label-text">Issue Description</label>
-                            <textarea class="tharpe-input-field" id="description" name="description" rows="5" placeholder="Provide details about the issue or error text you have faced." required></textarea>
-                        </div>
-
-                        <div class="d-grid mt-4 pt-2">
-                            <button type="submit" class="submit-btn-premium fs-5"><i class="bi bi-send-fill me-2"></i>Submit Ticket</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 3: Values, Experience & Client Review Panel -->
-    <section id="about-section" class="container my-5 py-5">
-        <div class="text-center mb-5">
-            <span class="text-uppercase tracking-wider fw-bold small" style="color: #ff3366; letter-spacing: 2px;">Core Values</span>
-            <h2 class="display-5 fw-bold text-white mt-1">About Tharpe IT Services</h2>
-            <div class="mx-auto" style="height: 3px; width: 50px; background: linear-gradient(to right, #ff3366, #ff55bb); margin-top: 15px;"></div>
-        </div>
-
-        <div class="row g-4 align-items-stretch mb-5">
-            <div class="col-md-6">
-                <div class="glass-container-card h-100 mb-0">
-                    <h4 class="text-white fw-bold mb-3 d-flex align-items-center"><i class="bi bi-clock-history me-2" style="color: #ff3366;"></i> 20 Years of Experience</h4>
-                    <p class="text-white-50 mb-0" style="line-height: 1.7;">
-                        Led by Timothy Tharpe, Tharpe IT Services brings over two decades of technical field knowledge directly to your home or office floor. We specialize in fast diagnostics, secure network rollouts, remote troubleshooting support, data safety optimization, and complete technical device care tailored explicitly to local community members.
-                    </p>
-                </div>
-            </div>
-
-            <div class="col-md-6">
-                <div class="glass-container-card h-100 mb-0 d-flex flex-column justify-content-between">
-                    <div>
-                        <h4 class="text-white fw-bold mb-3 d-flex align-items-center"><i class="bi bi-compass me-2" style="color: #ff3366;"></i> Our Mission Statement</h4>
-                        <blockquote class="blockquote p-3 rounded border-start border-3" style="background-color: rgba(6, 4, 16, 0.5) !important; border-color: #ff3366 !important;">
-                            <p class="fs-5 italic text-white mb-0">"Family and locally focused IT services for your convenience."</p>
-                        </blockquote>
-                    </div>
-                    <p class="text-white-50 mt-2 mb-0" style="line-height: 1.7;">
-                        We aim to bridge the accessibility gap by rendering top-tier professional engineering principles at affordable, family-focused rates. Your security is our absolute priority.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Lisa Folk Testimonial Card Frame -->
