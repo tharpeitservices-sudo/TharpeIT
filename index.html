@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechSupport</title>
+    <title>Tharpe IT Services</title>
     <!-- Alpine JS -->
     <script src="https://jsdelivr.net" defer></script>
     <!-- Bootstrap CSS Framework -->
@@ -15,101 +15,146 @@
 </head>
 <body class="bg-dark text-light">
 
+    <!-- Floating Text Support Button -->
+    <a href="sms:+12078493939?body=Hello%20Tharpe%20IT%20Services,%20I%20need%20assistance%20with..." 
+       class="btn btn-info text-dark fw-bold position-fixed bottom-0 end-0 m-4 px-4 py-3 rounded-pill shadow-lg z-3" 
+       style="border: 2px solid #fff;">
+        <i class="bi bi-chat-text-fill me-2"></i> Text Me For Help
+    </a>
+
     <!-- Navbar Section -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary px-4 py-3">
-        <a class="navbar-brand fs-3" href="#">
-            <i class="bi bi-cpu text-info"></i> TechSupport
-        </a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary px-4 py-3 shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand fs-3 fw-bold text-info" href="#">
+                <i class="bi bi-cpu text-info"></i> Tharpe IT Services
+            </a>
+            <span class="navbar-text text-light-50 d-none d-md-inline">
+                Providing local and simple IT services to the community
+            </span>
+        </div>
     </nav>
 
-    <!-- Main Content Header -->
-    <header class="container my-5 text-center">
-        <h1 class="display-4 fw-bold">Welcome to <span class="text-info">TechSupport</span> Portal</h1>
-        <p class="lead">Get immediate professional tech assistance or manage your ongoing tickets smoothly.</p>
-    </header>
+    <!-- Page 1: Hero Section & Ticketing System Container -->
+    <div class="container my-5">
+        <div class="row align-items-center g-5">
+            <!-- Left Side: Hero Image & Text -->
+            <div class="col-lg-6 text-start">
+                <div class="mb-4">
+                    <span class="badge bg-info text-dark uppercase p-2 px-3 fw-bold mb-3">Community First Tech Support</span>
+                    <h1 class="display-4 fw-bold lh-sm">Reliable & Simple <br><span class="text-info">IT Solutions</span></h1>
+                </div>
+                <p class="lead text-light-50 mb-4">
+                    Don't let technical breakdowns interrupt your day. Whether you are dealing with a slow device, home network issues, or small business infrastructure security, we deliver rapid, professional support right where you are.
+                </p>
+                <!-- Hero Visual Anchor Point -->
+                <div class="rounded-4 overflow-hidden border border-secondary bg-secondary p-2 shadow-sm d-none d-sm-block" style="max-height: 250px;">
+                    <img src="hero.png" alt="Tharpe IT Services Hero Graphic" class="img-fluid rounded-3 w-100 object-fit-cover" style="opacity: 0.85; min-height: 235px;">
+                </div>
+            </div>
 
-    <!-- Ticket Submission Form Container -->
-    <main class="container my-5" style="max-width: 800px;">
-        <div class="card bg-secondary text-light p-4 shadow">
-            <h2 class="mb-4 text-info"><i class="bi bi-ticket-perforated"></i> Submit a Support Ticket</h2>
-            
-            <!-- Working Formspree POST Configuration -->
-            <form action="https://formspree.io" method="POST">
-                <div class="mb-3">
-                    <label for="fullName" class="form-label">Full Name</label>
-                    <input type="text" class="form-control bg-dark text-light border-secondary" id="fullName" name="name" placeholder="Enter your full name" required>
-                </div>
-                
-                <div class="mb-3">
-                    <label for="emailAddr" class="form-label">Email Address</label>
-                    <input type="email" class="form-control bg-dark text-light border-secondary" id="emailAddr" name="email" placeholder="Enter your email address" required>
-                </div>
+            <!-- Right Side: Interactive Ticket Submission Form -->
+            <div class="col-lg-6">
+                <div class="card bg-secondary text-light p-4 shadow-lg rounded-4 border-0">
+                    <h3 class="mb-3 text-info fw-bold"><i class="bi bi-ticket-perforated-fill me-2"></i>Submit a Support Ticket</h3>
+                    <p class="small text-light-50 mb-4">Fill out your configuration profile. Submissions instantly alert our technician desk.</p>
+                    
+                    <form action="https://formspree.io" method="POST">
+                        <div class="mb-3">
+                            <label for="fullName" class="form-label small fw-bold">Full Name</label>
+                            <input type="text" class="form-control bg-dark text-light border-secondary p-2" id="fullName" name="name" placeholder="Enter your full name" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="emailAddr" class="form-label small fw-bold">Email Address</label>
+                            <input type="email" class="form-control bg-dark text-light border-secondary p-2" id="emailAddr" name="email" placeholder="Enter your email address" required>
+                        </div>
 
-                <div class="mb-3">
-                    <label for="category" class="form-label">Issue Category</label>
-                    <select class="form-select bg-dark text-light border-secondary" id="category" name="category" required>
-                        <option value="" disabled selected>Select Issue Category</option>
-                        <option value="Hardware">Hardware Issues & Diagnostics</option>
-                        <option value="Software">Software Installs & Operating System Errors</option>
-                        <option value="Network">Network Connectivity & Router Setup</option>
-                        <option value="Malware">Malware Removal & System Performance</option>
-                        <option value="Other">Other / General Technical Inquiry</option>
-                    </select>
-                </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label small fw-bold">Issue Category</label>
+                            <select class="form-select bg-dark text-light border-secondary p-2" id="category" name="category" required>
+                                <option value="" disabled selected>Select Issue Category</option>
+                                <option value="Hardware">Hardware Issues & Diagnostics</option>
+                                <option value="Software">Software Installs & Operating System Errors</option>
+                                <option value="Network">Network Connectivity & Router Setup</option>
+                                <option value="Malware">Malware Removal & System Performance</option>
+                                <option value="Other">Other / General Technical Inquiry</option>
+                            </select>
+                        </div>
 
-                <div class="mb-3">
-                    <label for="priority" class="form-label">Priority</label>
-                    <select class="form-select bg-dark text-light border-secondary" id="priority" name="priority" required>
-                        <option value="Low">Low Priority (Standard Response)</option>
-                        <option value="Medium" selected>Medium Priority (Standard Flexibility)</option>
-                        <option value="High">High Priority (Urgent System Breakdown)</option>
-                    </select>
-                </div>
+                        <div class="mb-3">
+                            <label for="priority" class="form-label small fw-bold">Priority</label>
+                            <select class="form-select bg-dark text-light border-secondary p-2" id="priority" name="priority" required>
+                                <option value="Low">Low Priority (Standard Response)</option>
+                                <option value="Medium" selected>Medium Priority (Flexible Scheduling)</option>
+                                <option value="High">High Priority (Urgent System Breakdown)</option>
+                            </select>
+                        </div>
 
-                <div class="mb-3">
-                    <label for="description" class="form-label">Issue Description</label>
-                    <textarea class="form-control bg-dark text-light border-secondary" id="description" name="description" rows="5" placeholder="Provide detailed information about the technical issues or errors you have faced." required></textarea>
-                </div>
+                        <div class="mb-3">
+                            <label for="description" class="form-label small fw-bold">Issue Description</label>
+                            <textarea class="form-control bg-dark text-light border-secondary p-2" id="description" name="description" rows="4" placeholder="Provide detailed information about the technical issues or error messages you have faced." required></textarea>
+                        </div>
 
-                <div class="text-end">
-                    <button type="submit" class="btn btn-info px-4 py-2 text-dark fw-bold">Submit Ticket</button>
+                        <div class="d-grid mt-4">
+                            <button type="submit" class="btn btn-info p-2.5 text-dark fw-bold fs-5 shadow-sm">Submit Request</button>
+                        </div>
+                    </form>
                 </div>
-            </form>
+            </div>
         </div>
-    </main>
+    </div>
 
-    <!-- Services Overview Section -->
-    <section class="container my-5 text-center">
-        <h2 class="mb-4">Why choose TechSupport?</h2>
-        <div class="row g-4">
+    <hr class="border-secondary my-5 container">
+
+    <!-- Page 2: About Us, Core Values, Mission & Customer Feedback Content -->
+    <div class="container my-5">
+        
+        <!-- Section Header -->
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold text-info">About Tharpe IT Services</h2>
+            <div class="bg-info mx-auto" style="height: 3px; width: 60px; margin-top: 15px;"></div>
+        </div>
+
+        <div class="row g-4 align-items-stretch">
+            <!-- Column 1: Our Profile & Background -->
+            <div class="col-md-6">
+                <div class="p-4 bg-secondary rounded-4 h-100 shadow-sm border border-dark">
+                    <h4 class="text-info mb-3"><i class="bi bi-person-badge-fill me-2"></i>20 Years of Trusted Experience</h4>
+                    <p class="text-light-50">
+                        Led by Timothy Tharpe, Tharpe IT Services brings over two decades of technical field knowledge directly to your home or office floor. We specialize in fast diagnostics, secure network rollouts, remote troubleshooting support, data safety optimization, and complete technical device care tailored explicitly to local community members.
+                    </p>
+                    <p class="text-light-50 mb-0">
+                        Our foundational approach values clarity over confusing industry jargon, giving you reliable transparency from check-in to resolution.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Column 2: Our Foundational Mission -->
+            <div class="col-md-6">
+                <div class="p-4 bg-secondary rounded-4 h-100 shadow-sm border border-dark d-flex flex-column justify-content-between">
+                    <div>
+                        <h4 class="text-info mb-3"><i class="bi bi-compass-fill me-2"></i>Our Mission Statement</h4>
+                        <blockquote class="blockquote bg-dark p-3 rounded border-start border-info border-3 mb-0">
+                            <p class="fs-5 italic text-light mb-0">"Providing local and simple IT services to the community."</p>
+                        </blockquote>
+                    </div>
+                    <p class="text-light-50 mt-3 mb-0">
+                        We aim to bridge the accessibility gap by rendering top-tier professional engineering principles at affordable, family-focused rates. Your security is our absolute priority.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Strategic Expertise Highlights -->
+        <div class="row g-4 mt-4">
             <div class="col-md-4">
-                <div class="p-4 bg-secondary rounded shadow-sm h-100">
+                <div class="p-4 bg-secondary rounded-4 shadow-sm h-100 text-center">
                     <i class="bi bi-clock-history fs-1 text-info mb-3"></i>
-                    <h5>24/7 Fast Response</h5>
-                    <p class="small text-light-50">Our team works around the clock to ensure your technical hurdles are resolved as quickly as possible.</p>
+                    <h5 class="fw-bold">24/7 Availability Architecture</h5>
+                    <p class="small text-light-50 mb-0">Our routing pipelines work non-stop to ensure critical infrastructure breakdowns get prioritized immediately.</p>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="p-4 bg-secondary rounded shadow-sm h-100">
+                <div class="p-4 bg-secondary rounded-4 shadow-sm h-100 text-center">
                     <i class="bi bi-shield-check fs-1 text-info mb-3"></i>
-                    <h5>Certified Professionals</h5>
-                    <p class="small text-light-50">All technicians are heavily vetted and hold active industry certifications to handle complex enterprise infrastructures.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="p-4 bg-secondary rounded shadow-sm h-100">
-                    <i class="bi bi-currency-dollar fs-1 text-info mb-3"></i>
-                    <h5>Affordable Rates</h5>
-                    <p class="small text-light-50">We provide transparent upfront pricing without any hidden structural fees or sudden contractual overheads.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer Section -->
-    <footer class="bg-secondary text-center py-3 mt-5">
-        <p class="mb-0 text-light-50">&copy; 2026 TechSupport Portal. All rights reserved.</p>
-    </footer>
-
-</body>
-</html>
+                    <h5 class="fw-bold">Cybersecurity Defenses</h5>
