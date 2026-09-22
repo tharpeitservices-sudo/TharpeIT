@@ -6,15 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (supportForm) {
         supportForm.addEventListener("submit", (e) => {
             e.preventDefault();
-            
-            // Collects your existing form values securely
-            const category = document.getElementById("ticket-category").value;
-            const urgency = document.getElementById("ticket-urgency").value;
-            const description = document.getElementById("ticket-desc").value;
-
-            console.log("Support Ticket Logged:", { category, urgency, description });
-            alert("Support Request submitted successfully!");
-            
+            alert("Support Request logged successfully!");
             supportForm.reset();
         });
     }
@@ -22,55 +14,55 @@ document.addEventListener("DOMContentLoaded", () => {
     // ==========================================
     // 2. LIVE INTERACTIVE CUSTOMER REVIEW SYSTEM
     // ==========================================
-    const fallbackForm = document.getElementById("fallback-review-form");
-    const renderWall = document.getElementById("fallback-reviews-render-wall");
+    const reviewForm = document.getElementById("live-user-review-form");
+    const reviewsWall = document.getElementById("live-reviews-display-wall");
 
-    if (fallbackForm && renderWall) {
+    if (reviewForm && reviewsWall) {
         // Loads reviews from browser local memory, or keeps a default 5-star review if empty
-        let reviewsList = JSON.parse(localStorage.getItem("local_reviews_data")) || [
+        let activeReviews = JSON.parse(localStorage.getItem("tharpe_reviews_list")) || [
             { rating: 5, msg: "Outstanding support. Cleared out my malware configuration instantly." }
         ];
 
         // Function to build out and display the reviews list on the screen
-        function redrawReviews() {
-            renderWall.innerHTML = "";
-            reviewsList.forEach(item => {
+        function renderReviewsToWall() {
+            reviewsWall.innerHTML = "";
+            activeReviews.forEach(item => {
                 const card = document.createElement("div");
                 card.className = "review-post-card";
                 card.innerHTML = `
                     <div class="card-stars-line">${"★".repeat(item.rating)}${"☆".repeat(5 - item.rating)}</div>
                     <div class="card-message">${item.msg}</div>
                 `;
-                renderWall.appendChild(card);
+                reviewsWall.appendChild(card);
             });
         }
 
         // Handles what happens when a user clicks "Submit Review"
-        fallbackForm.addEventListener("submit", (e) => {
+        reviewForm.addEventListener("submit", (e) => {
             e.preventDefault();
-            const chosenRating = document.querySelector('input[name="fallback-stars"]:checked');
-            const userMsg = document.getElementById("fallback-text-area").value.trim();
+            const checkedStar = document.querySelector('input[name="review-stars"]:checked');
+            const message = document.getElementById("review-text-input").value.trim();
 
-            if (!chosenRating) {
-                alert("Please select a star rating before submitting.");
+            if (!checkedStar) {
+                alert("Please click on a star rating level before submitting your review.");
                 return;
             }
 
             // Save the new review to the dataset list
-            reviewsList.unshift({
-                rating: parseInt(chosenRating.value),
-                msg: userMsg
+            activeReviews.unshift({
+                rating: parseInt(checkedStar.value),
+                msg: message
             });
 
             // Write the updated list back into browser memory
-            localStorage.setItem("local_reviews_data", JSON.stringify(reviewsList));
+            localStorage.setItem("tharpe_reviews_list", JSON.stringify(activeReviews));
             
             // Clear out the input boxes and update the user display wall
-            fallbackForm.reset();
-            redrawReviews();
+            reviewForm.reset();
+            renderReviewsToWall();
         });
 
         // Initialize and display the reviews wall when the page loads
-        redrawReviews();
+        renderReviewsToWall();
     }
 });
