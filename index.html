@@ -3,176 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tharpe IT Services Portal</title>
+    <title>TechSupport</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://jsdelivr.net" defer></script>
+    <link href="https://jsdelivr.net" rel="stylesheet">
+    <link rel="stylesheet" href="https://jsdelivr.net">
 </head>
-<body>
+<body class="bg-dark text-light">
 
-    <!-- Ambient Grid Background Elements -->
-    <div class="cyber-grid-overlay"></div>
-    <div class="ambient-glow-1"></div>
-    <div class="ambient-glow-2"></div>
+    <!-- Navbar Section -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary px-4 py-3">
+        <a class="navbar-brand fs-3" href="#">
+            <i class="bi bi-cpu text-info"></i> TechSupport
+        </a>
+    </nav>
 
-    <header class="cyber-header">
-        <div class="nav-container">
-            <img src="logo.png" alt="Tharpe IT Services Logo" class="site-logo">
-            <h1>Tharpe IT Services</h1>
-            <a href="sms:+12078493939" class="btn-text-me header-text-btn">💬 Text For Help</a>
-        </div>
+    <!-- Main Content Header -->
+    <header class="container my-5 text-center">
+        <h1 class="display-4 fw-bold">Welcome to <span class="text-info">TechSupport</span> Portal</h1>
+        <p class="lead">Get immediate professional tech assistance or manage your ongoing tickets smoothly.</p>
     </header>
 
-    <!-- ⚡ HIGH-CONVERTING HERO ENTRY GRID ⚡ -->
-    <section class="hero-split-grid">
-        
-        <!-- Left Side: Restored Picture Column with Inline Galaxy Purple Text -->
-        <div class="banner-container" style="display: flex; align-items: center; gap: 20px; width: 100%;">
-            <img src="hero.png" alt="Tharpe IT Services Layout Banner" class="full-responsive-banner" style="display: block;">
-            <!-- Galaxy Purple Styled Text Elements Positioned to the Right of the Image File -->
-            <div class="hero-text-label" style="color: #c39efc; font-weight: 700; font-size: 1.25rem; letter-spacing: 0.5px; font-family: 'Segoe UI', sans-serif; white-space: nowrap; text-shadow: 0 0 10px rgba(195, 158, 252, 0.3);">
-                For Your IT Needs
-            </div>
-            <div class="banner-glow-edge"></div>
-        </div>
-
-        <!-- Right Side: Upgraded Live Connected Support Ticket Form -->
-        <section id="ticketing-system" class="glass-card hero-form-card">
-            <div class="card-accent-bar pink-purple"></div>
-            <h2>Submit a Support Ticket</h2>
-            <form id="ticketForm" action="https://formspree.io" method="POST">
-                <div class="input-group">
-                    <label>Your Name</label>
-                    <input type="text" name="ClientName" placeholder="Enter your full name" required>
-                </div>
-                <div class="input-group">
-                    <label>Your Email Address</label>
-                    <input type="email" name="_replyto" placeholder="Enter your email address" required>
-                </div>
-                <div class="input-group">
-                    <label>Issue Category</label>
-                    <select name="Category" required>
-                        <option value="" disabled selected>Select Core Issue Category</option>
-                        <option value="Network Infrastructure">Network Infrastructure & Wi-Fi</option>
-                        <option value="Hardware Management">Device Diagnostics & Repairs</option>
-                        <option value="Cloud & Software">Software Install & Configuration</option>
-                        <option value="Cybersecurity">Virus Removal & Access Management</option>
-                        <option value="Other / General Support">Other / General Support Inquiry</option>
-                    </select>
-                </div>
-                <div class="input-group">
-                    <label>Priority Level</label>
-                    <select name="Priority" required>
-                        <option value="Low">Low Priority (General Question)</option>
-                        <option value="Medium" selected>Medium Priority (Standard Ticket)</option>
-                        <option value="High">High Priority (Urgent System Outage)</option>
-                    </select>
-                </div>
-                <div class="input-group">
-                    <label>Describe Your Issue</label>
-                    <textarea name="Description" placeholder="Provide details about the technical faults or device issues you need fixed..." required></textarea>
-                </div>
-                <input type="hidden" name="_next" value="https://tharpeitservices.com">
-                <button type="submit" class="btn-cyber">Dispatch Ticket</button>
-            </form>
-        </section>
-
-    </section>
-
-    <main class="portal-main-grid">
-        <!-- 🏢 CORE BUSINESS PROFILE PANEL -->
-        <section id="business-profile-info" class="glass-card full-width-card">
-            <div class="card-accent-bar blue-purple"></div>
-            <h2>Our Technical IT Solutions & Services</h2>
-            <div class="profile-content-grid">
-                <div class="profile-text-block">
-                    <p class="service-highlight-text">
-                        Providing local and simple IT services to the community.
-                    </p>
-                    <p class="body-narrative">
-                        Backed by over <strong>15 years of professional IT experience</strong>, we deliver robust tech troubleshooting, networking optimization, and clear device solutions built directly around your small business or home infrastructure.
-                    </p>
-                    
-                    <!-- Immediate Mobile Messaging Triage Action -->
-                    <div class="immediate-help-container">
-                        <a href="sms:+12078493939" class="btn-text-me pulse-glow">💬 Text Me For Immediate Help</a>
-                    </div>
+    <!-- Ticket Submission Form Container -->
+    <main class="container my-5" style="max-width: 800px;">
+        <div class="card bg-secondary text-light p-4 shadow">
+            <h2 class="mb-4 text-info"><i class="bi bi-ticket-perforated"></i> Submit a Support Ticket</h2>
+            
+            <!-- FIXED FORM TAG HERE: Added method="POST" -->
+            <form action="https://formspree.io" method="POST">
+                <div class="mb-3">
+                    <label for="fullName" class="form-label">Full Name</label>
+                    <input type="text" class="form-control bg-dark text-light border-secondary" id="fullName" name="name" placeholder="Enter your full name" required>
                 </div>
                 
-                <div class="contact-details-badge">
-                    <h3>📬 Contact Technical Support</h3>
-                    <p><strong>Email Us:</strong> <a href="mailto:Tharpeitservices@gmail.com" class="neon-link">Tharpeitservices@gmail.com</a></p>
-                    <p><strong>Call or Text:</strong> <a href="tel:2078493939" class="accent-glow">207-849-3939</a></p>
+                <div class="mb-3">
+                    <label for="emailAddr" class="form-label">Email Address</label>
+                    <input type="email" class="form-control bg-dark text-light border-secondary" id="emailAddr" name="email" placeholder="Enter your email address" required>
                 </div>
-            </div>
-        </section>
 
-        <!-- 🚀 WHAT WE ARE ALL ABOUT -->
-        <section id="about-us-section" class="glass-card full-width-card">
-            <div class="card-accent-bar purple-pink"></div>
-            <h2>What We Are All About</h2>
-            <p class="section-intro-text">At Tharpe IT Services, we believe that enterprise-grade support shouldn't come with confusing corporate jargon. We focus on building lasting technology foundations right here in our community.</p>
-            
-            <div class="about-features-grid">
-                <div class="feature-pillar">
-                    <div class="pillar-icon">🤝</div>
-                    <h3>Community First</h3>
-                    <p>We are dedicated to helping our neighbors and local businesses navigate tech challenges with friendly, reliable, on-site and remote support.</p>
+                <div class="mb-3">
+                    <label for="category" class="form-label">Issue Category</label>
+                    <select class="form-select bg-dark text-light border-secondary" id="category" name="category" required>
+                        <option value="" disabled selected>Select Issue Category</option>
+                        <option value="Hardware">Hardware Issues & Diagnostics</option>
+                        <option value="Software">Software Installs & Operating System Errors</option>
+                        <option value="Network">Network Connectivity & Router Setup</option>
+                        <option value="Malware">Malware Removal & System Performance</option>
+                        <option value="Other">Other / General Technical Inquiry</option>
+                    </select>
                 </div>
-                <div class="feature-pillar">
-                    <div class="pillar-icon">⚡</div>
-                    <h3>Simple Solutions</h3>
-                    <p>No unnecessary upsells. We diagnose your exact hardware or network issue and fix it using clear, straightforward methods.</p>
-                </div>
-                <div class="feature-pillar">
-                    <div class="pillar-icon">🛡️</div>
-                    <h3>15 Years of Trust</h3>
-                    <p>Bringing comprehensive industry expertise straight to your desktop. From malware removal to complex Wi-Fi routing, we have you covered.</p>
-                </div>
-            </div>
-        </section>
 
-        <!-- ⭐ LIVE CONNECTED USER REVIEWS FORM -->
-        <section id="review-system" class="glass-card full-width-card">
-            <div class="card-accent-bar gold-purple"></div>
-            <h2>Leave an Experience Review</h2>
-            <form id="reviewForm" action="https://formspree.io" method="POST">
-                <div class="input-group">
-                    <label>Your Name</label>
-                    <input type="text" id="revName" name="ReviewerName" placeholder="Enter your name" required>
+                <div class="mb-3">
+                    <label for="priority" class="form-label">Priority</label>
+                    <select class="form-select bg-dark text-light border-secondary" id="priority" name="priority" required>
+                        <option value="Low">Low Priority (Standard Response)</option>
+                        <option value="Medium" selected>Medium Priority (Standard Flexibility)</option>
+                        <option value="High">High Priority (Urgent System Breakdown)</option>
+                    </select>
                 </div>
-                <div class="star-rating-box">
-                    <label class="input-label-style">Select Support Score</label>
-                    <div class="rating-stars">
-                        <input type="radio" id="star5" name="RatingStars" value="5"><label for="star5">★</label>
-                        <input type="radio" id="star4" name="RatingStars" value="4"><label for="star4">★</label>
-                        <input type="radio" id="star3" name="RatingStars" value="3"><label for="star3">★</label>
-                        <input type="radio" id="star2" name="RatingStars" value="2"><label for="star2">★</label>
-                        <input type="radio" id="star1" name="RatingStars" value="1"><label for="star1">★</label>
-                    </div>
+
+                <div class="mb-3">
+                    <label for="description" class="form-label">Issue Description</label>
+                    <textarea class="form-control bg-dark text-light border-secondary" id="description" name="description" rows="5" placeholder="Provide detailed information about the technical issues or errors you have faced." required></textarea>
                 </div>
-                <div class="input-group">
-                    <label>Your Feedback</label>
-                    <textarea id="comments" name="ReviewComment" placeholder="Provide feedback regarding your technical helpdesk experience..." required></textarea>
+
+                <div class="text-end">
+                    <button type="submit" class="btn btn-info px-4 py-2 text-dark fw-bold">Submit Ticket</button>
                 </div>
-                <input type="hidden" name="_next" value="https://tharpeitservices.com">
-                <button type="submit" class="btn-cyber">Submit Review</button>
             </form>
-        </section>
-
-        <!-- 💬 APPROVED CUSTOMER TESTIMONIALS BOARD -->
-        <section id="approved-reviews-board" class="glass-card full-width-card">
-            <div class="card-accent-bar blue-pink"></div>
-            <h2>Approved Customer Testimonials</h2>
-            <div class="testimonials-grid" id="reviewList">
-                <!-- Live submitted client cards will load here without reloading -->
-            </div>
-        </section>
+        </div>
     </main>
 
-    <script>
-        // Formspree API AJAX controller engine explicitly forced to POST
-        document.getElementById('reviewForm').addEventListener('submit', function(e) {
-            e.preventDefault(); 
-            
-            const form = this;
-            const reviewList = document.getElementById('reviewList');
-            const nameVal = document.getElementById('revName').value;
+    <!-- Services Overview Section -->
+    <section class="container my-5 text-center">
+        <h2 class="mb-4">Why choose TechSupport?</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="p-4 bg-secondary rounded shadow-sm h-100">
+                    <i class="bi bi-clock-history fs-1 text-info mb-3"></i>
+                    <h5>24/7 Fast Response</h5>
+                    <p class="small text-light-50">Our team works around the clock to ensure your technical hurdles are resolved as quickly as possible.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-4 bg-secondary rounded shadow-sm h-100">
+                    <i class="bi bi-shield-check fs-1 text-info mb-3"></i>
+                    <h5>Certified Professionals</h5>
+                    <p class="small text-light-50">All technicians are heavily vetted and hold active industry certifications to handle complex enterprise infrastructures.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-4 bg-secondary rounded shadow-sm h-100">
+                    <i class="bi bi-currency-dollar fs-1 text-info mb-3"></i>
+                    <h5>Affordable Rates</h5>
+                    <p class="small text-light-50">We provide transparent upfront pricing without any hidden structural fees or sudden contractual overheads.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-secondary text-center py-3 mt-5">
+        <p class="mb-0 text-light-50">&copy; 2026 TechSupport Portal. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
