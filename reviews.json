@@ -1,22 +1,22 @@
 {
   "customer_reviews": [
     {
-      "avatar": "JD",
-      "name": "John D.",
+      "avatar": "LF",
+      "name": "Lisa F.",
       "stars": "★★★★★",
-      "text": "Tharpe IT fixed our local business network outage in less than an hour. Exceptional troubleshooting and everything was explained simply without corporate tech jargon!"
+      "text": "Tharpe IT fixed MY network outage and network setup Exceptional troubleshooting and everything was explained simply without corporate tech jargon!"
+    ,
+    {
+      "avatar": "HR",
+      "name": "Haley R.",
+      "stars": "★★★★★",
+      "text": "Having 15 years of experience really shows. Fast setup of our security system to our network system for our tv and the computers are all set up and a very professional attitude. Highly recommend their local services."
     },
     {
-      "avatar": "MS",
-      "name": "Mary S.",
+      "avatar": "CT",
+      "name": "Carol T.",
       "stars": "★★★★★",
-      "text": "Having 15 years of experience really shows. Fast setup of our home hardware devices and a very professional attitude. Highly recommend their local services."
-    },
-    {
-      "avatar": "RK",
-      "name": "Robert K.",
-      "stars": "★★★★★",
-      "text": "Excellent cybersecurity check on my systems. Simple to work with, local, and incredibly helpful phone response support."
+      "text": "Excellent cybersecurity check on my systems. Simple to work with, local, and incredibly helpful with making sure i was comfortable with my entire system and set up
     }
   ]
 }
