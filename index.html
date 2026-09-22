@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tharpe IT Services - Local Support Hub</title>
     <style>
-        /* --- Premium Deep Purple & Glassmorphic Variables --- */
+        /* --- Premium Deep Purple Design System --- */
         :root {
             --surface-bg: #09051c;
-            --panel-purple: rgba(18, 11, 41, 0.7);
-            --panel-hover: rgba(26, 17, 56, 0.85);
+            --panel-purple: rgba(18, 11, 41, 0.75);
+            --panel-hover: rgba(26, 17, 56, 0.9);
             --input-dark: #05020c;
             --glow-violet: #651fff;
             --accent-pink: #ff4081;
@@ -26,8 +26,8 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background-color: var(--surface-bg);
-            /* Carefully optimized gradient tracking protects readability while highlighting your profile photo on the right */
-            background-image: linear-gradient(to right, rgba(9, 5, 28, 0.92) 30%, rgba(9, 5, 28, 0.75) 60%, rgba(9, 5, 28, 0.4) 100%), url('hero.png');
+            /* Gradient layers guarantee high text visibility and push content visibility to the top layer */
+            background-image: linear-gradient(to right, rgba(9, 5, 28, 0.94) 30%, rgba(9, 5, 28, 0.8) 60%, rgba(9, 5, 28, 0.35) 100%), url('hero.png');
             background-size: cover;
             background-position: center top;
             background-attachment: fixed;
@@ -43,8 +43,6 @@
             position: sticky;
             top: 0;
             background: rgba(9, 5, 28, 0.85);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--border-glass);
             padding: 18px 40px;
             display: flex;
@@ -57,9 +55,6 @@
             font-size: 1.3rem;
             font-weight: 800;
             letter-spacing: -0.5px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
 
         .nav-links a {
@@ -68,32 +63,33 @@
             font-weight: 600;
             margin-left: 30px;
             font-size: 0.9rem;
-            transition: color 0.25s, text-shadow 0.25s;
+            transition: color 0.25s;
         }
 
         .nav-links a:hover {
             color: var(--accent-pink);
-            text-shadow: 0 0 12px rgba(255, 64, 129, 0.4);
         }
 
+        /* --- Content Layout Wrapper --- */
         .main-wrapper {
             max-width: 1300px;
             margin: 0 auto;
             padding: 60px 20px;
+            position: relative;
+            z-index: 10; /* Forces text to layer explicitly on top of background vectors */
         }
 
-        /* --- Layout Grid Systems (Flipped to protect right side) --- */
+        /* Two-Column Grid Setup (Forms on left, Right side stays open for picture profiles) */
         .workspace-grid {
             display: grid;
-            /* CHANGED: Forms/Text occupy the left, leaving the right 50% clear for your photo */
-            grid-template-columns: 1.1fr 0.9fr;
+            grid-template-columns: 1.15fr 0.85fr;
             gap: 60px;
             align-items: center;
-            margin-bottom: 120px;
+            margin-bottom: 100px;
         }
 
         .intro-block-pane {
-            padding-right: 10px;
+            padding-right: 15px;
         }
 
         .community-tag {
@@ -121,39 +117,34 @@
 
         .intro-block-pane h1 span {
             color: var(--accent-pink);
-            text-shadow: 0 0 20px rgba(255, 64, 129, 0.2);
         }
 
         .intro-block-pane p {
             font-size: 1.15rem;
             color: var(--text-dim);
             margin: 0 0 35px 0;
-            line-height: 1.65;
         }
 
-        /* Interactive Floating Card Structure */
+        /* Glassmorphic Form Card Layout Blocks */
         .glass-ui-card {
             background: var(--panel-purple);
             border: 1px solid var(--border-glass);
             border-radius: var(--card-radius);
             padding: 40px;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s, border-color 0.4s;
+            margin-bottom: 40px;
+            transition: transform 0.4s ease, background 0.4s ease;
         }
 
         .glass-ui-card:hover {
-            transform: translateY(-6px);
+            transform: translateY(-5px);
             background: var(--panel-hover);
             border-color: rgba(101, 31, 255, 0.4);
-            box-shadow: 0 30px 60px rgba(101, 31, 255, 0.18);
         }
 
         .glass-ui-card h2 {
             font-size: 1.9rem;
             margin: 0 0 10px 0;
-            letter-spacing: -0.5px;
             font-weight: 800;
         }
 
@@ -163,7 +154,7 @@
             margin: 0 0 30px 0;
         }
 
-        /* --- Clean Form Inputs --- */
+        /* --- Clean Form Field Architecture --- */
         .form-element-wrapper {
             margin-bottom: 24px;
             display: flex;
@@ -191,13 +182,12 @@
             color: var(--text-light);
             font-size: 1rem;
             box-sizing: border-box;
-            transition: border-color 0.25s, box-shadow 0.25s;
+            transition: border-color 0.25s;
         }
 
         input:focus, select:focus, textarea:focus {
             outline: none;
             border-color: var(--accent-pink);
-            box-shadow: 0 0 0 4px rgba(255, 64, 129, 0.15);
         }
 
         textarea {
@@ -209,7 +199,6 @@
         .conditional-input {
             margin-top: 12px;
             display: none;
-            border-color: var(--glow-violet);
         }
 
         .action-button {
@@ -223,42 +212,30 @@
             border-radius: 10px;
             cursor: pointer;
             box-shadow: 0 8px 20px rgba(101, 31, 255, 0.25);
-            transition: opacity 0.2s, transform 0.1s, box-shadow 0.2s;
+            transition: opacity 0.2s;
         }
 
         .action-button:hover {
-            box-shadow: 0 8px 25px rgba(101, 31, 255, 0.5);
             opacity: 0.95;
         }
 
-        .action-button:active {
-            transform: scale(0.99);
-        }
-
-        /* --- Section 2: Bottom Review Hub --- */
-        .section-break-line {
-            border: 0;
-            height: 1px;
-            background: linear-gradient(to right, transparent, rgba(255,255,255,0.08), transparent);
-            margin: 40px 0 80px 0;
-        }
-
+        /* --- Section 2: Bottom Review Grid Center --- */
         .review-header-center {
             text-align: center;
             margin-bottom: 60px;
+            margin-top: 60px;
         }
 
         .review-header-center h2 {
             font-size: 2.6rem;
-            letter-spacing: -1px;
-            margin: 0 0 12px 0;
             font-weight: 800;
+            margin: 0 0 12px 0;
         }
 
         .reviews-split-layout {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            gap: 40px;
             align-items: start;
         }
 
@@ -273,12 +250,6 @@
             border: 1px solid rgba(255, 255, 255, 0.04);
             border-radius: var(--card-radius);
             padding: 30px;
-            transition: background-color 0.25s, transform 0.25s;
-        }
-
-        .feedback-bubble-card:hover {
-            background-color: rgba(22, 14, 48, 0.7);
-            transform: translateX(6px);
         }
 
         .rating-stars {
@@ -292,34 +263,23 @@
             color: var(--text-dim);
             font-style: italic;
             margin: 0 0 15px 0;
-            font-size: 1.05rem;
         }
 
         .author-badge {
             font-size: 0.85rem;
             font-weight: 700;
-            color: var(--text-light);
             text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
         .inline-contact-row {
             margin-top: 35px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
         }
 
         .phone-cta-link {
             color: var(--accent-pink);
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 800;
             text-decoration: none;
-            transition: opacity 0.2s;
-        }
-
-        .phone-cta-link:hover {
-            opacity: 0.85;
         }
 
         footer {
@@ -328,13 +288,47 @@
             color: var(--text-dim);
             font-size: 0.85rem;
             border-top: 1px solid rgba(255, 255, 255, 0.04);
-            margin-top: 40px;
+            margin-top: 60px;
         }
 
-        /* --- Full Mobile Layout Optimization --- */
+        /* Mobile Layout Configuration */
         @media (max-width: 950px) {
             .workspace-grid, .reviews-split-layout {
                 grid-template-columns: 1fr;
-                gap: 45px;
+                gap: 40px;
             }
             body { 
+                background-image: linear-gradient(rgba(9, 5, 28, 0.92), rgba(9, 5, 28, 0.96)), url('hero.png');
+            }
+            .intro-block-pane h1 { font-size: 2.6rem; }
+            nav { padding: 15px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Sticky Nav Header -->
+    <nav>
+        <div class="nav-logo">💻 Tharpe IT Services</div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#ticketing-terminal">Support Portal</a>
+            <a href="#reviews-terminal">Community Feedback</a>
+        </div>
+    </nav>
+
+    <!-- Structural Outer Container Wrapper -->
+    <div class="main-wrapper">
+
+        <!-- WORKSPACE GRID SECTION 1 -->
+        <div class="workspace-grid">
+            
+            <!-- Left Grid Pane: Branding, Mission Statement & Intro Details -->
+            <div class="intro-block-pane">
+                <div class="community-tag">🤝 Neighborly & Reliable</div>
+                <h1>Technology can be complex. We make it <span>simple for you</span>.</h1>
+                <p>
+                    Whether it's for a busy home office or personal everyday use, we take pride in simplifying your basic and complex technical needs. No confusing tech talk—just dependable support for your everyday lifestyle.
+                </p>
+                
+                <div class="inline-contact-row">
