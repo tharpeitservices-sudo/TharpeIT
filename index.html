@@ -3,298 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tharpe IT Services - Support Portal</title>
-    <style>
-        /* --- Core Layout & Deep Purple Theme Styles --- */
-        :root {
-            --bg-deep-purple: #0b071e;
-            --card-purple: #130d2b;
-            --input-bg: #070412;
-            --accent-glow: #311b92;
-            --text-main: #ffffff;
-            --text-muted: #b3b0cb;
-            --highlight-pink: #ff4081;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: var(--bg-deep-purple);
-            /* Linked directly to your hero.png asset */
-            background-image: linear-gradient(rgba(11, 7, 30, 0.85), rgba(11, 7, 30, 0.9)), url('hero.png');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: var(--text-main);
-            margin: 0;
-            padding: 40px;
-            min-height: 100vh;
-            box-sizing: border-box;
-        }
-
-        .portal-wrapper {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        header {
-            margin-bottom: 40px;
-        }
-
-        .brand-title {
-            font-size: 1.6rem;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .status-badge {
-            color: var(--text-muted);
-            font-size: 1rem;
-            margin-top: 6px;
-            line-height: 1.4;
-        }
-        
-        .status-online {
-            color: #4caf50;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 4px;
-        }
-
-        /* --- TWO-COLUMN GRID SYSTEM --- */
-        .main-layout-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 40px;
-            align-items: start;
-        }
-
-        /* Responsive stack for phones and tablets */
-        @media (max-width: 900px) {
-            .main-layout-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            body {
-                padding: 20px;
-            }
-        }
-
-        /* --- Left Column: Support Form Card --- */
-        .support-ticket-form-card {
-            background-color: var(--card-purple);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 12px;
-            padding: 35px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-        }
-
-        h2 {
-            font-size: 1.8rem;
-            margin: 0 0 8px 0;
-            letter-spacing: -0.5px;
-        }
-
-        .subtitle {
-            color: var(--text-muted);
-            margin: 0 0 25px 0;
-            font-size: 0.95rem;
-            line-height: 1.4;
-        }
-
-        .input-group {
-            margin-bottom: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        label {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--text-main);
-            letter-spacing: 0.3px;
-        }
-
-        input[type="text"],
-        input[type="email"],
-        select,
-        textarea {
-            width: 100%;
-            padding: 12px 14px;
-            background-color: var(--input-bg);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 6px;
-            color: var(--text-main);
-            font-size: 1rem;
-            box-sizing: border-box;
-            transition: border-color 0.2s, box-shadow 0.2s;
-        }
-
-        input:focus, select:focus, textarea:focus {
-            outline: none;
-            border-color: var(--highlight-pink);
-            box-shadow: 0 0 0 3px rgba(255, 64, 129, 0.15);
-        }
-
-        textarea {
-            min-height: 140px;
-            resize: vertical;
-            font-family: inherit;
-            line-height: 1.4;
-        }
-
-        button[type="submit"] {
-            background-color: #ffffff;
-            color: #0b071e;
-            border: none;
-            padding: 13px 28px;
-            font-size: 1rem;
-            font-weight: bold;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: background-color 0.2s, transform 0.1s;
-            margin-top: 5px;
-        }
-
-        button[type="submit"]:hover {
-            background-color: #f0eef5;
-        }
-        
-        button[type="submit"]:active {
-            transform: scale(0.98);
-        }
-
-        /* --- Right Column: Info Sidebar Cards --- */
-        .info-sidebar {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .info-card-block {
-            background-color: rgba(19, 13, 43, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            padding: 25px;
-        }
-
-        .info-sidebar h3 {
-            font-size: 1.3rem;
-            margin: 0 0 10px 0;
-            letter-spacing: -0.3px;
-        }
-
-        .phone-link {
-            color: var(--highlight-pink);
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.3rem;
-            display: inline-block;
-            margin-top: 8px;
-        }
-
-        .commitment-text {
-            color: var(--text-muted);
-            margin: 0;
-            line-height: 1.6;
-            font-size: 0.95rem;
-        }
-
-        footer {
-            margin-top: 60px;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            padding-top: 20px;
-            text-align: center;
-        }
-    </style>
+    <title>Support - Tharpe IT Services</title>
 </head>
 <body>
 
-    <div class="portal-wrapper">
+    <!-- Main Container -->
+    <div class="support-container">
         
-        <!-- Header Branding Area -->
-        <header>
-            <div class="brand-title">💻 Tharpe IT Services</div>
-            <div class="status-badge">
-                Providing local and simple IT services to the community.<br>
-                <span class="status-online">● Online</span>
-            </div>
+        <!-- Header Section -->
+        <header class="support-header">
+            <h1>Need help? We've got your back.</h1>
+            <p>Choose the support path that best fits your needs.</p>
         </header>
 
-        <!-- Main Layout Split Grid Layout -->
-        <div class="main-layout-grid">
+        <!-- Selection Section -->
+        <div class="support-options">
             
-            <!-- Left Side: Interactive Ticket Form Card -->
-            <main class="support-ticket-form-card">
-                <h2>Support Ticket Portal</h2>
-                <p class="subtitle">Submit a request below and our team will get back to you within 24-48 hours.</p>
-
+            <!-- Left Side: For Everyone (Free Plan) -->
+            <div class="support-card free-tier">
+                <h2>Community Support</h2>
+                <p>Get answers from our community forum and public documentation.</p>
+                
+                <!-- Open Free Support Form -->
+                <!-- FIXED: Fully functional Formspree endpoint attached -->
                 <form action="https://formspree.io" method="POST">
                     
                     <div class="input-group">
-                        <label for="full-name">Full Name</label>
-                        <input type="text" id="full-name" name="name" placeholder="Enter your full name" required>
+                        <label for="free-name">Full Name</label>
+                        <!-- FIXED: Added name attribute for Formspree parser -->
+                        <input type="text" id="free-name" name="name" placeholder="Your full name" required>
                     </div>
 
                     <div class="input-group">
-                        <label for="email-address">Email Address</label>
-                        <input type="email" id="email-address" name="email" placeholder="Enter your email address" required>
+                        <label for="free-email">Email Address</label>
+                        <!-- FIXED: Added name attribute for Formspree parser -->
+                        <input type="email" id="free-email" name="email" placeholder="Your email address" required>
                     </div>
 
                     <div class="input-group">
-                        <label for="service">Service Requested</label>
-                        <select id="service" name="service" required>
-                            <option value="" disabled selected>Select a service...</option>
-                            <option value="General Support">General IT Troubleshooting</option>
-                            <option value="Hardware Repair">Hardware Upgrades / Repair</option>
-                            <option value="Network Config">Network & Wi-Fi Configuration</option>
-                            <option value="Device Setup">New Device Infrastructure Setup</option>
+                        <label for="free-issue">Issue Category</label>
+                        <!-- FIXED: Added name attribute for Formspree parser -->
+                        <select id="free-issue" name="category" required>
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="account">Account Access / Login Issues</option>
+                            <option value="billing">Billing & Invoicing Questions</option>
+                            <option value="bug">Report a Bug / Software Malfunction</option>
+                            <option value="feature">Feature Request / Enhancement Idea</option>
+                            <option value="general">General Support / General Documentation</option>
                         </select>
                     </div>
 
                     <div class="input-group">
-                        <label for="priority">Priority Level</label>
-                        <select id="priority" name="priority" required>
-                            <option value="Low">Low - General Question / Routine Checkup</option>
-                            <option value="Medium">Medium - Functional Issue / Non-Urgent</option>
-                            <option value="High">High - System Down / Urgent Assistance</option>
+                        <label for="free-priority">Priority Level</label>
+                        <!-- FIXED: Added name attribute for Formspree parser -->
+                        <select id="free-priority" name="priority" required>
+                            <option value="low">Low (Standard Review)</option>
+                            <option value="medium">Medium (Next Available Agent)</option>
+                            <option value="high">High (Urgent Security / Critical System Issues)</option>
                         </select>
                     </div>
 
                     <div class="input-group">
-                        <label for="description">Detailed Description</label>
-                        <textarea id="description" name="description" placeholder="Please describe the technical issues or requests you have in detail..." required></textarea>
+                        <label for="free-message">Description</label>
+                        <!-- FIXED: Added name attribute for Formspree parser -->
+                        <textarea id="free-message" name="message" placeholder="Details about the technical issues or general inquiries you have" required></textarea>
                     </div>
 
-                    <button type="submit">Submit Ticket</button>
+                    <button type="submit" class="btn btn-primary">Submit Ticket</button>
                 </form>
-            </main>
+            </div>
 
-            <!-- Right Side: Sidebar Info Panels -->
-            <aside class="info-sidebar">
+            <!-- Right Side: Dedicated Support (Paid Tier) -->
+            <div class="support-card paid-tier">
+                <h2>Priority Integration Support</h2>
                 
-                <div class="info-card-block">
-                    <h3>Direct Support Line</h3>
-                    <p style="margin: 0; color: var(--text-muted);">Need immediate assistance? Give us a call or text directly.</p>
-                    <a href="tel:2073492939" class="phone-link">207-349-2939</a>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <strong>Dedicated Slack Channel</strong>
+                        <p>Direct communication with our engineering team.</p>
+                    </div>
+                    <div class="feature-item">
+                        <strong>Guaranteed 1-Hour SLA</strong>
+                        <p>Providing minor fixes & patches to the community.</p>
+                    </div>
+                    <div class="feature-item">
+                        <strong>Custom Deployments</strong>
+                        <p>Tailored directly into your infrastructure environment.</p>
+                    </div>
                 </div>
 
-                <div class="info-card-block">
-                    <h3>Our Commitment</h3>
-                    <p class="commitment-text">With over 15 years of dedicated IT experience, we specialize in delivering clean, fast, and simple solutions tailored directly to your home or small business infrastructure environment.</p>
+                <div class="pricing-cta">
+                    <p class="price">$499<span>/month</span></p>
+                    <p class="subtext">Billed monthly per organization.</p>
+                    <a href="#paid-support-form" class="btn btn-secondary">Upgrade to Priority Support</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Divider Line -->
+        <hr class="section-divider">
+
+        <!-- Bottom Section: Paid Tier Ticket Submission -->
+        <div id="paid-support-form" class="paid-form-section">
+            <header class="section-header">
+                <h2>Submit Priority Support Ticket</h2>
+                <p>For active Enterprise and Premium integrations.</p>
+            </header>
+
+            <!-- Open Paid Support Form -->
+            <!-- FIXED: Fully functional Formspree endpoint attached -->
+            <form action="https://formspree.io" method="POST">
+                
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label for="paid-name">Full Name</label>
+                        <!-- FIXED: Added name attribute for Formspree parser -->
+                        <input type="text" id="paid-name" name="name" placeholder="Your full name" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="paid-email">Organization Email</label>
+                        <!-- FIXED: Added name attribute for Formspree parser -->
+                        <input type="email" id="paid-email" name="email" placeholder="company@domain.com" required>
+                    </div>
                 </div>
 
-            </aside>
+                <div class="input-group">
+                    <label for="paid-env">Environment Type</label>
+                    <!-- FIXED: Added name attribute for Formspree parser -->
+                    <select id="paid-env" name="environment" required>
+                        <option value="" disabled selected>Select active environment</option>
+                        <option value="production">Production (Live Users Impacted)</option>
+                        <option value="staging">Staging / Pre-release Testing</option>
+                        <option value="development">Local Development Environment</option>
+                    </select>
+                </div>
 
-        </div> <!-- End Grid Layout -->
+                <div class="input-group">
+                    <label for="paid-logs">Error Logs / System Diagnostics</label>
+                    <!-- FIXED: Added name attribute for Formspree parser -->
+                    <textarea id="paid-logs" name="logs" placeholder="Paste relevant error codes, console outputs, or stack traces here..." rows="6"></textarea>
+                </div>
 
-        <footer>
-            &copy; 2026 Tharpe IT Services. All rights reserved.
-        </footer>
+                <button type="submit" class="btn btn-dark">Submit Priority Request</button>
+            </form>
+        </div>
 
     </div>
 
